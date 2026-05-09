@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peter B Chase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400&family=Raleway:wght@200;300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #f7f5f0;
+      --ink:   #19160f;
+      --fade:  4200ms;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    /* ─── Slideshow ─────────────────────────────────────── */
+    #slideshow {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity var(--fade) cubic-bezier(0.45, 0, 0.55, 1);
+      background-color: var(--cream);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      will-change: opacity;
+    }
+
+    .slide.on {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      :root { --fade: 1000ms; }
+    }
+
+    /* ─── Atmosphere overlays ───────────────────────────── */
+
+    /* Cream wash — top for legibility */
+    #wash {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      background:
+        linear-gradient(to bottom,
+          rgba(247, 245, 240, 0.95) 0%,
+          rgba(247, 245, 240, 0.00) 20%
+        );
+    }
+
+    /* Film grain */
+    #grain {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      opacity: 0.042;
+      mix-blend-mode: multiply;
+    }
+
+    /* ─── Header ────────────────────────────────────────── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: clamp(2rem, 3.8vw, 3.2rem) clamp(2rem, 4.5vw, 4.5rem);
+    }
+
+    /* Logo */
+    .logo {
+      font-family: 'Cormorant', serif;
+      font-weight: 300;
+      font-size: clamp(1.01rem, 1.54vw, 1.54rem);
+      letter-spacing: 0.42em;
+      line-height: 1.55;
+      color: var(--ink);
+      text-decoration: none;
+      display: block;
+      transition: opacity 0.6s ease;
+    }
+
+    .logo:hover       { opacity: 0.50; }
+    .logo:focus-visible {
+      outline: 1px solid var(--ink);
+      outline-offset: 7px;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: baseline;
+      gap: clamp(1.8rem, 3.2vw, 3.6rem);
+      padding-top: 0.15rem; /* optical baseline alignment with logo top */
+    }
+
+    nav a {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.62rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.45s ease;
+    }
+
+    nav a:hover       { opacity: 0.40; }
+    nav a:active      { opacity: 0.25; }
+    nav a:focus-visible {
+      outline: 1px solid var(--ink);
+      outline-offset: 5px;
+    }
+
+    /* ─── Galleries dropdown ────────────────────────────── */
+    .nav-item {
+      position: relative;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      list-style: none;
+      background: rgba(247, 245, 240, 0.97);
+      padding: 1.2rem 0 0.9rem;
+      min-width: 15rem;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-5px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    .nav-item:hover .dropdown,
+    .nav-item:focus-within .dropdown {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .dropdown li a {
+      display: block;
+      padding: 0.6rem 1.8rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+
+    .dropdown li a:hover       { opacity: 0.40; }
+    .dropdown li a:focus-visible {
+      outline: 1px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    /* ─── Contact panel ─────────────────────────────────── */
+    #contact-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: #f7f5f0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease;
+      overflow-y: auto;
+    }
+
+    #contact-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #contact-close {
+      position: absolute;
+      top: 2.2rem;
+      left: clamp(2rem, 4.5vw, 4.5rem);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(25, 22, 15, 0.65);
+      transition: opacity 0.3s ease;
+    }
+
+    #contact-close:hover { opacity: 0.40; }
+    #contact-close:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+
+    #contact-inner {
+      max-width: 34rem;
+      margin: 0 auto;
+      padding: clamp(6rem, 10vw, 9rem) clamp(2rem, 4.5vw, 4.5rem) clamp(4rem, 6vw, 6rem);
+    }
+
+    #contact-inner p {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.78rem, 1.05vw, 0.98rem);
+      line-height: 1.85;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin-bottom: 2.8rem;
+    }
+
+    .contact-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .contact-field label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.55rem, 0.68vw, 0.64rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(25, 22, 15, 0.55);
+    }
+
+    .contact-field input,
+    .contact-field textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(25, 22, 15, 0.25);
+      padding: 0.5rem 0;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.78rem, 1vw, 0.92rem);
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.3s ease;
+      width: 100%;
+      resize: none;
+    }
+
+    .contact-field input:focus,
+    .contact-field textarea:focus {
+      border-bottom-color: rgba(25, 22, 15, 0.7);
+    }
+
+    .contact-field textarea { min-height: 7rem; }
+
+    #contact-submit {
+      margin-top: 2rem;
+      background: none;
+      border: 1px solid rgba(25, 22, 15, 0.35);
+      padding: 0.7rem 2.2rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.55rem, 0.68vw, 0.64rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+      transition: opacity 0.3s ease, border-color 0.3s ease;
+    }
+
+    #contact-submit:hover { opacity: 0.55; }
+    #contact-submit:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+
+    #contact-status,
+    #contact-error {
+      margin-top: 1.4rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.62rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.08em;
+      color: rgba(25, 22, 15, 0.6);
+    }
+
+    #contact-status:empty,
+    #contact-error:empty { display: none; }
+
+    .fs-field-error {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: rgba(160, 60, 40, 0.8);
+      margin-top: 0.25rem;
+    }
+
+    /* ─── Why panel ─────────────────────────────────────── */
+    #why-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: #f7f5f0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease;
+      overflow-y: auto;
+    }
+
+    #why-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #why-close {
+      position: absolute;
+      top: 2.2rem;
+      left: clamp(2rem, 4.5vw, 4.5rem);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(25, 22, 15, 0.65);
+      transition: opacity 0.3s ease;
+    }
+
+    #why-close:hover { opacity: 0.40; }
+    #why-close:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+
+    #why-text {
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: clamp(6rem, 10vw, 9rem) clamp(2rem, 4.5vw, 4.5rem) clamp(4rem, 6vw, 6rem);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.78rem, 1.05vw, 0.98rem);
+      line-height: 1.85;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    #why-text p + p { margin-top: 1.5em; }
+
+    /* ─── Sotto Voce gallery ────────────────────────────── */
+    #gallery {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: #0c0b09;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease;
+    }
+
+    #gallery.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #gallery-img {
+      position: absolute;
+      top: 7vmin;
+      bottom: 7vmin;
+      left: 11vmin;
+      right: 11vmin;
+      width: calc(100% - 22vmin);
+      height: calc(100% - 14vmin);
+      object-fit: contain;
+      image-rendering: high-quality;
+      cursor: pointer;
+      transition: opacity 2s ease;
+    }
+
+    .gal-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: rgba(247, 245, 240, 0.30);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 200;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1;
+      cursor: pointer;
+      padding: 1rem clamp(1.5rem, 2.5vmin, 3rem);
+      transition: color 0.35s ease;
+    }
+
+    .gal-arrow:hover        { color: rgba(247, 245, 240, 0.80); }
+    .gal-arrow:focus-visible { outline: 1px solid rgba(247,245,240,0.4); outline-offset: 4px; }
+    #gallery-prev { left: 0; }
+    #gallery-next { right: 0; }
+
+    #gallery-close {
+      position: absolute;
+      top: 2.2rem;
+      left: 2.5rem;
+      background: none;
+      border: none;
+      color: rgba(247, 245, 240, 0.38);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.35s ease;
+    }
+
+    #gallery-close:hover        { color: rgba(247, 245, 240, 0.80); }
+    #gallery-close:focus-visible { outline: 1px solid rgba(247,245,240,0.4); outline-offset: 5px; }
+
+    /* Light mode overrides */
+    #gallery.light               { background: #f7f5f0; }
+    #gallery.light .gal-arrow    { color: rgba(25, 22, 15, 0.28); }
+    #gallery.light .gal-arrow:hover    { color: rgba(25, 22, 15, 0.75); }
+    #gallery.light #gallery-close      { color: rgba(25, 22, 15, 0.65); }
+    #gallery.light #gallery-close:hover { color: rgba(25, 22, 15, 0.90); }
+
+    /* Gray mode overrides */
+    #gallery.gray               { background: #808080; }
+    #gallery.gray .gal-arrow    { color: rgba(247, 245, 240, 0.50); }
+    #gallery.gray .gal-arrow:hover    { color: rgba(247, 245, 240, 0.90); }
+    #gallery.gray #gallery-close      { color: rgba(247, 245, 240, 0.70); }
+    #gallery.gray #gallery-close:hover { color: rgba(247, 245, 240, 0.95); }
+
+    /* Close button fully opaque at end of sequence */
+    #gallery-close.at-end,
+    #gallery.light #gallery-close.at-end { color: rgba(25, 22, 15, 1.0) !important; }
+    #gallery.gray #gallery-close.at-end  { color: rgba(247, 245, 240, 1.0) !important; }
+  </style>
+</head>
+<body>
+
+  <!-- Full-screen slideshow -->
+  <div id="slideshow"></div>
+
+  <!-- Overlays (stacked above slideshow) -->
+  <div id="wash"></div>
+
+  <!-- Film-grain SVG -->
+  <svg id="grain" aria-hidden="true">
+    <filter id="gf" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.68"
+        numOctaves="4"
+        stitchTiles="stitch"/>
+    </filter>
+    <rect width="100%" height="100%" filter="url(#gf)"/>
+  </svg>
+
+  <!-- Contact panel -->
+  <section id="contact-panel" aria-hidden="true" aria-label="Contact">
+    <button id="contact-close">← Close</button>
+    <div id="contact-inner">
+      <p>Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.</p>
+      <div id="contact-status" data-fs-success aria-live="polite"></div>
+      <div id="contact-error" data-fs-error aria-live="polite"></div>
+      <form id="contact-form">
+        <div class="contact-field">
+          <label for="cf-name">Name</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" data-fs-field>
+        </div>
+        <div class="contact-field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" data-fs-field>
+          <span data-fs-error="email" class="fs-field-error"></span>
+        </div>
+        <div class="contact-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" required data-fs-field></textarea>
+          <span data-fs-error="message" class="fs-field-error"></span>
+        </div>
+        <button type="submit" id="contact-submit" data-fs-submit-btn>Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Why panel -->
+  <section id="why-panel" aria-hidden="true" aria-label="Why">
+    <button id="why-close">← Close</button>
+    <div id="why-text">
+      <p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p>
+      <p>Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p>
+      <p>Years later I carried mother's beautiful Leica M3 around campus and reveled in the analog alchemy of watching my images slowly emerge from trays of liquid developer. I still believed in those journeys. I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages- physical and chemical - followed.</p>
+      <p>My journeys are farther afield now, and this site is a message in a bottle thrown into the cyber sea.</p>
+      <p>Unfurl a few of the messages inside.</p>
+      <p>— pc, 2026</p>
+    </div>
+  </section>
+
+  <!-- Sotto Voce gallery -->
+  <section id="gallery" aria-hidden="true" aria-label="Sotto Voce gallery">
+    <button id="gallery-close">← Close</button>
+    <img id="gallery-img" alt="Sotto Voce" />
+    <button id="gallery-prev" class="gal-arrow" aria-label="Previous image">&#8249;</button>
+    <button id="gallery-next" class="gal-arrow" aria-label="Next image">&#8250;</button>
+  </section>
+
+  <!-- Header -->
+  <header>
+    <a href="/" class="logo" aria-label="Peter B Chase Photography">
+      PETER B CHASE
+    </a>
+    <nav aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="#galleries">Galleries</a>
+        <ul class="dropdown" role="menu">
+          <li><a href="#sotto-voce" role="menuitem">Sotto Voce</a></li>
+          <li><a href="#fin-del-mundo" role="menuitem">Fin del Mundo</a></li>
+          <li><a href="#solitaire" role="menuitem">Desert Solitaire</a></li>
+          <li><a href="#elation" role="menuitem">Elation</a></li>
+          <li><a href="#continental-drift" role="menuitem">Continental Drift</a></li>
+          <li><a href="#elegy" role="menuitem">Elegy</a></li>
+          <li><a href="#tiny-miracles" role="menuitem">Tiny Miracles</a></li>
+          <li><a href="#still-lives" role="menuitem">Still Lives</a></li>
+          <li><a href="#unintelligent-design" role="menuitem">Unintelligent Design</a></li>
+        </ul>
+      </div>
+      <a href="#why">Why</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <script>
+    // Landing panorama — white screen for 5 s, then fade in
+    const container = document.getElementById('slideshow');
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+    slide.style.backgroundImage = "url('" + encodeURI('20250823-_DSF8675-Pano-Edit-2.jpg') + "')";
+    slide.style.zIndex = '1';
+    container.appendChild(slide);
+
+    requestAnimationFrame(() => requestAnimationFrame(() => slide.classList.add('on')));
+
+    // ── Gallery engine ───────────────────────────────────
+    const galleries = {
+      'sotto-voce': {
+        images: [
+          'Sotto Voce/10.JPG',
+          'Sotto Voce/20.jpg',
+          'Sotto Voce/25.JPG',
+          'Sotto Voce/30.jpg',
+          'Sotto Voce/35.JPG',
+          'Sotto Voce/40.jpg',
+          'Sotto Voce/45.jpg',
+          'Sotto Voce/50.JPG',
+          'Sotto Voce/70.JPG',
+          'Sotto Voce/80.jpg',
+          'Sotto Voce/110.jpg',
+        ],
+        light:           true,
+        fade:            true,
+        fadeOpenDuration:'5s',
+      },
+      'continental-drift': {
+        images: [
+          'Continental Drift/5.jpg',
+          'Continental Drift/7.JPG',
+          'Continental Drift/10.jpg',
+          'Continental Drift/15.JPG',
+          'Continental Drift/30.JPG',
+          'Continental Drift/33.JPG',
+          'Continental Drift/35.jpg',
+          'Continental Drift/40.jpg',
+          'Continental Drift/50.JPG',
+          'Continental Drift/60.JPG',
+          'Continental Drift/65.JPG',
+          'Continental Drift/70.JPG',
+        ],
+        light: true,
+        fade:  false,
+      },
+      'unintelligent-design': {
+        images: [
+          'Unintelligent Design/20241126-20241126_120554~2-Edit.JPG',
+          'Unintelligent Design/Italy 2023-1001083.jpg',
+          'Unintelligent Design/Patagonia 2019-1042043.jpg',
+        ],
+        light: true,
+        fade:  false,
+      },
+      'solitaire': {
+        images: [
+          'Desert Solitare/10.jpg',
+          'Desert Solitare/20.JPG',
+          'Desert Solitare/30.JPG',
+          'Desert Solitare/40.JPG',
+          'Desert Solitare/50.JPG',
+          'Desert Solitare/60.JPG',
+          'Desert Solitare/70.JPG',
+          'Desert Solitare/75.JPG',
+          'Desert Solitare/80.JPG',
+          'Desert Solitare/85.JPG',
+          'Desert Solitare/90.JPG',
+          'Desert Solitare/100.JPG',
+          'Desert Solitare/102.JPG',
+          'Desert Solitare/105.JPG',
+          'Desert Solitare/107.JPG',
+          'Desert Solitare/110.JPG',
+          'Desert Solitare/120.JPG',
+          'Desert Solitare/125.JPG',
+          'Desert Solitare/130.JPG',
+          'Desert Solitare/140.JPG',
+          'Desert Solitare/150.JPG',
+        ],
+        light:       true,
+        fade:        true,
+        fadeDuration:1000,
+      },
+      'elegy': {
+        images: [
+          'Elegy/10.JPG',
+          'Elegy/20.JPG',
+          'Elegy/30.JPG',
+          'Elegy/40.JPG',
+          'Elegy/50.JPG',
+          'Elegy/60.JPG',
+          'Elegy/70.JPG',
+          'Elegy/80.JPG',
+          'Elegy/85.JPG',
+          'Elegy/90.JPG',
+        ],
+        light: false,
+        gray:  true,
+        fade:  true,
+      },
+      'fin-del-mundo': {
+        images: [
+          'Fin del Mundo/10.jpg',
+          'Fin del Mundo/20.jpg',
+          'Fin del Mundo/30.jpg',
+          'Fin del Mundo/40.jpg',
+          'Fin del Mundo/45.jpg',
+          'Fin del Mundo/50.jpg',
+          'Fin del Mundo/60.jpg',
+          'Fin del Mundo/70.jpg',
+          'Fin del Mundo/80.jpg',
+        ],
+        light: true,
+        fade:  false,
+      },
+      'still-lives': {
+        images: [
+          'Still Lives/20200109-P1075609.jpg',
+          'Still Lives/20200517-P1119215.JPG',
+          'Still Lives/20200613-P1129834.JPG',
+          'Still Lives/20200624-P1130093.JPG',
+          'Still Lives/20210621-P1253172.JPG',
+          'Still Lives/20210825-P1297986-Enhanced~2.jpg',
+          'Still Lives/20211008-P1319456.JPG',
+          'Still Lives/20240101-P1000263-Edit.JPG',
+          'Still Lives/20240406-P1498191-Edit.jpg',
+          'Still Lives/20250927-20250927_154817-Edit.jpg',
+          'Still Lives/Patagonia 2019-1053140.jpg',
+          'Still Lives/Still Live VIII.jpg',
+        ],
+        light: true,
+        fade:  false,
+      },
+      'tiny-miracles': {
+        images: [
+          'Tiny Miracles/10.JPG',
+          'Tiny Miracles/20.jpg',
+          'Tiny Miracles/30.JPG',
+          'Tiny Miracles/40.JPG',
+          'Tiny Miracles/50.JPG',
+          'Tiny Miracles/53.JPG',
+          'Tiny Miracles/60.JPG',
+          'Tiny Miracles/70.JPG',
+          'Tiny Miracles/80.JPG',
+        ],
+        light: true,
+        fade:  false,
+      },
+      'elation': {
+        images: [
+          'Elation/5.JPG',
+          'Elation/15.JPG',
+          'Elation/20.JPG',
+          'Elation/30.jpg',
+          'Elation/35.jpg',
+          'Elation/70.jpg',
+          'Elation/80.jpg',
+          'Elation/90.jpg',
+          'Elation/100.jpg',
+        ],
+        light: true,
+        fade:  false,
+      },
+    };
+
+    const galSection = document.getElementById('gallery');
+    const galImg     = document.getElementById('gallery-img');
+    let galImages = [];
+    let galMode   = {};
+    let galIndex  = 0;
+    let galBusy   = false;
+
+    const galPrevBtn  = document.getElementById('gallery-prev');
+    const galNextBtn  = document.getElementById('gallery-next');
+    const galCloseBtn = document.getElementById('gallery-close');
+
+    function updateGalArrows() {
+      const isFirst = galIndex === 0;
+      const isLast  = galIndex === galImages.length - 1;
+
+      const setArrow = (btn, active) => {
+        btn.style.opacity       = active ? '' : '0';
+        btn.style.pointerEvents = active ? '' : 'none';
+      };
+
+      if (isLast) {
+        setArrow(galPrevBtn, false);
+        setArrow(galNextBtn, false);
+        galCloseBtn.classList.add('at-end');
+        galCloseBtn.focus();
+      } else {
+        setArrow(galPrevBtn, !isFirst);
+        setArrow(galNextBtn, true);
+        galCloseBtn.classList.remove('at-end');
+      }
+    }
+
+    function galOpen(key) {
+      galBusy   = false;
+      galMode   = galleries[key];
+      galImages = galMode.images.slice().sort((a, b) => {
+        const fa = a.split('/').pop().toLowerCase();
+        const fb = b.split('/').pop().toLowerCase();
+        const na = parseFloat(fa), nb = parseFloat(fb);
+        if (!isNaN(na) && !isNaN(nb)) return na - nb;
+        return fa < fb ? -1 : fa > fb ? 1 : 0;
+      });
+      galIndex  = 0;
+      galSection.classList.toggle('light', !!galMode.light);
+      galSection.classList.toggle('gray',  !!galMode.gray);
+      galImages.forEach(src => { new Image().src = encodeURI(src); });
+
+      if (galMode.fade) {
+        galImg.style.opacity = '0';
+        galImg.style.transition = '';
+        galSection.classList.add('open');
+        galSection.removeAttribute('aria-hidden');
+        updateGalArrows();
+        const firstSrc = encodeURI(galImages[0]);
+        const dur = galMode.fadeOpenDuration || '';
+        const doFadeIn = (img) => {
+          galImg.style.transition = 'none';
+          galImg.src = img.src;
+          void galImg.offsetWidth; // force reflow — commits opacity:0 before transition starts
+          galImg.style.transition = dur ? `opacity ${dur} ease` : '';
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            galImg.style.opacity = '1';
+            if (dur) setTimeout(() => { galImg.style.transition = ''; }, parseFloat(dur) * 1000);
+          }));
+        };
+        const loader = new Image();
+        loader.onload = () => {
+          if (loader.decode) { loader.decode().then(() => doFadeIn(loader)).catch(() => doFadeIn(loader)); }
+          else { doFadeIn(loader); }
+        };
+        loader.onerror = () => doFadeIn(loader);
+        loader.src = firstSrc;
+      } else {
+        galImg.style.opacity = '0';
+        const loader = new Image();
+        loader.onload = () => {
+          galImg.src = loader.src;
+          galSection.classList.add('open');
+          galSection.removeAttribute('aria-hidden');
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            galImg.style.opacity = '1';
+            updateGalArrows();
+          }));
+        };
+        loader.onerror = () => {
+          galSection.classList.add('open');
+          galSection.removeAttribute('aria-hidden');
+          galImg.style.opacity = '1';
+          updateGalArrows();
+        };
+        loader.src = encodeURI(galImages[0]);
+      }
+    }
+
+    function galClose() {
+      galSection.classList.remove('open');
+      galSection.setAttribute('aria-hidden', 'true');
+      galBusy = false;
+    }
+
+    function galGoTo(index) {
+      const next = Math.max(0, Math.min(index, galImages.length - 1));
+      if (next === galIndex || galBusy) return;
+
+      if (galMode.fade) {
+        galBusy = true;
+        const fadeDur = galMode.fadeDuration || 2000;
+        galImg.style.transition = `opacity ${fadeDur}ms ease`;
+        galImg.style.opacity = '0';
+        setTimeout(() => {
+          galIndex = next;
+          galImg.src = encodeURI(galImages[galIndex]);
+          const fadeIn = () => {
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              galImg.style.opacity = '1';
+              setTimeout(() => { galBusy = false; galImg.style.transition = ''; updateGalArrows(); }, fadeDur + 50);
+            }));
+          };
+          if (galImg.decode) {
+            galImg.decode().then(fadeIn).catch(fadeIn);
+          } else {
+            fadeIn();
+          }
+        }, fadeDur + 50);
+      } else {
+        galBusy = true;
+        const loader = new Image();
+        loader.onload = () => {
+          galIndex = next;
+          galImg.src = loader.src;
+          galBusy = false;
+          updateGalArrows();
+        };
+        loader.onerror = () => { galBusy = false; };
+        loader.src = encodeURI(galImages[next]);
+      }
+    }
+
+    document.querySelector('a[href="#sotto-voce"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('sotto-voce');
+    });
+    document.querySelector('a[href="#continental-drift"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('continental-drift');
+    });
+    document.querySelector('a[href="#unintelligent-design"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('unintelligent-design');
+    });
+    document.querySelector('a[href="#solitaire"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('solitaire');
+    });
+    document.querySelector('a[href="#elegy"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('elegy');
+    });
+    document.querySelector('a[href="#fin-del-mundo"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('fin-del-mundo');
+    });
+    document.querySelector('a[href="#still-lives"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('still-lives');
+    });
+    document.querySelector('a[href="#tiny-miracles"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('tiny-miracles');
+    });
+    document.querySelector('a[href="#elation"]').addEventListener('click', e => {
+      e.preventDefault(); galOpen('elation');
+    });
+
+    document.getElementById('gallery-close').addEventListener('click', galClose);
+    galPrevBtn.addEventListener('click', () => galGoTo(galIndex - 1));
+    galNextBtn.addEventListener('click', () => galGoTo(galIndex + 1));
+    galImg.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); });
+
+    document.addEventListener('keydown', e => {
+      if (!galSection.classList.contains('open')) return;
+      if (e.key === 'ArrowRight') galGoTo(galIndex + 1);
+      if (e.key === 'ArrowLeft')  galGoTo(galIndex - 1);
+      if (e.key === 'Escape')     galClose();
+    });
+
+    // ── Contact panel ─────────────────────────────────────
+    const contactPanel = document.getElementById('contact-panel');
+
+    function contactOpen() {
+      contactPanel.classList.add('open');
+      contactPanel.removeAttribute('aria-hidden');
+    }
+
+    function contactClose() {
+      contactPanel.classList.remove('open');
+      contactPanel.setAttribute('aria-hidden', 'true');
+      const form = document.getElementById('contact-form');
+      if (form) { form.reset(); form.style.display = ''; }
+      document.getElementById('contact-status').textContent = '';
+      document.getElementById('contact-error').textContent = '';
+    }
+
+    document.querySelector('a[href="#contact"]').addEventListener('click', e => {
+      e.preventDefault(); contactOpen();
+    });
+
+    document.getElementById('contact-close').addEventListener('click', contactClose);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && contactPanel.classList.contains('open')) contactClose();
+    });
+
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'xpqbyobg' });
+
+    // ── Why panel ────────────────────────────────────────
+    const whyPanel = document.getElementById('why-panel');
+
+    function whyOpen() {
+      whyPanel.classList.add('open');
+      whyPanel.removeAttribute('aria-hidden');
+    }
+
+    function whyClose() {
+      whyPanel.classList.remove('open');
+      whyPanel.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelector('a[href="#why"]').addEventListener('click', e => {
+      e.preventDefault(); whyOpen();
+    });
+
+    document.getElementById('why-close').addEventListener('click', whyClose);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && whyPanel.classList.contains('open')) whyClose();
+    });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
