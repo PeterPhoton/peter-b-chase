@@ -117,7 +117,7 @@
       right: 0;
       z-index: 200;
       display: flex;
-      align-items: flex-start;
+      align-items: baseline;
       justify-content: space-between;
       padding: clamp(2rem, 3.8vw, 3.2rem) clamp(2rem, 4.5vw, 4.5rem);
     }
@@ -125,7 +125,7 @@
     /* Logo */
     .logo {
       font-family: 'Cormorant', serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: clamp(1.01rem, 1.54vw, 1.54rem);
       letter-spacing: 0.42em;
       line-height: 1.55;
@@ -146,12 +146,12 @@
       display: flex;
       align-items: baseline;
       gap: clamp(1.8rem, 3.2vw, 3.6rem);
-      padding-top: 0.15rem; /* optical baseline alignment with logo top */
+      padding-top: 0;
     }
 
     nav a {
       font-family: 'Raleway', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: clamp(0.62rem, 0.8vw, 0.75rem);
       letter-spacing: 0.38em;
       text-transform: uppercase;
@@ -197,7 +197,7 @@
       display: block;
       padding: 0.6rem 1.8rem;
       font-family: 'Raleway', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       font-size: clamp(0.58rem, 0.72vw, 0.68rem);
       letter-spacing: 0.32em;
       text-transform: uppercase;
@@ -395,6 +395,86 @@
 
     #why-text p + p { margin-top: 1.5em; }
 
+    /* ─── Notes panel ──────────────────────────────────────── */
+    #notes-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: #f7f5f0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease;
+      overflow-y: auto;
+    }
+
+    #notes-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #notes-close {
+      position: absolute;
+      top: 2.2rem;
+      left: clamp(2rem, 4.5vw, 4.5rem);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(25, 22, 15, 0.65);
+      transition: opacity 0.3s ease;
+    }
+
+    #notes-close:hover { opacity: 0.40; }
+    #notes-close:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+
+    #notes-text {
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: clamp(4rem, 6vw, 5.5rem) clamp(2rem, 4.5vw, 4.5rem) clamp(4rem, 6vw, 6rem);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.78rem, 1.05vw, 0.98rem);
+      line-height: 1.85;
+      letter-spacing: 0.04em;
+      color: #19160f;
+    }
+
+    #notes-text p + p { margin-top: 1.5em; }
+
+    .notes-date {
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #19160f;
+      margin-bottom: 2em;
+    }
+
+    .notes-heading {
+      font-size: clamp(0.62rem, 0.8vw, 0.75rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #19160f;
+      font-weight: 400;
+      margin-top: 2.5em !important;
+      margin-bottom: -0.5em;
+    }
+
+    .notes-copyright {
+      margin-top: 8em !important;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      border-top: 1px solid rgba(25, 22, 15, 0.35);
+      border-bottom: 1px solid rgba(25, 22, 15, 0.35);
+      font-size: clamp(0.62rem, 0.78vw, 0.72rem);
+      color: #19160f;
+      font-weight: 400;
+      line-height: 1.9;
+    }
+
     /* ─── Sotto Voce gallery ────────────────────────────── */
     #gallery {
       position: fixed;
@@ -548,6 +628,25 @@
     </div>
   </section>
 
+  <!-- Notes panel -->
+  <section id="notes-panel" aria-hidden="true" aria-label="Notes">
+    <button id="notes-close">← Close</button>
+    <div id="notes-text">
+      <p class="notes-date">May 2026</p>
+
+      <p class="notes-heading">Hello World!</p>
+      <p>This is definitely a version 1.0 site at this point. It has been a blast to dive into web design and new AI technology — my sincerest thanks go to my tireless assistant Claude. Thank you all for your patience, this is an ongoing learning experience for me.</p>
+
+      <p class="notes-heading">Stay Tuned</p>
+      <p>Periodically I'll be adding new images, new functionality and hopefully improving things without causing too much damage. All of the current photos are from, I believe the last 4 years, but before long I'll be digging in the archive and will post some "classics". :-)</p>
+
+      <p class="notes-heading">Contact Page</p>
+      <p>Any comments, suggestions, sycophantic praise or basically anything on this side of mean comments about my mental health are encouraged and appreciated.</p>
+
+      <p class="notes-copyright">© 2026 Peter B Chase. All rights reserved. All images on this site are the exclusive property of Peter B Chase and may not be reproduced, copied, transmitted, or manipulated without written permission. Unauthorized use is a violation of federal copyright law and will be prosecuted to the full extent of the law, including but not limited to, a full body wax administered by a really rough, six-foot-tall Swedish woman, those really really cringy photographs your girlfriend took of you in high school being published online and possibly something involving a plague of locusts, or other bad stuff.</p>
+    </div>
+  </section>
+
   <!-- Sotto Voce gallery -->
   <section id="gallery" aria-hidden="true" aria-label="Sotto Voce gallery">
     <button id="gallery-close">← Close</button>
@@ -577,6 +676,7 @@
         </ul>
       </div>
       <a href="#why">Why</a>
+      <a href="#notes">Notes</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -981,6 +1081,29 @@
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && whyPanel.classList.contains('open')) whyClose();
+    });
+
+    // ── Notes panel ───────────────────────────────────────
+    const notesPanel = document.getElementById('notes-panel');
+
+    function notesOpen() {
+      notesPanel.classList.add('open');
+      notesPanel.removeAttribute('aria-hidden');
+    }
+
+    function notesClose() {
+      notesPanel.classList.remove('open');
+      notesPanel.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelector('a[href="#notes"]').addEventListener('click', e => {
+      e.preventDefault(); notesOpen();
+    });
+
+    document.getElementById('notes-close').addEventListener('click', notesClose);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && notesPanel.classList.contains('open')) notesClose();
     });
   </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
