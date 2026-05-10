@@ -766,9 +766,12 @@
       galSection.classList.toggle('gray',  !!galMode.gray);
       galImages.forEach(src => { new Image().src = encodeURI(src); });
 
+      // Snap old image away instantly so it can't flash when a new gallery opens
+      galImg.style.transition = 'none';
+      galImg.style.opacity = '0';
+      void galImg.offsetWidth;
+
       if (galMode.fade) {
-        galImg.style.opacity = '0';
-        galImg.style.transition = '';
         galSection.classList.add('open');
         galSection.removeAttribute('aria-hidden');
         updateGalArrows();
@@ -792,7 +795,6 @@
         loader.onerror = () => doFadeIn(loader);
         loader.src = firstSrc;
       } else {
-        galImg.style.opacity = '0';
         const loader = new Image();
         loader.onload = () => {
           galImg.src = loader.src;
