@@ -879,6 +879,7 @@
     // ── Gallery engine ───────────────────────────────────
     const galleries = {
       'sotto-voce': {
+        name: 'Sotto Voce',
         images: [
           'Sotto Voce/10.JPG',
           'Sotto Voce/20.jpg',
@@ -897,6 +898,7 @@
         fadeOpenDuration:'5s',
       },
       'continental-drift': {
+        name: 'Continental Drift',
         images: [
           'Continental Drift/5.jpg',
           'Continental Drift/7.JPG',
@@ -915,6 +917,7 @@
         fade:  false,
       },
       'unintelligent-design': {
+        name: 'Unintelligent Design',
         images: [
           'Unintelligent Design/20241126-20241126_120554~2-Edit.JPG',
           'Unintelligent Design/Italy 2023-1001083.jpg',
@@ -924,6 +927,7 @@
         fade:  false,
       },
       'solitaire': {
+        name: 'Desert Solitaire',
         images: [
           'Desert Solitare/10.jpg',
           'Desert Solitare/20.JPG',
@@ -952,6 +956,7 @@
         fadeDuration:1000,
       },
       'elegy': {
+        name: 'Elegy',
         images: [
           'Elegy/10.JPG',
           'Elegy/20.JPG',
@@ -969,6 +974,7 @@
         fade:  true,
       },
       'fin-del-mundo': {
+        name: 'Fin del Mundo',
         images: [
           'Fin del Mundo/10.jpg',
           'Fin del Mundo/20.jpg',
@@ -984,6 +990,7 @@
         fade:  false,
       },
       'still-lives': {
+        name: 'Still Lives',
         images: [
           'Still Lives/20200109-P1075609.jpg',
           'Still Lives/20200517-P1119215.JPG',
@@ -1002,6 +1009,7 @@
         fade:  false,
       },
       'tiny-miracles': {
+        name: 'Tiny Miracles',
         images: [
           'Tiny Miracles/10.JPG',
           'Tiny Miracles/20.jpg',
@@ -1017,6 +1025,7 @@
         fade:  false,
       },
       'elation': {
+        name: 'Elation',
         images: [
           'Elation/10.JPG',
           'Elation/15.JPG',
@@ -1095,6 +1104,7 @@
         const doFadeIn = (img) => {
           galImg.style.transition = 'none';
           galImg.src = img.src;
+          galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
           void galImg.offsetWidth; // force reflow — commits opacity:0 before transition starts
           galImg.style.transition = dur ? `opacity ${dur} ease` : '';
           requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1113,6 +1123,7 @@
         const loader = new Image();
         loader.onload = () => {
           galImg.src = loader.src;
+          galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
           galSection.classList.add('open');
           galSection.removeAttribute('aria-hidden');
           requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1148,6 +1159,7 @@
         setTimeout(() => {
           galIndex = next;
           galImg.src = encodeURI(galImages[galIndex]);
+          galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
           const fadeIn = () => {
             requestAnimationFrame(() => requestAnimationFrame(() => {
               galImg.style.opacity = '1';
@@ -1166,6 +1178,7 @@
         loader.onload = () => {
           galIndex = next;
           galImg.src = loader.src;
+          galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
           galBusy = false;
           updateGalArrows();
         };
