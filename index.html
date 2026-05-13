@@ -108,6 +108,68 @@
         );
     }
 
+    /* ─── Share button & popover ────────────────────────── */
+    #share-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: rgba(25, 22, 15, 0.80);
+      transition: color 0.35s ease;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    #share-btn:hover { color: rgba(25, 22, 15, 0.40); }
+    #share-btn:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+    #share-btn svg { display: block; width: 0.85rem; height: 0.85rem; }
+
+    #share-popover {
+      position: absolute;
+      top: calc(100% + 1rem);
+      right: 0;
+      background: rgba(247, 245, 240, 0.97);
+      border: 1px solid rgba(25, 22, 15, 0.12);
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      white-space: nowrap;
+      min-width: 10rem;
+    }
+
+    #share-popover.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .share-option {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(25, 22, 15, 0.75);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+
+    .share-option:hover { color: rgba(25, 22, 15, 1.0); }
+    .share-option svg { width: 0.85rem; height: 0.85rem; flex-shrink: 0; }
+
     /* Film grain */
     #grain {
       position: fixed;
@@ -687,19 +749,71 @@
       <a href="#why">Why</a>
       <a href="#notes">Notes</a>
       <a href="#contact">Contact</a>
+      <button id="share-btn" aria-label="Share this site" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        </svg>
+        <div id="share-popover" role="menu">
+          <a class="share-option" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fpeterbchase.com&text=Messages+in+a+bottle+thrown+into+the+cyber+sea+%E2%80%94+fine+art+photography+by+Peter+B+Chase." target="_blank" rel="noopener" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.261 5.632 5.903-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <a class="share-option" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpeterbchase.com" target="_blank" rel="noopener" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a class="share-option" href="mailto:?subject=Peter%20B%20Chase%20%E2%80%94%20Fine%20Art%20Photography&body=Messages%20in%20a%20bottle%20thrown%20into%20the%20cyber%20sea%20%E2%80%94%20fine%20art%20photography%20by%20Peter%20B%20Chase.%0A%0Ahttps%3A%2F%2Fpeterbchase.com" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <button class="share-option" id="share-copy" role="menuitem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <span id="share-copy-label">Copy Link</span>
+          </button>
+        </div>
+      </button>
     </nav>
   </header>
 
   <script>
-    // Landing panorama — white screen for 5 s, then fade in
-    const container = document.getElementById('slideshow');
-    const slide = document.createElement('div');
-    slide.className = 'slide';
-    slide.style.backgroundImage = "url('" + encodeURI('20250823-_DSF8675-Pano-Edit-2.jpg') + "')";
-    slide.style.zIndex = '1';
-    container.appendChild(slide);
+    // Landing slideshow — crossfades through curated panoramas
+    const slideshowImages = [
+      '20250823-_DSF8675-Pano-Edit-2.jpg',
+      '20211029-P1331254-Pano.JPG',
+      'Continental Drift/65.JPG',
+      '20250307-20250307_145257-Pano-2.jpg',
+      'Unintelligent Design/Patagonia 2019-1042043.jpg',
+      '20250929-P1138786-Pano-Edit.jpg',
+      'Italy 2023-30.JPG',
+    ];
 
-    requestAnimationFrame(() => requestAnimationFrame(() => slide.classList.add('on')));
+    const container = document.getElementById('slideshow');
+    slideshowImages.forEach(src => {
+      const slide = document.createElement('div');
+      slide.className = 'slide';
+      slide.style.backgroundImage = "url('" + encodeURI(src) + "')";
+      container.appendChild(slide);
+    });
+
+    const slides = Array.from(container.querySelectorAll('.slide'));
+    let slideIndex = 0;
+
+    requestAnimationFrame(() => requestAnimationFrame(() => slides[0].classList.add('on')));
+
+    function advanceSlide() {
+      const next = (slideIndex + 1) % slides.length;
+      slides[next].style.zIndex = '2';
+      slides[slideIndex].style.zIndex = '1';
+      slides[next].classList.add('on');
+      slides[slideIndex].classList.remove('on');
+      slideIndex = next;
+    }
+
+    setTimeout(() => {
+      advanceSlide();
+      setInterval(advanceSlide, 8000);
+    }, 8000);
 
     // ── Gallery engine ───────────────────────────────────
     const galleries = {
@@ -1113,6 +1227,29 @@
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && notesPanel.classList.contains('open')) notesClose();
+    });
+
+    // ── Share popover ─────────────────────────────────────
+    const shareBtn     = document.getElementById('share-btn');
+    const sharePopover = document.getElementById('share-popover');
+
+    shareBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = sharePopover.classList.toggle('open');
+      shareBtn.setAttribute('aria-expanded', open);
+    });
+
+    document.addEventListener('click', () => {
+      sharePopover.classList.remove('open');
+      shareBtn.setAttribute('aria-expanded', 'false');
+    });
+
+    document.getElementById('share-copy').addEventListener('click', async e => {
+      e.stopPropagation();
+      await navigator.clipboard.writeText('https://peterbchase.com');
+      const label = document.getElementById('share-copy-label');
+      label.textContent = 'Copied!';
+      setTimeout(() => { label.textContent = 'Copy Link'; }, 2000);
     });
   </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
