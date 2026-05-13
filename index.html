@@ -516,6 +516,56 @@
 
     #notes-text p + p { margin-top: 1.5em; }
 
+    /* ─── Art panel ──────────────────────────────────────── */
+    #art-panel {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: #f7f5f0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease;
+      overflow-y: auto;
+    }
+
+    #art-panel.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #art-close {
+      position: absolute;
+      top: 2.2rem;
+      left: clamp(2rem, 4.5vw, 4.5rem);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(25, 22, 15, 0.65);
+      transition: opacity 0.3s ease;
+    }
+
+    #art-close:hover { opacity: 0.40; }
+    #art-close:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+
+    #art-text {
+      max-width: 38rem;
+      margin: 0 auto;
+      padding: clamp(6rem, 10vw, 9rem) clamp(2rem, 4.5vw, 4.5rem) clamp(4rem, 6vw, 6rem);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.78rem, 1.05vw, 0.98rem);
+      line-height: 1.85;
+      letter-spacing: 0.04em;
+      color: #19160f;
+    }
+
+    #art-text p + p { margin-top: 1.5em; }
+
     .notes-date {
       font-size: clamp(0.58rem, 0.72vw, 0.68rem);
       letter-spacing: 0.32em;
@@ -699,6 +749,16 @@
     </div>
   </section>
 
+  <!-- But Is It Art? panel -->
+  <section id="art-panel" aria-hidden="true" aria-label="But Is It Art?">
+    <button id="art-close">← Close</button>
+    <div id="art-text">
+      <p>These photographs are both improvisations and compositions. They capture the drama of landscapes and spontaneous urban moments with the immediacy of documentary photography, while drawing from traditions ranging from Japanese woodblock prints to the work of Diane Arbus and Sebastião Salgado. Mr. Chase refers to his approach as 'Documentary Surrealism.'</p>
+      <p>Mr. Chase has been making images since the 1970s. He studied art and photography at university and now spends much of his time traveling the world, using photography to experience as much wonder as possible.</p>
+      <p>Mr. Chase currently lives in Virginia with his remarkable girlfriend — and no pets whatsoever.</p>
+    </div>
+  </section>
+
   <!-- Notes panel -->
   <section id="notes-panel" aria-hidden="true" aria-label="Notes">
     <button id="notes-close">← Close</button>
@@ -748,6 +808,7 @@
       </div>
       <a href="#why">Why</a>
       <a href="#notes">Notes</a>
+      <a href="#art">But Is It Art?</a>
       <a href="#contact">Contact</a>
       <button id="share-btn" aria-label="Share this site" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -1227,6 +1288,29 @@
 
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && notesPanel.classList.contains('open')) notesClose();
+    });
+
+    // ── Art panel ─────────────────────────────────────────
+    const artPanel = document.getElementById('art-panel');
+
+    function artOpen() {
+      artPanel.classList.add('open');
+      artPanel.removeAttribute('aria-hidden');
+    }
+
+    function artClose() {
+      artPanel.classList.remove('open');
+      artPanel.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelector('a[href="#art"]').addEventListener('click', e => {
+      e.preventDefault(); artOpen();
+    });
+
+    document.getElementById('art-close').addEventListener('click', artClose);
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && artPanel.classList.contains('open')) artClose();
     });
 
     // ── Share popover ─────────────────────────────────────
