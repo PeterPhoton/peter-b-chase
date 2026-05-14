@@ -326,6 +326,133 @@
     .lang-opt:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
     .lang-dropdown { min-width: 10rem; }
 
+    /* ─── Hamburger ─────────────────────────────────────── */
+    #hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: var(--ink);
+      align-items: center;
+    }
+
+    #hamburger svg { width: 1.1rem; height: 1.1rem; }
+    #hamburger:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+
+    @media (max-width: 900px) {
+      nav { display: none; }
+      #hamburger { display: flex; }
+    }
+
+    /* ─── Mobile menu ───────────────────────────────────── */
+    #mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: var(--cream);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-y: auto;
+    }
+
+    #mobile-menu.open { opacity: 1; pointer-events: auto; }
+
+    #mobile-close {
+      position: absolute;
+      top: clamp(1.8rem, 4vw, 2.5rem);
+      right: clamp(1.8rem, 4vw, 2.5rem);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(25, 22, 15, 0.65);
+      transition: opacity 0.3s ease;
+      padding: 0;
+    }
+
+    #mobile-close svg { width: 1rem; height: 1rem; display: block; }
+    #mobile-close:hover { opacity: 0.4; }
+
+    #mobile-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 5rem 2rem 3rem;
+      width: 100%;
+    }
+
+    #mobile-nav a,
+    .mobile-galleries-btn {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.78rem, 4vw, 1rem);
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    #mobile-nav a:hover,
+    .mobile-galleries-btn:hover { opacity: 0.4; }
+
+    .mobile-nav-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    #mobile-galleries-sub {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+    }
+
+    #mobile-galleries-sub.open { max-height: 35rem; }
+
+    #mobile-galleries-sub a {
+      font-size: clamp(0.60rem, 3vw, 0.72rem);
+      letter-spacing: 0.28em;
+      opacity: 0.65;
+    }
+
+    .mobile-lang {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+
+    .mobile-lang-opt {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.60rem, 3vw, 0.70rem);
+      letter-spacing: 0.18em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(25, 22, 15, 0.65);
+      transition: opacity 0.3s ease;
+      padding: 0;
+    }
+
+    .mobile-lang-opt:hover { opacity: 0.4; }
+
     /* ─── CJK font override ─────────────────────────────── */
     :lang(zh) #why-text,
     :lang(zh) #notes-text,
@@ -901,7 +1028,48 @@
         </ul>
       </div>
     </nav>
+    <button id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
   </header>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobile-menu" aria-hidden="true">
+    <button id="mobile-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div id="mobile-nav">
+      <div class="mobile-nav-group">
+        <button class="mobile-galleries-btn" data-i18n="nav_galleries">Galleries</button>
+        <div id="mobile-galleries-sub">
+          <a href="#sotto-voce">Sotto Voce</a>
+          <a href="#fin-del-mundo">Fin del Mundo</a>
+          <a href="#solitaire">Desert Solitaire</a>
+          <a href="#elation">Elation</a>
+          <a href="#continental-drift">Continental Drift</a>
+          <a href="#elegy">Elegy</a>
+          <a href="#tiny-miracles">Tiny Miracles</a>
+          <a href="#still-lives">Still Lives</a>
+          <a href="#unintelligent-design">Unintelligent Design</a>
+        </div>
+      </div>
+      <a href="#why" data-i18n="nav_why">Why</a>
+      <a href="#notes" data-i18n="nav_notes">Notes</a>
+      <a href="#art" data-i18n="nav_art">But Is It Art?</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <div class="mobile-lang">
+        <button class="mobile-lang-opt" data-lang="en">🇺🇸 EN</button>
+        <button class="mobile-lang-opt" data-lang="de">🇩🇪 DE</button>
+        <button class="mobile-lang-opt" data-lang="es">🇪🇸 ES</button>
+        <button class="mobile-lang-opt" data-lang="fr">🇫🇷 FR</button>
+        <button class="mobile-lang-opt" data-lang="zh">🇨🇳 中</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     // Landing slideshow — crossfades through curated panoramas
@@ -1258,32 +1426,16 @@
       }
     }
 
-    document.querySelector('a[href="#sotto-voce"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('sotto-voce');
-    });
-    document.querySelector('a[href="#continental-drift"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('continental-drift');
-    });
-    document.querySelector('a[href="#unintelligent-design"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('unintelligent-design');
-    });
-    document.querySelector('a[href="#solitaire"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('solitaire');
-    });
-    document.querySelector('a[href="#elegy"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('elegy');
-    });
-    document.querySelector('a[href="#fin-del-mundo"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('fin-del-mundo');
-    });
-    document.querySelector('a[href="#still-lives"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('still-lives');
-    });
-    document.querySelector('a[href="#tiny-miracles"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('tiny-miracles');
-    });
-    document.querySelector('a[href="#elation"]').addEventListener('click', e => {
-      e.preventDefault(); galOpen('elation');
+    [
+      ['#sotto-voce','sotto-voce'], ['#continental-drift','continental-drift'],
+      ['#unintelligent-design','unintelligent-design'], ['#solitaire','solitaire'],
+      ['#elegy','elegy'], ['#fin-del-mundo','fin-del-mundo'],
+      ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
+      ['#elation','elation'],
+    ].forEach(([href, key]) => {
+      document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
+        e.preventDefault(); galOpen(key);
+      }));
     });
 
     document.getElementById('gallery-close').addEventListener('click', galClose);
@@ -1315,9 +1467,9 @@
       document.getElementById('contact-error').textContent = '';
     }
 
-    document.querySelector('a[href="#contact"]').addEventListener('click', e => {
+    document.querySelectorAll('a[href="#contact"]').forEach(el => el.addEventListener('click', e => {
       e.preventDefault(); contactOpen();
-    });
+    }));
 
     document.getElementById('contact-close').addEventListener('click', contactClose);
 
@@ -1341,9 +1493,9 @@
       whyPanel.setAttribute('aria-hidden', 'true');
     }
 
-    document.querySelector('a[href="#why"]').addEventListener('click', e => {
+    document.querySelectorAll('a[href="#why"]').forEach(el => el.addEventListener('click', e => {
       e.preventDefault(); whyOpen();
-    });
+    }));
 
     document.getElementById('why-close').addEventListener('click', whyClose);
 
@@ -1364,9 +1516,9 @@
       notesPanel.setAttribute('aria-hidden', 'true');
     }
 
-    document.querySelector('a[href="#notes"]').addEventListener('click', e => {
+    document.querySelectorAll('a[href="#notes"]').forEach(el => el.addEventListener('click', e => {
       e.preventDefault(); notesOpen();
-    });
+    }));
 
     document.getElementById('notes-close').addEventListener('click', notesClose);
 
@@ -1387,9 +1539,9 @@
       artPanel.setAttribute('aria-hidden', 'true');
     }
 
-    document.querySelector('a[href="#art"]').addEventListener('click', e => {
+    document.querySelectorAll('a[href="#art"]').forEach(el => el.addEventListener('click', e => {
       e.preventDefault(); artOpen();
-    });
+    }));
 
     document.getElementById('art-close').addEventListener('click', artClose);
 
@@ -1466,6 +1618,42 @@
     });
 
     setLanguage(localStorage.getItem('lang') || 'en');
+
+    // ── Mobile menu ───────────────────────────────────────
+    const hamburger   = document.getElementById('hamburger');
+    const mobileMenu  = document.getElementById('mobile-menu');
+    const mobileClose = document.getElementById('mobile-close');
+
+    function mobileMenuOpen() {
+      mobileMenu.classList.add('open');
+      mobileMenu.removeAttribute('aria-hidden');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+
+    function mobileMenuClose() {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburger.addEventListener('click', mobileMenuOpen);
+    mobileClose.addEventListener('click', mobileMenuClose);
+
+    document.querySelectorAll('#mobile-nav a').forEach(a => {
+      a.addEventListener('click', mobileMenuClose);
+    });
+
+    const mobileGalBtn = document.querySelector('.mobile-galleries-btn');
+    const mobileGalSub = document.getElementById('mobile-galleries-sub');
+    mobileGalBtn.addEventListener('click', () => mobileGalSub.classList.toggle('open'));
+
+    document.querySelectorAll('.mobile-lang-opt').forEach(btn => {
+      btn.addEventListener('click', () => { setLanguage(btn.dataset.lang); mobileMenuClose(); });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) mobileMenuClose();
+    });
 
     // ── Share popover ─────────────────────────────────────
     const shareBtn     = document.getElementById('share-btn');
