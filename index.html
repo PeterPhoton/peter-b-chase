@@ -69,7 +69,10 @@
     /* ─── Slideshow ─────────────────────────────────────── */
     #slideshow {
       position: fixed;
-      inset: 0;
+      top: clamp(5.5rem, 9vw, 8rem);
+      left: 0;
+      right: 0;
+      bottom: 0;
       z-index: 1;
     }
 
@@ -216,7 +219,7 @@
     nav {
       display: flex;
       align-items: baseline;
-      gap: clamp(1.8rem, 3.2vw, 3.6rem);
+      gap: clamp(1.2rem, 1.9vw, 2.2rem);
       padding-top: 0;
     }
 
@@ -282,6 +285,59 @@
     .dropdown li a:focus-visible {
       outline: 1px solid var(--ink);
       outline-offset: 3px;
+    }
+
+    /* ─── Language selector ─────────────────────────────── */
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      color: rgba(25, 22, 15, 0.80);
+      display: flex;
+      align-items: center;
+      transition: color 0.35s ease;
+    }
+
+    .lang-btn svg { display: block; width: 0.85rem; height: 0.85rem; }
+    .lang-btn:hover { color: rgba(25, 22, 15, 0.40); }
+    .lang-btn:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
+    .lang-item { position: relative; }
+
+    .lang-opt {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.55rem 1.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.58rem, 0.72vw, 0.68rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+    }
+
+    .lang-opt:hover { opacity: 0.40; }
+    .lang-opt:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+    .lang-dropdown { min-width: 10rem; }
+
+    /* ─── CJK font override ─────────────────────────────── */
+    :lang(zh) #why-text,
+    :lang(zh) #notes-text,
+    :lang(zh) #art-text,
+    :lang(zh) #contact-inner p {
+      font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+      letter-spacing: 0.04em;
+      line-height: 2;
+    }
+
+    :lang(zh) [data-i18n] {
+      letter-spacing: 0.12em;
     }
 
     /* ─── Contact panel ─────────────────────────────────── */
@@ -711,35 +767,35 @@
 
   <!-- Contact panel -->
   <section id="contact-panel" aria-hidden="true" aria-label="Contact">
-    <button id="contact-close">← Close</button>
+    <button id="contact-close" data-i18n="close">← Close</button>
     <div id="contact-inner">
-      <p>Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.</p>
+      <p data-i18n="contact_intro">Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.</p>
       <div id="contact-status" data-fs-success aria-live="polite"></div>
       <div id="contact-error" data-fs-error aria-live="polite"></div>
       <form id="contact-form">
         <div class="contact-field">
-          <label for="cf-name">Name</label>
+          <label for="cf-name" data-i18n="contact_name">Name</label>
           <input type="text" id="cf-name" name="name" required autocomplete="name" data-fs-field>
         </div>
         <div class="contact-field">
-          <label for="cf-email">Email</label>
+          <label for="cf-email" data-i18n="contact_email">Email</label>
           <input type="email" id="cf-email" name="email" required autocomplete="email" data-fs-field>
           <span data-fs-error="email" class="fs-field-error"></span>
         </div>
         <div class="contact-field">
-          <label for="cf-message">Message</label>
+          <label for="cf-message" data-i18n="contact_message">Message</label>
           <textarea id="cf-message" name="message" required data-fs-field></textarea>
           <span data-fs-error="message" class="fs-field-error"></span>
         </div>
-        <button type="submit" id="contact-submit" data-fs-submit-btn>Send</button>
+        <button type="submit" id="contact-submit" data-fs-submit-btn data-i18n="contact_send">Send</button>
       </form>
     </div>
   </section>
 
   <!-- Why panel -->
   <section id="why-panel" aria-hidden="true" aria-label="Why">
-    <button id="why-close">← Close</button>
-    <div id="why-text">
+    <button id="why-close" data-i18n="close">← Close</button>
+    <div id="why-text" data-i18n-html="why_html">
       <p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p>
       <p style="font-style: italic; padding-left: 2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p>
       <p>Years later I carried mother's beautiful Leica M3 around campus and reveled in the analog alchemy of watching my images slowly emerge from trays of liquid developer. I still believed in those journeys. I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages- physical and chemical - followed.</p>
@@ -751,18 +807,18 @@
 
   <!-- But Is It Art? panel -->
   <section id="art-panel" aria-hidden="true" aria-label="But Is It Art?">
-    <button id="art-close">← Close</button>
-    <div id="art-text">
+    <button id="art-close" data-i18n="close">← Close</button>
+    <div id="art-text" data-i18n-html="art_html">
       <p>These photographs are both improvisations and compositions. They capture the drama of landscapes and spontaneous urban moments with the immediacy of documentary photography, while drawing from traditions ranging from Japanese woodblock prints to the work of Diane Arbus and Sebastião Salgado. Mr. Chase refers to his approach as 'Documentary Surrealism.'</p>
-      <p>Mr. Chase has been making images since the 1970s. He studied art and photography at university and now spends much of his time traveling the world, using photography to experience as much wonder as possible.</p>
+      <p>Mr. Chase has been making images since the 1970s. He studied art and photography at university and now spends much of his time traveling the world, using photography to experience and share as much wonder as possible.</p>
       <p>Mr. Chase currently lives in Virginia with his remarkable girlfriend — and no pets whatsoever.</p>
     </div>
   </section>
 
   <!-- Notes panel -->
   <section id="notes-panel" aria-hidden="true" aria-label="Notes">
-    <button id="notes-close">← Close</button>
-    <div id="notes-text">
+    <button id="notes-close" data-i18n="close">← Close</button>
+    <div id="notes-text" data-i18n-html="notes_html">
       <p class="notes-date">May 2026</p>
 
       <p class="notes-heading">Hello World!</p>
@@ -793,7 +849,7 @@
     </a>
     <nav aria-label="Main navigation">
       <div class="nav-item">
-        <a href="#galleries">Galleries</a>
+        <a href="#galleries" data-i18n="nav_galleries">Galleries</a>
         <ul class="dropdown" role="menu">
           <li><a href="#sotto-voce" role="menuitem">Sotto Voce</a></li>
           <li><a href="#fin-del-mundo" role="menuitem">Fin del Mundo</a></li>
@@ -806,10 +862,10 @@
           <li><a href="#unintelligent-design" role="menuitem">Unintelligent Design</a></li>
         </ul>
       </div>
-      <a href="#why">Why</a>
-      <a href="#notes">Notes</a>
-      <a href="#art">But Is It Art?</a>
-      <a href="#contact">Contact</a>
+      <a href="#why" data-i18n="nav_why">Why</a>
+      <a href="#notes" data-i18n="nav_notes">Notes</a>
+      <a href="#art" data-i18n="nav_art">But Is It Art?</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
       <button id="share-btn" aria-label="Share this site" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
@@ -834,6 +890,16 @@
           </button>
         </div>
       </button>
+      <div class="nav-item lang-item">
+        <button class="lang-btn" aria-label="Select language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
+        <ul class="dropdown lang-dropdown" role="menu">
+          <li><button class="lang-opt" data-lang="en" role="menuitem">🇺🇸 English</button></li>
+          <li><button class="lang-opt" data-lang="de" role="menuitem">🇩🇪 Deutsch</button></li>
+          <li><button class="lang-opt" data-lang="es" role="menuitem">🇪🇸 Español</button></li>
+          <li><button class="lang-opt" data-lang="fr" role="menuitem">🇫🇷 Français</button></li>
+          <li><button class="lang-opt" data-lang="zh" role="menuitem">🇨🇳 中文</button></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -1330,6 +1396,76 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && artPanel.classList.contains('open')) artClose();
     });
+
+    // ── Language / i18n ───────────────────────────────────
+    const translations = {
+      en: {
+        nav_galleries: 'Galleries', nav_why: 'Why', nav_notes: 'Notes', nav_art: 'But Is It Art?', nav_contact: 'Contact',
+        close: '← Close',
+        contact_intro: 'Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.',
+        contact_name: 'Name', contact_email: 'Email', contact_message: 'Message', contact_send: 'Send',
+        why_html: `<p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p><p style="font-style:italic;padding-left:2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p><p>Years later I carried mother's beautiful Leica M3 around campus and reveled in the analog alchemy of watching my images slowly emerge from trays of liquid developer. I still believed in those journeys. I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages — physical and chemical — followed.</p><p>My journeys are farther afield now, and this site is a message in a bottle thrown into the cyber sea.</p><p>Unfurl a few of the messages inside.</p><p>— pc, 2026</p>`,
+        notes_html: `<p class="notes-date">May 2026</p><p class="notes-heading">Hello World!</p><p>Welcome to version 1.0. Building a site has been on the old mental to-do list for some time, but as I've zero web design background instead my energy had been spent inventing excuses and polishing my procrastination skills. But as luck would have it AI technology finally caught up with my ignorance! I can sincerely say diving into the deep end of the internet pool has been a bracing experience I've truly enjoyed — my sincerest thanks go to my (literally) tireless and infinitely patient assistant Claude.</p><p class="notes-heading">Stay Tuned</p><p>Periodically I'll be adding new images, new functionality and hopefully fix more things than I break. All of the current photos are from, I believe, the last 4 years, but before long I'll be digging in the archives and post some "classics". :-)</p><p class="notes-heading">Contact Page</p><p>Any comments, suggestions, sycophantic praise or basically anything on this side of mean comments about my mental health are encouraged and appreciated.</p><p class="notes-copyright">© 2026 Peter B Chase. All rights reserved. All images on this site are the exclusive property of Peter B Chase and may not be reproduced, copied, transmitted, or manipulated without written permission. Unauthorized use is a violation of federal copyright law and will be prosecuted to the full extent of the law, including but not limited to, a full body wax administered by a really rough, six-foot-tall Swedish woman, those really really cringy photographs your girlfriend took of you in high school being published online and possibly something involving a plague of locusts, or other bad stuff.</p>`,
+        art_html: `<p>These photographs are both improvisations and compositions. They capture the drama of landscapes and spontaneous urban moments with the immediacy of documentary photography, while drawing from traditions ranging from Japanese woodblock prints to the work of Diane Arbus and Sebastião Salgado. Mr. Chase refers to his approach as 'Documentary Surrealism.'</p><p>Mr. Chase has been making images since the 1970s. He studied art and photography at university and now spends much of his time traveling the world, using photography to experience and share as much wonder as possible.</p><p>Mr. Chase currently lives in Virginia with his remarkable girlfriend — and no pets whatsoever.</p>`,
+      },
+      de: {
+        nav_galleries: 'Galerien', nav_why: 'Warum', nav_notes: 'Notizen', nav_art: 'Aber ist es Kunst?', nav_contact: 'Kontakt',
+        close: '← Schließen',
+        contact_intro: 'Durchdachte Kommunikation wird sehr geschätzt. Flammendes oder ignorantes Schimpfen wird in den 4. Höllenkreis verbannt, wo es hingehört.',
+        contact_name: 'Name', contact_email: 'E-Mail', contact_message: 'Nachricht', contact_send: 'Senden',
+        why_html: `<p>So lange ist es her, dass Träume und Erinnerungen kaum noch voneinander zu unterscheiden sind — meine Liebe zur Fotografie begann in einem verdunkelten Zimmer, durchbohrt von einem Lichtstrahl, mein Vater am Steuer des Kodak-Karussellprojektors. Die Einweihung in diesen heiligen vorstädtischen Ritus — die Diaschau — pflanzte eine kleine, zähe Idee, die selbst nach tausend Überarbeitungen noch lebt:</p><p style="font-style:italic;padding-left:2em;">Die Fotografie kann Staunen, Wissen und Gefühl von Reisen zu jedem Horizont zurückbringen.</p><p>Jahre später trug ich Mutters wunderschöne Leica M3 über den Campus und schwelgte in der analogen Alchemie, meine Bilder langsam aus Schalen voller Entwicklerflüssigkeit auftauchen zu sehen. Ich glaubte noch immer an diese Reisen. Ich hoffte noch immer, mit einer Rolle Pan-X-Film zurückzukehren, die eine Erkenntnis festgehalten hatte, die im Alltag nicht zu finden ist. Universität, Kunstschule und viele Pilgerfahrten — physische und chemische — folgten.</p><p>Meine Reisen führen mich heute weiter in die Ferne, und diese Seite ist eine Flaschenpost ins Cybermeer.</p><p>Entfalte einige der Nachrichten darin.</p><p>— pc, 2026</p>`,
+        notes_html: `<p class="notes-date">Mai 2026</p><p class="notes-heading">Hallo Welt!</p><p>Willkommen zu Version 1.0. Eine Website zu erstellen stand schon lange auf meiner geistigen To-do-Liste, aber da ich keinerlei Webdesign-Hintergrund habe, habe ich stattdessen meine Energie damit verbracht, Ausreden zu erfinden und meine Aufschubfähigkeiten zu perfektionieren. Zum Glück hat die KI-Technologie endlich meiner Unwissenheit aufgeholt! Ich kann aufrichtig sagen, dass das Eintauchen in die Tiefen des Internets eine erfrischende Erfahrung war, die ich wirklich genossen habe — mein aufrichtigster Dank gilt meinem (buchstäblich) unermüdlichen und unendlich geduldigen Assistenten Claude.</p><p class="notes-heading">Bleib dran</p><p>Von Zeit zu Zeit werde ich neue Bilder und neue Funktionen hinzufügen und hoffentlich mehr Dinge reparieren als kaputt machen. Alle aktuellen Fotos stammen, soweit ich weiß, aus den letzten 4 Jahren, aber bald werde ich in den Archiven graben und einige „Klassiker" veröffentlichen. :-)</p><p class="notes-heading">Kontaktseite</p><p>Kommentare, Vorschläge, schmeichelhafte Lobeshymnen oder im Wesentlichen alles diesseits von bösen Kommentaren über meine geistige Gesundheit sind willkommen und werden geschätzt.</p><p class="notes-copyright">© 2026 Peter B Chase. Alle Rechte vorbehalten. Alle Bilder auf dieser Seite sind ausschließliches Eigentum von Peter B Chase und dürfen ohne schriftliche Genehmigung weder reproduziert, kopiert, übertragen noch manipuliert werden.</p>`,
+        art_html: `<p>Diese Fotografien sind sowohl Improvisationen als auch Kompositionen. Sie erfassen die Dramatik von Landschaften und spontane urbane Momente mit der Unmittelbarkeit der Dokumentarfotografie und schöpfen dabei aus Traditionen, die von japanischen Holzschnittdrucken bis zu den Werken von Diane Arbus und Sebastião Salgado reichen. Mr. Chase bezeichnet seinen Ansatz als „Dokumentarischer Surrealismus".</p><p>Mr. Chase macht seit den 1970er Jahren Bilder. Er studierte Kunst und Fotografie an der Universität und verbringt nun einen Großteil seiner Zeit damit, die Welt zu bereisen und die Fotografie zu nutzen, um so viel Staunen wie möglich zu erleben.</p><p>Mr. Chase lebt derzeit in Virginia mit seiner bemerkenswerten Freundin — und absolut ohne Haustiere.</p>`,
+      },
+      es: {
+        nav_galleries: 'Galerías', nav_why: 'Por Qué', nav_notes: 'Notas', nav_art: '¿Pero es Arte?', nav_contact: 'Contacto',
+        close: '← Cerrar',
+        contact_intro: 'La comunicación reflexiva es muy apreciada. Los insultos o las diatribas ignorantes serán desterrados al 4.° círculo del infierno, donde pertenecen.',
+        contact_name: 'Nombre', contact_email: 'Correo', contact_message: 'Mensaje', contact_send: 'Enviar',
+        why_html: `<p>Hace tanto tiempo que los sueños y los recuerdos se han vuelto difíciles de distinguir — mi amor por la fotografía comenzó en una habitación oscura atravesada por un rayo de luz, mi padre al mando del proyector de carrusel Kodak. La iniciación en ese sagrado rito suburbano — la proyección de diapositivas — plantó una pequeña y tenaz idea que sobrevive incluso ahora, tras miles de revisiones:</p><p style="font-style:italic;padding-left:2em;">La fotografía puede traer de vuelta asombro, conocimiento y emoción de viajes a cualquier frontera.</p><p>Años después llevé la hermosa Leica M3 de mi madre por el campus y me deleité con la alquimia analógica de ver mis imágenes emerger lentamente de bandejas de líquido revelador. Todavía creía en esos viajes. Todavía esperaba regresar con un rollo de película Pan X capturando algún conocimiento no disponible en la vida ordinaria. Universidad, escuela de arte y muchas peregrinaciones — físicas y químicas — siguieron.</p><p>Mis viajes son ahora más lejanos, y este sitio es un mensaje en una botella lanzado al mar cibernético.</p><p>Despliega algunos de los mensajes dentro.</p><p>— pc, 2026</p>`,
+        notes_html: `<p class="notes-date">Mayo 2026</p><p class="notes-heading">¡Hola Mundo!</p><p>Bienvenido a la versión 1.0. Crear un sitio web ha estado en mi lista mental de tareas pendientes desde hace tiempo, pero como no tengo ningún conocimiento de diseño web, en cambio he gastado mi energía inventando excusas y perfeccionando mis habilidades de procrastinación. ¡Pero por suerte la tecnología de IA finalmente alcanzó mi ignorancia! Puedo decir sinceramente que lanzarme al fondo del mar de Internet ha sido una experiencia vigorizante que realmente he disfrutado — mi más sincero agradecimiento va a mi asistente Claude, literalmente incansable e infinitamente paciente.</p><p class="notes-heading">Próximamente</p><p>Periódicamente añadiré nuevas imágenes, nueva funcionalidad y con suerte arreglaré más cosas de las que rompa. Todas las fotos actuales son, creo, de los últimos 4 años, pero pronto comenzaré a hurgar en los archivos y publicaré algunos "clásicos". :-)</p><p class="notes-heading">Página de Contacto</p><p>Cualquier comentario, sugerencia, elogio adulador o básicamente cualquier cosa a este lado de comentarios hirientes sobre mi salud mental son bienvenidos y apreciados.</p><p class="notes-copyright">© 2026 Peter B Chase. Todos los derechos reservados. Todas las imágenes de este sitio son propiedad exclusiva de Peter B Chase y no pueden reproducirse, copiarse, transmitirse ni manipularse sin autorización escrita.</p>`,
+        art_html: `<p>Estas fotografías son tanto improvisaciones como composiciones. Capturan el drama de los paisajes y los momentos urbanos espontáneos con la inmediatez de la fotografía documental, al tiempo que se nutren de tradiciones que van desde las xilografías japonesas hasta el trabajo de Diane Arbus y Sebastião Salgado. El señor Chase denomina su enfoque «Surrealismo Documental».</p><p>El señor Chase lleva haciendo imágenes desde los años 70. Estudió arte y fotografía en la universidad y ahora dedica gran parte de su tiempo a viajar por el mundo, utilizando la fotografía para experimentar todo el asombro posible.</p><p>El señor Chase vive actualmente en Virginia con su extraordinaria novia — y sin mascotas en absoluto.</p>`,
+      },
+      fr: {
+        nav_why: 'Pourquoi', nav_notes: 'Notes', nav_art: "Mais est-ce de l'Art ?", nav_contact: 'Contact',
+        close: '← Fermer',
+        contact_intro: "La communication réfléchie est très appréciée. Les insultes ou les diatribes ignorantes seront bannies au 4e cercle de l'enfer, où elles méritent d'être.",
+        contact_name: 'Nom', contact_email: 'E-mail', contact_message: 'Message', contact_send: 'Envoyer',
+        why_html: `<p>Il y a si longtemps que les rêves et les souvenirs sont devenus difficiles à distinguer — mon amour de la photographie a commencé dans une pièce obscure traversée par un faisceau de lumière, mon père aux commandes du projecteur à carousel Kodak. L'initiation à ce rite suburban sacré — la projection de diapositives — a planté une petite idée tenace qui survit encore aujourd'hui après des milliers de révisions :</p><p style="font-style:italic;padding-left:2em;">La photographie peut rapporter émerveillement, connaissance et émotion de voyages vers toutes les frontières.</p><p>Des années plus tard, je portais le magnifique Leica M3 de ma mère sur le campus et me délectais de l'alchimie analogique de voir mes images émerger lentement de bacs de développeur liquide. Je croyais encore en ces voyages. J'espérais encore revenir avec une pellicule Pan X capturant quelque connaissance indisponible dans la vie ordinaire. L'université, l'école d'art et de nombreux pèlerinages — physiques et chimiques — ont suivi.</p><p>Mes voyages sont désormais plus lointains, et ce site est un message dans une bouteille jeté dans la mer cybernétique.</p><p>Dépliez quelques-uns des messages à l'intérieur.</p><p>— pc, 2026</p>`,
+        notes_html: `<p class="notes-date">Mai 2026</p><p class="notes-heading">Bonjour le Monde !</p><p>Bienvenue dans la version 1.0. Créer un site était depuis longtemps sur ma liste mentale de choses à faire, mais comme je n'ai aucune formation en conception web, j'ai plutôt consacré mon énergie à inventer des excuses et à perfectionner mes compétences en procrastination. Mais par chance, la technologie IA a finalement rattrapé mon ignorance ! Je peux sincèrement dire que plonger dans le grand bain d'Internet a été une expérience vivifiante que j'ai vraiment appréciée — mes plus sincères remerciements vont à mon assistant Claude, littéralement infatigable et infiniment patient.</p><p class="notes-heading">À suivre</p><p>Périodiquement, j'ajouterai de nouvelles images, de nouvelles fonctionnalités et j'espère corriger plus de choses que j'en casse. Toutes les photos actuelles datent, je crois, des 4 dernières années, mais bientôt je fouillerai dans les archives pour publier quelques « classiques ». :-)</p><p class="notes-heading">Page Contact</p><p>Tout commentaire, suggestion, éloge flatteur ou en gros tout ce qui se situe en deçà de commentaires blessants sur ma santé mentale est encouragé et apprécié.</p><p class="notes-copyright">© 2026 Peter B Chase. Tous droits réservés. Toutes les images de ce site sont la propriété exclusive de Peter B Chase et ne peuvent être reproduites, copiées, transmises ou manipulées sans autorisation écrite.</p>`,
+        art_html: `<p>Ces photographies sont à la fois des improvisations et des compositions. Elles capturent le drame des paysages et des moments urbains spontanés avec l'immédiateté de la photographie documentaire, tout en puisant dans des traditions allant des estampes japonaises sur bois aux œuvres de Diane Arbus et Sebastião Salgado. M. Chase désigne son approche comme le « Surréalisme Documentaire ».</p><p>M. Chase fait des images depuis les années 1970. Il a étudié l'art et la photographie à l'université et passe maintenant une grande partie de son temps à voyager à travers le monde, utilisant la photographie pour vivre autant d'émerveillement que possible.</p><p>M. Chase vit actuellement en Virginie avec sa remarquable compagne — et absolument aucun animal de compagnie.</p>`,
+      },
+      zh: {
+        nav_galleries: '画廊', nav_why: '为何', nav_notes: '笔记', nav_art: '这是艺术吗？', nav_contact: '联系',
+        close: '← 关闭',
+        contact_intro: '欢迎深思熟虑的交流。无礼或无知的谩骂将被打入地狱第四层，那是它们应得的归宿。',
+        contact_name: '姓名', contact_email: '电子邮件', contact_message: '留言', contact_send: '发送',
+        why_html: `<p>时光久远，梦境与记忆已难以分辨——我对摄影的热爱，始于一间被光束穿透的暗室，父亲手持柯达旋转投影仪。那神圣的郊区仪式——幻灯放映——在我心中种下了一颗微小而顽强的种子，历经千百次修炼至今仍在生长：</p><p style="font-style:italic;padding-left:2em;">摄影能从任何边疆的旅途中，带回惊奇、知识与情感。</p><p>多年后，我带着母亲那台美丽的徕卡M3漫步校园，沉醉于在显影液托盘中看着自己的照片慢慢浮现的模拟炼金术。我仍相信那些旅途，仍期盼带着一卷全色胶片归来，记录下寻常生活中无从获得的某种顿悟。大学、艺术学校，以及许多精神与化学层面的朝圣之旅随之而来。</p><p>如今我的旅途更加遥远，这个网站是我投入赛博之海的漂流瓶。</p><p>展开瓶中的几封信吧。</p><p>— pc, 2026</p>`,
+        notes_html: `<p class="notes-date">2026年5月</p><p class="notes-heading">你好，世界！</p><p>欢迎来到1.0版本。建立一个网站在我的心理待办清单上已有相当一段时间，但由于我完全没有网页设计背景，我的精力一直用在发明借口和磨练拖延技能上。幸运的是，人工智能技术终于追上了我的无知！我可以真诚地说，跳入互联网深水区是一段令我真正享受的磨砺经历——我最诚挚的感谢献给我那（字面意义上的）不知疲倦、耐心无限的助手Claude。</p><p class="notes-heading">敬请关注</p><p>我将定期添加新图片、新功能，并希望修复的东西多于损坏的东西。目前所有照片，我相信，都来自过去4年，但不久之后我将翻出档案，发布一些"经典之作"。:-)</p><p class="notes-heading">联系页面</p><p>欢迎任何评论、建议、阿谀奉承的称赞，或者基本上任何不至于对我的心理健康发表刻薄评论的内容。</p><p class="notes-copyright">© 2026 Peter B Chase。保留所有权利。本网站所有图片均为Peter B Chase的专有财产，未经书面许可，不得复制、传输或操纵。未经授权的使用违反联邦版权法，将依法追究，包括但不限于由一位身材魁梧的瑞典女士实施的全身蜡脱毛，以及您中学时代那些令人尴尬的照片被公开发布，或其他不幸之事。</p>`,
+        art_html: `<p>这些照片既是即兴之作，也是精心构图。它们以纪录片摄影的即时性，捕捉了大地景观的戏剧张力与自发的都市瞬间，同时汲取从日本木版画到黛安·阿勃丝和塞巴斯蒂昂·萨尔加多作品等各种传统的养分。Chase先生将自己的方式称为"纪实超现实主义"。</p><p>Chase先生自1970年代起便开始摄影创作。他在大学修习艺术与摄影，如今将大量时间用于周游世界，以摄影来体验并分享尽可能多的惊奇。</p><p>Chase先生目前与他出色的女友同居于弗吉尼亚州——家中绝无任何宠物。</p>`,
+      },
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang];
+      if (!t) return;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.dataset.i18nHtml;
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+    }
+
+    document.querySelectorAll('.lang-opt').forEach(btn => {
+      btn.addEventListener('click', () => { setLanguage(btn.dataset.lang); btn.blur(); document.activeElement.blur(); });
+    });
+
+    setLanguage(localStorage.getItem('lang') || 'en');
 
     // ── Share popover ─────────────────────────────────────
     const shareBtn     = document.getElementById('share-btn');
