@@ -1665,7 +1665,7 @@
     mobileGalBtn.addEventListener('click', () => mobileGalSub.classList.toggle('open'));
 
     document.querySelectorAll('.mobile-lang-opt').forEach(btn => {
-      btn.addEventListener('click', () => { setLanguage(btn.dataset.lang); mobileMenuClose(); });
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
     });
 
     document.addEventListener('keydown', e => {
