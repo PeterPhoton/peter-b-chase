@@ -1112,10 +1112,11 @@
       slideIndex = next;
     }
 
+    const slideDwell = window.innerWidth < 900 ? 6000 : 8000;
     setTimeout(() => {
       advanceSlide();
-      setInterval(advanceSlide, 8000);
-    }, 8000);
+      setInterval(advanceSlide, slideDwell);
+    }, slideDwell);
 
     // ── Gallery engine ───────────────────────────────────
     const galleries = {
