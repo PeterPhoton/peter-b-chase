@@ -189,7 +189,10 @@
       font-weight: 400;
       letter-spacing: 0.04em;
       color: rgba(25,22,15,0.45);
-      text-decoration: none;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
       transition: color 0.25s ease;
     }
     #notes-corner:hover { color: rgba(25,22,15,0.85); }
@@ -907,7 +910,7 @@
   <!-- Full-screen slideshow -->
   <div id="slideshow"></div>
 
-  <a href="#notes" id="notes-corner">behindTheCurtain</a>
+  <button id="notes-corner">behindTheCurtain</button>
 
   <!-- Overlays (stacked above slideshow) -->
   <div id="wash"></div>
@@ -1567,6 +1570,7 @@
     document.querySelectorAll('a[href="#notes"]').forEach(el => el.addEventListener('click', e => {
       e.preventDefault(); notesOpen();
     }));
+    document.getElementById('notes-corner').addEventListener('click', notesOpen);
 
     document.getElementById('notes-close').addEventListener('click', notesClose);
 
