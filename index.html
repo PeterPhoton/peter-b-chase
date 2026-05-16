@@ -70,7 +70,7 @@
     /* ─── Slideshow ─────────────────────────────────────── */
     #slideshow {
       position: fixed;
-      top: clamp(5.5rem, 9vw, 8rem);
+      top: clamp(4rem, 7vw, 6rem);
       left: 0;
       right: 0;
       bottom: 0;
@@ -87,6 +87,10 @@
       background-position: center;
       background-repeat: no-repeat;
       will-change: opacity;
+    }
+    .slide-std {
+      padding: 2rem 0 2.5rem;
+      background-origin: content-box;
     }
 
     .slide.on {
@@ -184,11 +188,11 @@
       font-size: 0.72rem;
       font-weight: 400;
       letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.38);
+      color: rgba(25,22,15,0.45);
       text-decoration: none;
-      transition: color 0.25s ease, opacity 0.25s ease;
+      transition: color 0.25s ease;
     }
-    #notes-corner:hover { color: rgba(255,255,255,0.85); }
+    #notes-corner:hover { color: rgba(25,22,15,0.85); }
 
     /* Film grain */
     #grain {
@@ -1107,7 +1111,7 @@
     const container = document.getElementById('slideshow');
     slideshowImages.forEach(src => {
       const slide = document.createElement('div');
-      slide.className = 'slide';
+      slide.className = src.toLowerCase().includes('pano') ? 'slide' : 'slide slide-std';
       slide.style.backgroundImage = "url('" + encodeURI(src) + "')";
       container.appendChild(slide);
     });
