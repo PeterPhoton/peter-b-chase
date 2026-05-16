@@ -1351,6 +1351,7 @@
     }
 
     function galOpen(key) {
+      container.style.visibility = 'hidden';
       galBusy   = false;
       galMode   = galleries[key];
       galImages = galMode.images.slice().sort((a, b) => {
@@ -1420,6 +1421,7 @@
       galSection.classList.remove('open');
       galSection.setAttribute('aria-hidden', 'true');
       galBusy = false;
+      container.style.visibility = '';
     }
 
     function galGoTo(index) {
