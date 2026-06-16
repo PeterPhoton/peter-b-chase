@@ -1142,11 +1142,29 @@
       'Unintelligent Design/Patagonia 2019-1042043.jpg',
       '20250307-20250307_145257-Pano-2.jpg',
       '20250929-P1138786-Pano-Edit.jpg',
+      'Continental Drift/67.jpg',
+      'Continental Drift/70.JPG',
+      'Desert Solitare/10.jpg',
+      'Desert Solitare/105.JPG',
+      'Desert Solitare/140.JPG',
+      'Elation/82.jpg',
+      'Elation/90.jpg',
+      'Elation/100.jpg',
+      'Fin del Mundo/60.jpg',
+      'Fin del Mundo/80.jpg',
+      'Still Lives/60.jpg',
     ].filter(src => {
       const isMobile = window.innerWidth < 900;
       const isPano = src.toLowerCase().includes('pano');
       const isPortrait = src === 'Sotto Voce/50.JPG' || src === 'Desert Solitare/70.JPG';
-      if (isMobile) return !isPano;
+      const isDesktopOnly = new Set([
+        'Continental Drift/67.jpg', 'Continental Drift/70.JPG',
+        'Desert Solitare/10.jpg', 'Desert Solitare/105.JPG', 'Desert Solitare/140.JPG',
+        'Elation/82.jpg', 'Elation/90.jpg', 'Elation/100.jpg',
+        'Fin del Mundo/60.jpg', 'Fin del Mundo/80.jpg',
+        'Still Lives/60.jpg',
+      ]).has(src);
+      if (isMobile) return !isPano && !isDesktopOnly;
       return !isPortrait;
     });
 
