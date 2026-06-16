@@ -239,17 +239,25 @@
       outline-offset: 7px;
     }
 
+    .logo-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      white-space: nowrap;
+    }
+
     .tagline {
       font-family: 'Cormorant', serif;
-      font-size: clamp(0.7rem, 0.95vw, 0.95rem);
+      font-size: clamp(0.88rem, 1.19vw, 1.19rem);
       font-weight: 400;
       font-style: italic;
       letter-spacing: 0.04em;
       color: var(--ink);
       opacity: 0.65;
-      margin-top: 0.35em;
-      padding-left: 0.25em;
+      margin-top: 0.5em;
+      margin-left: 5ch;
       pointer-events: none;
+      white-space: nowrap;
     }
 
     /* Nav */
@@ -1019,10 +1027,10 @@
 
   <!-- Header -->
   <header>
-    <a href="/" class="logo" aria-label="Peter B Chase Photography">
-      PETER B CHASE
-    </a>
-    <p class="tagline">Age conspires to extinguish wonder and mystery — the galleries resist.</p>
+    <div class="logo-group">
+      <a href="/" class="logo" aria-label="Peter B Chase Photography">PETER B CHASE</a>
+      <p class="tagline">Age conspires to extinguish wonder and mystery — the galleries resist.</p>
+    </div>
     <nav aria-label="Main navigation">
       <div class="nav-item">
         <a href="#galleries" data-i18n="nav_galleries">Galleries</a>
