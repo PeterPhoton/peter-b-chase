@@ -1153,10 +1153,35 @@
       'Fin del Mundo/60.jpg',
       'Fin del Mundo/80.jpg',
       'Still Lives/60.jpg',
+      'Desert Solitare/110.JPG',
+      'Desert Solitare/130.JPG',
+      'Desert Solitare/150.JPG',
+      'Elation/10.JPG',
+      'Elation/85.jpg',
+      'Elation/95.jpg',
+      'Elegy/10.JPG',
+      'Elegy/90.JPG',
+      'Fin del Mundo/20.jpg',
+      'Fin del Mundo/30.jpg',
+      'Fin del Mundo/40.jpg',
+      'Sotto Voce/10.JPG',
+      'Sotto Voce/70.JPG',
+      'Still Lives/40.JPG',
+      'Tiny Miracles/52.jpg',
+      'Unintelligent Design/B0000788_edited-1.jpg',
     ].filter(src => {
       const isMobile = window.innerWidth < 900;
       const isPano = src.toLowerCase().includes('pano');
-      const isPortrait = src === 'Sotto Voce/50.JPG' || src === 'Desert Solitare/70.JPG';
+      const isPortrait = new Set([
+        'Sotto Voce/50.JPG', 'Desert Solitare/70.JPG',
+        'Desert Solitare/110.JPG', 'Desert Solitare/130.JPG', 'Desert Solitare/150.JPG',
+        'Elation/10.JPG', 'Elation/85.jpg', 'Elation/95.jpg',
+        'Elegy/10.JPG', 'Elegy/90.JPG',
+        'Fin del Mundo/20.jpg', 'Fin del Mundo/30.jpg', 'Fin del Mundo/40.jpg',
+        'Sotto Voce/10.JPG', 'Sotto Voce/70.JPG',
+        'Still Lives/40.JPG', 'Tiny Miracles/52.jpg',
+        'Unintelligent Design/B0000788_edited-1.jpg',
+      ]).has(src);
       const isDesktopOnly = new Set([
         'Continental Drift/67.jpg', 'Continental Drift/70.JPG',
         'Desert Solitare/10.jpg', 'Desert Solitare/105.JPG', 'Desert Solitare/140.JPG',
