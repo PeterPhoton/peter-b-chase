@@ -226,7 +226,7 @@
       font-weight: 400;
       font-size: clamp(1.01rem, 1.54vw, 1.54rem);
       letter-spacing: 0.42em;
-      line-height: 1.55;
+      line-height: 1;
       color: var(--ink);
       text-decoration: none;
       display: block;
@@ -253,8 +253,9 @@
       font-style: italic;
       letter-spacing: 0.04em;
       color: var(--ink);
-      opacity: 0.65;
-      margin-top: 0.5em;
+      opacity: 1;
+      margin-top: 0;
+      margin-bottom: 0;
       margin-left: 5ch;
       pointer-events: none;
       white-space: nowrap;
@@ -1029,7 +1030,7 @@
   <header>
     <div class="logo-group">
       <a href="/" class="logo" aria-label="Peter B Chase Photography">PETER B CHASE</a>
-      <p class="tagline">Age conspires to extinguish wonder and mystery — the galleries resist.</p>
+      <p class="tagline">Age conspires to extinguish wonder and mystery — the galleries resist</p>
     </div>
     <nav aria-label="Main navigation">
       <div class="nav-item">
@@ -1141,7 +1142,13 @@
       'Unintelligent Design/Patagonia 2019-1042043.jpg',
       '20250307-20250307_145257-Pano-2.jpg',
       '20250929-P1138786-Pano-Edit.jpg',
-    ].filter(src => window.innerWidth >= 900 || !src.toLowerCase().includes('pano'));
+    ].filter(src => {
+      const isMobile = window.innerWidth < 900;
+      const isPano = src.toLowerCase().includes('pano');
+      const isPortrait = src === 'Sotto Voce/50.JPG' || src === 'Desert Solitare/70.JPG';
+      if (isMobile) return !isPano;
+      return !isPortrait;
+    });
 
     const container = document.getElementById('slideshow');
     slideshowImages.forEach(src => {
