@@ -258,7 +258,6 @@
       margin-bottom: 0;
       margin-left: 5ch;
       pointer-events: none;
-      white-space: nowrap;
     }
 
     /* Nav */
@@ -1030,7 +1029,7 @@
   <header>
     <div class="logo-group">
       <a href="/" class="logo" aria-label="Peter B Chase Photography">PETER B CHASE</a>
-      <p class="tagline">Age conspires to extinguish wonder and mystery — the galleries resist</p>
+      <p class="tagline">Age conspires to extinguish wonder and mystery<br>— the galleries resist</p>
     </div>
     <nav aria-label="Main navigation">
       <div class="nav-item">
@@ -1182,14 +1181,7 @@
         'Still Lives/40.JPG', 'Tiny Miracles/52.jpg',
         'Unintelligent Design/B0000788_edited-1.jpg',
       ]).has(src);
-      const isDesktopOnly = new Set([
-        'Continental Drift/67.jpg', 'Continental Drift/70.JPG',
-        'Desert Solitare/10.jpg', 'Desert Solitare/105.JPG', 'Desert Solitare/140.JPG',
-        'Elation/82.jpg', 'Elation/90.jpg', 'Elation/100.jpg',
-        'Fin del Mundo/60.jpg', 'Fin del Mundo/80.jpg',
-        'Still Lives/60.jpg',
-      ]).has(src);
-      if (isMobile) return !isPano && !isDesktopOnly;
+      if (isMobile) return isPortrait;
       return !isPortrait;
     });
 
