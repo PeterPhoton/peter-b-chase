@@ -263,8 +263,13 @@
       .mob-br { display: inline; }
       header { padding: 0.75rem clamp(1rem, 4vw, 2rem); }
       .logo { font-size: 1.5rem; }
-      .tagline { font-size: 1.1rem; }
-      #slideshow { top: 14rem; }
+      .tagline { font-size: 1.1rem; margin-top: 0.6rem; }
+      #slideshow { top: 15rem; }
+    }
+    @media (max-width: 899px) and (orientation: landscape) {
+      header { padding: 0.4rem clamp(1rem, 4vw, 2rem); }
+      .tagline { display: none; }
+      #slideshow { top: 3.5rem; }
     }
 
     /* Nav */
