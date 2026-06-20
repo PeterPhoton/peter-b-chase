@@ -264,7 +264,6 @@
       header { padding: 0.75rem clamp(1rem, 4vw, 2rem); }
       .logo { font-size: 1.5rem; }
       .tagline { font-size: 1.1rem; margin-top: 0.6rem; }
-      #slideshow { top: 8rem; }
     }
     @media (max-width: 899px) and (orientation: landscape) {
       header { padding: 0.4rem clamp(1rem, 4vw, 2rem); }
@@ -1208,6 +1207,16 @@
     });
 
     const container = document.getElementById('slideshow');
+
+    if (window.innerWidth < 900) {
+      const setTop = () => {
+        const h = document.querySelector('header').getBoundingClientRect().bottom;
+        container.style.top = (h + 8) + 'px';
+      };
+      setTop();
+      window.addEventListener('resize', setTop);
+    }
+
     slideshowImages.forEach(src => {
       const slide = document.createElement('div');
       slide.className = src.toLowerCase().includes('pano') ? 'slide' : 'slide slide-std';
