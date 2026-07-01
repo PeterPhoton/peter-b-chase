@@ -1065,6 +1065,7 @@
           <li><a href="#tiny-miracles" role="menuitem">Tiny Miracles</a></li>
           <li><a href="#still-lives" role="menuitem">Still Lives</a></li>
           <li><a href="#unintelligent-design" role="menuitem">Unintelligent Design</a></li>
+          <li><a href="#adagio" role="menuitem">Adagio</a></li>
         </ul>
       </div>
       <a href="#why" data-i18n="nav_why">Why</a>
@@ -1132,6 +1133,7 @@
           <a href="#tiny-miracles">Tiny Miracles</a>
           <a href="#still-lives">Still Lives</a>
           <a href="#unintelligent-design">Unintelligent Design</a>
+          <a href="#adagio">Adagio</a>
         </div>
       </div>
       <a href="#why" data-i18n="nav_why">Why</a>
@@ -1244,7 +1246,16 @@
       setInterval(advanceSlide, slideDwell);
     }, slideDwell);
 
-    window.addEventListener('orientationchange', () => setTimeout(() => window.location.reload(), 300));
+    window.addEventListener('orientationchange', () => {
+      const anyOpen =
+        document.getElementById('gallery').classList.contains('open') ||
+        document.getElementById('contact-panel').classList.contains('open') ||
+        document.getElementById('why-panel').classList.contains('open') ||
+        document.getElementById('notes-panel').classList.contains('open') ||
+        document.getElementById('art-panel').classList.contains('open') ||
+        document.getElementById('mobile-menu').classList.contains('open');
+      if (!anyOpen) setTimeout(() => window.location.reload(), 300);
+    });
 
     // ── Gallery engine ───────────────────────────────────
     const galleries = {
@@ -1413,6 +1424,7 @@
           'Elation/35.jpg',
           'Elation/70.jpg',
           'Elation/80.jpg',
+          'Elation/82.jpg',
           'Elation/85.jpg',
           'Elation/90.jpg',
           'Elation/95.jpg',
@@ -1421,6 +1433,21 @@
         light:       true,
         fade:        false,
         fullDisplay: true,
+      },
+      'adagio': {
+        name: 'Adagio',
+        images: [
+          'Adagio/Adagio_10.jpg',
+          'Adagio/Adagio_30.jpg',
+          'Adagio/Adagio_40.jpg',
+          'Adagio/Adagio_50.jpg',
+          'Adagio/Adagio_60.jpg',
+          'Adagio/Adagio_70.jpg',
+        ],
+        light:           true,
+        fade:            true,
+        fadeOpenDuration:'5s',
+        fullDisplay:     true,
       },
     };
 
@@ -1576,7 +1603,7 @@
       ['#unintelligent-design','unintelligent-design'], ['#solitaire','solitaire'],
       ['#elegy','elegy'], ['#fin-del-mundo','fin-del-mundo'],
       ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
-      ['#elation','elation'],
+      ['#elation','elation'], ['#adagio','adagio'],
     ].forEach(([href, key]) => {
       document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
         e.preventDefault(); galOpen(key);
