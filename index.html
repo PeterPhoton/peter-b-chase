@@ -1068,12 +1068,7 @@
           <li><a href="#adagio" role="menuitem">Adagio</a></li>
         </ul>
       </div>
-      <div class="nav-item">
-        <a href="#studio">The Studio</a>
-        <ul class="dropdown" role="menu">
-          <li><a href="#variations-without-a-theme" role="menuitem">Variations without a Theme</a></li>
-        </ul>
-      </div>
+      <a href="#studio">The Studio</a>
       <a href="#why" data-i18n="nav_why">Why</a>
       <a href="#art" data-i18n="nav_art">But Is It Art?</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -1142,12 +1137,7 @@
           <a href="#adagio">Adagio</a>
         </div>
       </div>
-      <div class="mobile-nav-group">
-        <button class="mobile-galleries-btn mobile-studio-btn">The Studio</button>
-        <div id="mobile-studio-sub">
-          <a href="#variations-without-a-theme">Variations without a Theme</a>
-        </div>
-      </div>
+      <a href="#studio">The Studio</a>
       <a href="#why" data-i18n="nav_why">Why</a>
       <a href="#art" data-i18n="nav_art">But Is It Art?</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -1651,7 +1641,7 @@
       ['#elegy','elegy'], ['#fin-del-mundo','fin-del-mundo'],
       ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
       ['#elation','elation'], ['#adagio','adagio'],
-      ['#variations-without-a-theme','variations-without-a-theme'],
+      ['#studio','variations-without-a-theme'],
     ].forEach(([href, key]) => {
       document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
         e.preventDefault(); if (galleries[key].images.length) galOpen(key);
@@ -1883,9 +1873,6 @@
     const mobileGalSub = document.getElementById('mobile-galleries-sub');
     mobileGalBtn.addEventListener('click', () => mobileGalSub.classList.toggle('open'));
 
-    const mobileStudioBtn = document.querySelector('.mobile-studio-btn');
-    const mobileStudioSub = document.getElementById('mobile-studio-sub');
-    mobileStudioBtn.addEventListener('click', () => mobileStudioSub.classList.toggle('open'));
 
     document.querySelectorAll('.mobile-lang-opt').forEach(btn => {
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
