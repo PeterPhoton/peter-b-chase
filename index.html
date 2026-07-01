@@ -1050,7 +1050,7 @@
   <header>
     <div class="logo-group">
       <a href="/" class="logo" aria-label="Peter B Chase Photography">PETER B CHASE</a>
-      <p class="tagline">Age sacrifices mystery to understanding,<br class="mob-br"> wonder to indifference,<br class="mob-br"> perception to expectation.<br>Resist.</p>
+      <p class="tagline">Age sacrifices mystery to understanding,<br> wonder to indifference,<br> perception to expectation.<br>Resist.</p>
     </div>
     <nav aria-label="Main navigation">
       <div class="nav-item">
@@ -1066,6 +1066,12 @@
           <li><a href="#still-lives" role="menuitem">Still Lives</a></li>
           <li><a href="#unintelligent-design" role="menuitem">Unintelligent Design</a></li>
           <li><a href="#adagio" role="menuitem">Adagio</a></li>
+        </ul>
+      </div>
+      <div class="nav-item">
+        <a href="#studio">In the Studio <span style="font-style:italic;text-transform:none;letter-spacing:0.1em;opacity:0.7;">(new work)</span></a>
+        <ul class="dropdown" role="menu">
+          <li><a href="#variations-without-a-theme" role="menuitem">Variations without a Theme</a></li>
         </ul>
       </div>
       <a href="#why" data-i18n="nav_why">Why</a>
@@ -1134,6 +1140,12 @@
           <a href="#still-lives">Still Lives</a>
           <a href="#unintelligent-design">Unintelligent Design</a>
           <a href="#adagio">Adagio</a>
+        </div>
+      </div>
+      <div class="mobile-nav-group">
+        <button class="mobile-galleries-btn mobile-studio-btn">In the Studio <span style="font-style:italic;text-transform:none;letter-spacing:0.1em;opacity:0.7;">(new work)</span></button>
+        <div id="mobile-studio-sub">
+          <a href="#variations-without-a-theme">Variations without a Theme</a>
         </div>
       </div>
       <a href="#why" data-i18n="nav_why">Why</a>
@@ -1415,6 +1427,13 @@
         fade:        false,
         fullDisplay: true,
       },
+      'variations-without-a-theme': {
+        name: 'Variations without a Theme',
+        images: [],
+        light:       true,
+        fade:        false,
+        fullDisplay: true,
+      },
       'elation': {
         name: 'Elation',
         images: [
@@ -1604,9 +1623,10 @@
       ['#elegy','elegy'], ['#fin-del-mundo','fin-del-mundo'],
       ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
       ['#elation','elation'], ['#adagio','adagio'],
+      ['#variations-without-a-theme','variations-without-a-theme'],
     ].forEach(([href, key]) => {
       document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
-        e.preventDefault(); galOpen(key);
+        e.preventDefault(); if (galleries[key].images.length) galOpen(key);
       }));
     });
 
@@ -1834,6 +1854,10 @@
     const mobileGalBtn = document.querySelector('.mobile-galleries-btn');
     const mobileGalSub = document.getElementById('mobile-galleries-sub');
     mobileGalBtn.addEventListener('click', () => mobileGalSub.classList.toggle('open'));
+
+    const mobileStudioBtn = document.querySelector('.mobile-studio-btn');
+    const mobileStudioSub = document.getElementById('mobile-studio-sub');
+    mobileStudioBtn.addEventListener('click', () => mobileStudioSub.classList.toggle('open'));
 
     document.querySelectorAll('.mobile-lang-opt').forEach(btn => {
       btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
