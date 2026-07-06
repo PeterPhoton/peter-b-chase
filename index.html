@@ -445,7 +445,8 @@
     }
 
     #mobile-nav a,
-    .mobile-galleries-btn {
+    .mobile-galleries-btn,
+    .mobile-studio-btn {
       font-family: 'Raleway', sans-serif;
       font-weight: 400;
       font-size: clamp(0.78rem, 4vw, 1rem);
@@ -461,7 +462,8 @@
     }
 
     #mobile-nav a:hover,
-    .mobile-galleries-btn:hover { opacity: 0.4; }
+    .mobile-galleries-btn:hover,
+    .mobile-studio-btn:hover { opacity: 0.4; }
 
     .mobile-nav-group {
       display: flex;
@@ -483,6 +485,24 @@
     #mobile-galleries-sub.open { max-height: 35rem; }
 
     #mobile-galleries-sub a {
+      font-size: clamp(0.60rem, 3vw, 0.72rem);
+      letter-spacing: 0.28em;
+      opacity: 0.65;
+    }
+
+    #mobile-studio-sub {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease;
+    }
+
+    #mobile-studio-sub.open { max-height: 10rem; }
+
+    #mobile-studio-sub a {
       font-size: clamp(0.60rem, 3vw, 0.72rem);
       letter-spacing: 0.28em;
       opacity: 0.65;
@@ -1070,7 +1090,13 @@
           <li><a href="#unintelligent-design" role="menuitem">Unintelligent Design</a></li>
         </ul>
       </div>
-      <a href="#studio">In the Studio</a>
+      <div class="nav-item">
+        <a href="#studio">In the Studio</a>
+        <ul class="dropdown" role="menu">
+          <li><a href="#sketches" role="menuitem">Sketches</a></li>
+          <li><a href="#war-of-words" role="menuitem">War of Words and Images</a></li>
+        </ul>
+      </div>
       <a href="#why" data-i18n="nav_why">Why</a>
       <a href="#art" data-i18n="nav_art">But Is It Art?</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -1139,7 +1165,13 @@
           <a href="#unintelligent-design">Unintelligent Design</a>
         </div>
       </div>
-      <a href="#studio">In the Studio</a>
+      <div class="mobile-nav-group">
+        <button class="mobile-studio-btn">In the Studio</button>
+        <div id="mobile-studio-sub">
+          <a href="#sketches">Sketches</a>
+          <a href="#war-of-words">War of Words and Images</a>
+        </div>
+      </div>
       <a href="#why" data-i18n="nav_why">Why</a>
       <a href="#art" data-i18n="nav_art">But Is It Art?</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -1419,8 +1451,8 @@
         fade:        false,
         fullDisplay: true,
       },
-      'variations-without-a-theme': {
-        name: 'Variations without a Theme',
+      'sketches': {
+        name: 'Sketches',
         images: [
           'In the Studio/20260523-P1139044.jpg',
           'In the Studio/20260525-20260525_074706.jpg',
@@ -1446,8 +1478,14 @@
           'In the Studio/20260606-20260606_191149.jpg',
           'In the Studio/20260608-20260608_071856~2.jpg',
           'In the Studio/20260608-20260608_080224(0).jpg',
-          'In the Studio/20260608-P1150010.jpg',
         ],
+        light:       true,
+        fade:        false,
+        fullDisplay: true,
+      },
+      'war-of-words-and-images': {
+        name: 'War of Words and Images',
+        images: [],
         light:       true,
         fade:        false,
         fullDisplay: true,
@@ -1481,12 +1519,14 @@
           'Adagio/Adagio_60.jpg',
           'Adagio/Adagio_70.jpg',
           'Adagio/Adagio_80.jpg',
+          'In the Studio/20260608-P1150010.jpg',
           'Adagio/Adagio_90.jpg',
         ],
         light:           true,
         fade:            true,
         fadeOpenDuration:'5s',
         fullDisplay:     true,
+        noSort:          true,
       },
     };
 
@@ -1527,7 +1567,7 @@
       galBusy   = false;
       galMode   = galleries[key];
       galSection.classList.toggle('full-display', !!galMode.fullDisplay);
-      galImages = galMode.images.slice().sort((a, b) => {
+      galImages = galMode.noSort ? galMode.images.slice() : galMode.images.slice().sort((a, b) => {
         const fa = a.split('/').pop().toLowerCase();
         const fb = b.split('/').pop().toLowerCase();
         const na = parseFloat(fa), nb = parseFloat(fb);
@@ -1643,7 +1683,7 @@
       ['#elegy','elegy'], ['#fin-del-mundo','fin-del-mundo'],
       ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
       ['#elation','elation'], ['#adagio','adagio'],
-      ['#studio','variations-without-a-theme'],
+      ['#sketches','sketches'], ['#war-of-words','war-of-words-and-images'],
     ].forEach(([href, key]) => {
       document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
         e.preventDefault(); if (galleries[key].images.length) galOpen(key);
@@ -1874,6 +1914,10 @@
     const mobileGalBtn = document.querySelector('.mobile-galleries-btn');
     const mobileGalSub = document.getElementById('mobile-galleries-sub');
     mobileGalBtn.addEventListener('click', () => mobileGalSub.classList.toggle('open'));
+
+    const mobileStudioBtn = document.querySelector('.mobile-studio-btn');
+    const mobileStudioSub = document.getElementById('mobile-studio-sub');
+    mobileStudioBtn.addEventListener('click', () => mobileStudioSub.classList.toggle('open'));
 
 
     document.querySelectorAll('.mobile-lang-opt').forEach(btn => {
