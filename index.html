@@ -306,7 +306,7 @@
     .dropdown {
       position: absolute;
       top: 100%;
-      right: 0;
+      right: -4.5rem;
       list-style: none;
       background: rgba(247, 245, 240, 0.97);
       padding: 1.2rem 0 0.9rem;
@@ -966,6 +966,30 @@
     #gallery-close.at-end,
     #gallery.light #gallery-close.at-end { color: rgba(25, 22, 15, 1.0) !important; }
     #gallery.gray #gallery-close.at-end  { color: rgba(247, 245, 240, 1.0) !important; }
+
+    /* ─── Gallery text slide ─────────────────────────── */
+    #gallery-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      text-align: left;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.75rem, 1.4vw, 1rem);
+      line-height: 2.2;
+      color: #f7f5f0;
+      padding: clamp(4rem, 12vh, 8rem) clamp(2rem, 8vw, 10rem) clamp(4rem, 8vh, 6rem) clamp(6rem, 18vw, 22rem);
+      opacity: 0;
+      pointer-events: none;
+      letter-spacing: 0.18em;
+      overflow-y: auto;
+    }
+    #gallery.light #gallery-text { color: var(--ink); }
+    #gallery-text p { margin: 0; }
+    #gallery-text p + p { margin-top: 1.6em; }
   </style>
 </head>
 <body>
@@ -1021,9 +1045,9 @@
   <section id="why-panel" aria-hidden="true" aria-label="Why">
     <button id="why-close" data-i18n="close">← Close</button>
     <div id="why-text" data-i18n-html="why_html">
-      <p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p>
+      <p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel slide projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p>
       <p style="font-style: italic; padding-left: 2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p>
-      <p>Years later I carried mother's beautiful Leica M3 around campus and reveled in the analog alchemy, watching my images slowly emerge from trays of liquid developer. I still believed in those journeys. I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages- physical and chemical - followed.</p>
+      <p>Many years later I carried mother's beautiful Leica M3 around campus, and reveled in the analog alchemy of watching my images slowly materialize at the bottom of trays filled with liquid developer. I still believed in those frontier journeys. And I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages- physical and chemical - followed.</p>
       <p>My journeys are farther afield now, and this site is my message in a bottle.</p>
       <p>Unfurl a few of the messages inside.</p>
       <p>— pc, 2026</p>
@@ -1034,9 +1058,9 @@
   <section id="art-panel" aria-hidden="true" aria-label="But Is It Art?">
     <button id="art-close" data-i18n="close">← Close</button>
     <div id="art-text" data-i18n-html="art_html">
-      <p>These photographs are of course, spontaneous improvisations, but then... they're not: landscapes verging on transcendent, urban moments grabbed mid-breath, tiny shards of found beauty — all made with the same restless instinct, whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley. But then you look a little deeper and find some highly intentional composition, feel some Shanshui ink-wash stillness and unflinching directness of Diane Arbus — all morphed through a guy who's been at it since the 1970s, and still hasn't decided what he wants to be when he grows up.</p>
-      <p>Mr. Chase calls it "Documentary Surrealism," which is either a serious aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both?</p>
-      <p>Mr. Chase studied art and photography properly, at actual universities, so there's intent and technique under the chaos. But his real education has been in the decades since, traveling the world chasing wonder with a camera. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy.</p>
+      <p>These photographs are of course, spontaneous improvisations, but then... they're not: landscapes verging on transcendent, urban moments grabbed mid-breath, tiny shards of found beauty — all made with the same restless instinct, whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley. But then you look a little deeper and find some highly intentional composition, feel some Shanshui ink-wash stillness or the unflinching directness of Diane Arbus — all morphed through a guy who's been at it since the 1970s, and still hasn't decided what he wants to be when he grows up.</p>
+      <p>Mr. Chase calls it "Documentary Surrealism," which is either a authentic aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both?</p>
+      <p>Mr. Chase studied art and photography properly, at actual universities, so there's concept and technique under the chaos. But his real education has been in the decades since, traveling the world chasing wonder with a camera. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy.</p>
       <p>So is it art? Pity, but you'll have to decide. Peter's just going to keep making the pictures either way.</p>
     </div>
   </section>
@@ -1064,6 +1088,7 @@
   <section id="gallery" aria-hidden="true" aria-label="Sotto Voce gallery">
     <button id="gallery-close">← Close</button>
     <img id="gallery-img" alt="Sotto Voce" />
+    <div id="gallery-text"></div>
     <button id="gallery-prev" class="gal-arrow" aria-label="Previous image">&#8249;</button>
     <button id="gallery-next" class="gal-arrow" aria-label="Next image">&#8250;</button>
   </section>
@@ -1485,10 +1510,21 @@
       },
       'war-of-words-and-images': {
         name: 'War of Words and Images',
-        images: [],
-        light:       true,
-        fade:        false,
-        fullDisplay: true,
+        images: [
+          { type: 'text', content: 'I carried cardboard boxes filled with books, pots and pans, and clothes,\n\nup the stairs to my new apartment\n\nI counted each of the twenty four steps\n\nOne for each year it had been, since I last lived alone' },
+          'War of Words and Images/2013 11 04_0365_edited-2.jpg',
+          { type: 'text', content: 'I woke this morning and listened to you breathing\n\nin the stillness below the threshold of our consciousness\n\nThe rhythm of your breath was the cadence of grace\n\nA sparrow pierced the darkness with its tiny song,\n\nan act of faith that the sun would rise again,\n\nas my faith that you would still love me through another day' },
+          'War of Words and Images/2015 01 02_3565_edited-1.jpg',
+          { type: 'text', content: 'Giggling under the pine trees in the Arboretum\n\nthe joint revolved between us\n\nDave turned his bloodshot eyes to the sky and I heard the small plane far overhead\n\nFred exhaled a huge cloud looking up and exclaimed, "I hope they don\'t have a marijuana detector!"\n\nWe all collapsed in spasms of laughter and coughing\n\nOur careless and unlikely futures looking down on us' },
+          'War of Words and Images/2015 11 22_6533.jpg',
+        ],
+        light:           false,
+        gray:            true,
+        fade:            true,
+        fadeOpenDuration:'1.5s',
+        fadeDuration:    1000,
+        fullDisplay:     true,
+        noSort:          true,
       },
       'elation': {
         name: 'Elation',
@@ -1540,6 +1576,12 @@
     const galPrevBtn  = document.getElementById('gallery-prev');
     const galNextBtn  = document.getElementById('gallery-next');
     const galCloseBtn = document.getElementById('gallery-close');
+    const galTextEl   = document.getElementById('gallery-text');
+
+    function isTextSlide(s) { return s && typeof s === 'object' && s.type === 'text'; }
+    function renderTextSlide(s) {
+      galTextEl.innerHTML = s.content.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    }
 
     function updateGalArrows() {
       const isFirst = galIndex === 0;
@@ -1577,56 +1619,86 @@
       galIndex  = 0;
       galSection.classList.toggle('light', !!galMode.light);
       galSection.classList.toggle('gray',  !!galMode.gray);
-      galImages.forEach(src => { new Image().src = encodeURI(src); });
+      galImages.forEach(slide => { if (!isTextSlide(slide)) new Image().src = encodeURI(slide); });
 
-      // Snap old image away instantly so it can't flash when a new gallery opens
+      // Snap old content away instantly so it can't flash when a new gallery opens
       galImg.style.transition = 'none';
       galImg.style.opacity = '0';
+      galImg.style.pointerEvents = 'none';
+      galTextEl.style.transition = 'none';
+      galTextEl.style.opacity = '0';
+      galTextEl.style.pointerEvents = 'none';
       void galImg.offsetWidth;
+
+      const firstIsText = isTextSlide(galImages[0]);
 
       if (galMode.fade) {
         galSection.classList.add('open');
         galSection.removeAttribute('aria-hidden');
         updateGalArrows();
-        const firstSrc = encodeURI(galImages[0]);
         const dur = galMode.fadeOpenDuration || '';
-        const doFadeIn = (img) => {
-          galImg.style.transition = 'none';
-          galImg.src = img.src;
-          galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
-          void galImg.offsetWidth; // force reflow — commits opacity:0 before transition starts
-          galImg.style.transition = dur ? `opacity ${dur} ease` : '';
+        if (firstIsText) {
+          renderTextSlide(galImages[0]);
+          void galTextEl.offsetWidth;
+          galTextEl.style.transition = dur ? `opacity ${dur} ease` : '';
           requestAnimationFrame(() => requestAnimationFrame(() => {
-            galImg.style.opacity = '1';
-            if (dur) setTimeout(() => { galImg.style.transition = ''; }, parseFloat(dur) * 1000);
+            galTextEl.style.opacity = '1';
+            galTextEl.style.pointerEvents = 'auto';
+            if (dur) setTimeout(() => { galTextEl.style.transition = ''; }, parseFloat(dur) * 1000);
           }));
-        };
-        const loader = new Image();
-        loader.onload = () => {
-          if (loader.decode) { loader.decode().then(() => doFadeIn(loader)).catch(() => doFadeIn(loader)); }
-          else { doFadeIn(loader); }
-        };
-        loader.onerror = () => doFadeIn(loader);
-        loader.src = firstSrc;
+        } else {
+          const doFadeIn = (img) => {
+            galImg.style.transition = 'none';
+            galImg.src = img.src;
+            galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
+            void galImg.offsetWidth;
+            galImg.style.transition = dur ? `opacity ${dur} ease` : '';
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              galImg.style.opacity = '1';
+              galImg.style.pointerEvents = '';
+              if (dur) setTimeout(() => { galImg.style.transition = ''; }, parseFloat(dur) * 1000);
+            }));
+          };
+          const loader = new Image();
+          loader.onload = () => {
+            if (loader.decode) { loader.decode().then(() => doFadeIn(loader)).catch(() => doFadeIn(loader)); }
+            else { doFadeIn(loader); }
+          };
+          loader.onerror = () => doFadeIn(loader);
+          loader.src = encodeURI(galImages[0]);
+        }
       } else {
-        const loader = new Image();
-        loader.onload = () => {
-          galImg.src = loader.src;
-          galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
+        if (firstIsText) {
+          renderTextSlide(galImages[0]);
           galSection.classList.add('open');
           galSection.removeAttribute('aria-hidden');
           requestAnimationFrame(() => requestAnimationFrame(() => {
-            galImg.style.opacity = '1';
+            galTextEl.style.opacity = '1';
+            galTextEl.style.pointerEvents = 'auto';
             updateGalArrows();
           }));
-        };
-        loader.onerror = () => {
-          galSection.classList.add('open');
-          galSection.removeAttribute('aria-hidden');
-          galImg.style.opacity = '1';
-          updateGalArrows();
-        };
-        loader.src = encodeURI(galImages[0]);
+        } else {
+          const loader = new Image();
+          loader.onload = () => {
+            galImg.src = loader.src;
+            galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
+            galSection.classList.add('open');
+            galSection.removeAttribute('aria-hidden');
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+              galImg.style.opacity = '1';
+              galImg.style.pointerEvents = '';
+              updateGalArrows();
+            }));
+          };
+          loader.onerror = () => {
+            galSection.classList.add('open');
+            galSection.removeAttribute('aria-hidden');
+            galImg.style.opacity = '1';
+            galImg.style.pointerEvents = '';
+            updateGalArrows();
+          };
+          loader.src = encodeURI(galImages[0]);
+        }
       }
     }
 
@@ -1634,6 +1706,8 @@
       galSection.classList.remove('open');
       galSection.setAttribute('aria-hidden', 'true');
       galBusy = false;
+      galTextEl.style.opacity = '0';
+      galTextEl.style.pointerEvents = 'none';
       container.style.visibility = '';
     }
 
@@ -1641,39 +1715,69 @@
       const next = Math.max(0, Math.min(index, galImages.length - 1));
       if (next === galIndex || galBusy) return;
 
+      const fromText = isTextSlide(galImages[galIndex]);
+      const toText   = isTextSlide(galImages[next]);
+      const fadeOutEl = fromText ? galTextEl : galImg;
+
       if (galMode.fade) {
         galBusy = true;
         const fadeDur = galMode.fadeDuration || 2000;
-        galImg.style.transition = `opacity ${fadeDur}ms ease`;
-        galImg.style.opacity = '0';
+        fadeOutEl.style.transition = `opacity ${fadeDur}ms ease`;
+        fadeOutEl.style.opacity = '0';
+        fadeOutEl.style.pointerEvents = 'none';
+
         setTimeout(() => {
           galIndex = next;
-          galImg.src = encodeURI(galImages[galIndex]);
-          galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
-          const fadeIn = () => {
+          if (toText) {
+            renderTextSlide(galImages[next]);
+            galTextEl.style.transition = `opacity ${fadeDur}ms ease`;
             requestAnimationFrame(() => requestAnimationFrame(() => {
-              galImg.style.opacity = '1';
-              setTimeout(() => { galBusy = false; galImg.style.transition = ''; updateGalArrows(); }, fadeDur + 50);
+              galTextEl.style.opacity = '1';
+              galTextEl.style.pointerEvents = 'auto';
+              setTimeout(() => { galBusy = false; galTextEl.style.transition = ''; updateGalArrows(); }, fadeDur + 50);
             }));
-          };
-          if (galImg.decode) {
-            galImg.decode().then(fadeIn).catch(fadeIn);
           } else {
-            fadeIn();
+            galImg.style.transition = 'none';
+            galImg.src = encodeURI(galImages[next]);
+            galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
+            const fadeIn = () => {
+              requestAnimationFrame(() => requestAnimationFrame(() => {
+                galImg.style.transition = `opacity ${fadeDur}ms ease`;
+                galImg.style.opacity = '1';
+                galImg.style.pointerEvents = '';
+                setTimeout(() => { galBusy = false; galImg.style.transition = ''; updateGalArrows(); }, fadeDur + 50);
+              }));
+            };
+            if (galImg.decode) { galImg.decode().then(fadeIn).catch(fadeIn); }
+            else { fadeIn(); }
           }
         }, fadeDur + 50);
       } else {
         galBusy = true;
-        const loader = new Image();
-        loader.onload = () => {
-          galIndex = next;
-          galImg.src = loader.src;
-          galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
+        galIndex = next;
+        if (toText) {
+          galImg.style.opacity = '0';
+          galImg.style.pointerEvents = 'none';
+          renderTextSlide(galImages[next]);
+          galTextEl.style.opacity = '1';
+          galTextEl.style.pointerEvents = 'auto';
           galBusy = false;
           updateGalArrows();
-        };
-        loader.onerror = () => { galBusy = false; };
-        loader.src = encodeURI(galImages[next]);
+        } else {
+          const loader = new Image();
+          loader.onload = () => {
+            galTextEl.style.opacity = '0';
+            galTextEl.style.pointerEvents = 'none';
+            galImg.src = loader.src;
+            galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
+            galImg.style.opacity = '1';
+            galImg.style.pointerEvents = '';
+            galBusy = false;
+            updateGalArrows();
+          };
+          loader.onerror = () => { galBusy = false; };
+          loader.src = encodeURI(galImages[next]);
+        }
       }
     }
 
@@ -1694,6 +1798,7 @@
     galPrevBtn.addEventListener('click', () => galGoTo(galIndex - 1));
     galNextBtn.addEventListener('click', () => galGoTo(galIndex + 1));
     galImg.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); });
+    galTextEl.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); });
 
     let touchStartX = 0, touchStartY = 0;
     document.addEventListener('touchstart', e => {
@@ -1824,9 +1929,9 @@
         close: '← Close',
         contact_intro: 'Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.',
         contact_name: 'Name', contact_email: 'Email', contact_message: 'Message', contact_send: 'Send',
-        why_html: `<p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p><p style="font-style:italic;padding-left:2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p><p>Years later I carried mother's beautiful Leica M3 around campus and reveled in the analog alchemy, watching my images slowly emerge from trays of liquid developer. I still believed in those journeys. I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages — physical and chemical — followed.</p><p>My journeys are farther afield now, and this site is my message in a bottle.</p><p>Unfurl a few of the messages inside.</p><p>— pc, 2026</p>`,
+        why_html: `<p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel slide projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p><p style="font-style:italic;padding-left:2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p><p>Many years later I carried mother's beautiful Leica M3 around campus, and reveled in the analog alchemy of watching my images slowly materialize at the bottom of trays filled with liquid developer. I still believed in those frontier journeys. And I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages — physical and chemical — followed.</p><p>My journeys are farther afield now, and this site is my message in a bottle.</p><p>Unfurl a few of the messages inside.</p><p>— pc, 2026</p>`,
         notes_html: `<p class="notes-date">May 2026</p><p class="notes-heading">Hello World!</p><p>Welcome to version 1.0. Building a site has been on the old mental to-do list for some time, but as I've zero web design background instead my energy had been spent inventing excuses and polishing my procrastination skills. But as luck would have it AI technology finally caught up with my ignorance! I can sincerely say diving into the deep end of the internet pool has been a bracing experience I've truly enjoyed — my sincerest thanks go to my (literally) tireless and infinitely patient assistant Claude.</p><p class="notes-heading">Stay Tuned</p><p>Periodically I'll be adding new images, new functionality and hopefully fix more things than I break. All of the current photos are from, I believe, the last 4 years, but before long I'll be digging in the archives and post some "classics". :-)</p><p class="notes-heading">Contact Page</p><p>Any comments, suggestions, sycophantic praise or basically anything on this side of mean comments about my mental health are encouraged and appreciated.</p><img src="Behind the Curtain/20211031-IMG_1196.jpg" class="notes-photo" alt="Peter B Chase"><p class="notes-copyright">© 2026 Peter B Chase. All rights reserved. All images on this site are the exclusive property of Peter B Chase and may not be reproduced, copied, transmitted, or manipulated without written permission. Unauthorized use is a violation of federal copyright law and will be prosecuted to the full extent of the law, including but not limited to, a full body wax administered by a really rough, six-foot-tall Swedish woman, those really really cringy photographs your girlfriend took of you in high school being published online and possibly something involving a plague of locusts, or other bad stuff.</p>`,
-        art_html: `<p>These photographs are of course, spontaneous improvisations, but then... they're not: landscapes verging on transcendent, urban moments grabbed mid-breath, tiny shards of found beauty — all made with the same restless instinct, whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley. But then you look a little deeper and find some highly intentional composition, feel some Shanshui ink-wash stillness and unflinching directness of Diane Arbus — all morphed through a guy who's been at it since the 1970s, and still hasn't decided what he wants to be when he grows up.</p><p>Mr. Chase calls it "Documentary Surrealism," which is either a serious aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both?</p><p>Mr. Chase studied art and photography properly, at actual universities, so there's intent and technique under the chaos. But his real education has been in the decades since, traveling the world chasing wonder with a camera. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy.</p><p>So is it art? Pity, but you'll have to decide. Peter's just going to keep making the pictures either way.</p>`,
+        art_html: `<p>These photographs are of course, spontaneous improvisations, but then... they're not: landscapes verging on transcendent, urban moments grabbed mid-breath, tiny shards of found beauty — all made with the same restless instinct, whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley. But then you look a little deeper and find some highly intentional composition, feel some Shanshui ink-wash stillness or the unflinching directness of Diane Arbus — all morphed through a guy who's been at it since the 1970s, and still hasn't decided what he wants to be when he grows up.</p><p>Mr. Chase calls it "Documentary Surrealism," which is either a authentic aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both?</p><p>Mr. Chase studied art and photography properly, at actual universities, so there's concept and technique under the chaos. But his real education has been in the decades since, traveling the world chasing wonder with a camera. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy.</p><p>So is it art? Pity, but you'll have to decide. Peter's just going to keep making the pictures either way.</p>`,
       },
       de: {
         nav_galleries: 'Galerien', nav_why: 'Warum', nav_notes: 'Notizen', nav_art: 'Aber ist es Kunst?', nav_contact: 'Kontakt',
