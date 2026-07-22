@@ -46,7 +46,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400&family=Raleway:wght@200;300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400&family=Playfair+Display:wght@400;600&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -222,10 +222,10 @@
 
     /* Logo */
     .logo {
-      font-family: 'Cormorant', serif;
+      font-family: 'Playfair Display', serif;
       font-weight: 400;
       font-size: clamp(1.01rem, 1.54vw, 1.54rem);
-      letter-spacing: 0.315em;
+      letter-spacing: 0.2em;
       line-height: 1;
       color: var(--ink);
       text-decoration: none;
@@ -254,7 +254,7 @@
       text-transform: none;
       color: var(--ink);
       opacity: 1;
-      margin-top: 0;
+      margin-top: 0.6rem;
       margin-bottom: 0;
       margin-left: 2ch;
       pointer-events: none;
@@ -264,6 +264,7 @@
       .mob-br { display: inline; }
       header { padding: 0.75rem clamp(1rem, 4vw, 2rem); }
       .logo { font-size: 1.5rem; }
+      .logo-subtitle { display: block; margin-left: 0.3em; }
       .tagline { font-size: 1.1rem; margin-top: 0.6rem; }
     }
     @media (max-width: 899px) and (orientation: landscape) {
@@ -283,7 +284,7 @@
 
     nav a {
       font-family: 'Raleway', sans-serif;
-      font-weight: 400;
+      font-weight: 600;
       font-size: clamp(0.62rem, 0.8vw, 0.75rem);
       letter-spacing: 0.38em;
       text-transform: uppercase;
@@ -1101,14 +1102,14 @@
   <!-- Header -->
   <header>
     <div class="logo-group">
-      <a href="/" class="logo" aria-label="Peter B Chase Photography">PETER B CHASE</a>
+      <a href="/" class="logo" aria-label="Peter B Chase Photography">PETER B CHASE <span style="font-family: 'Raleway', sans-serif; font-weight: 500; letter-spacing: 0.05em; line-height: 1; vertical-align: baseline; font-size: 0.88em;" class="logo-subtitle">- Light and Language</span></a>
       <p class="tagline">Age sacrifices mystery to understanding,<br> wonder to indifference, perception to expectation.<br>Visit the galleries to resist.</p>
     </div>
     <nav aria-label="Main navigation">
       <div class="nav-item">
         <a href="#galleries" data-i18n="nav_galleries">Galleries</a>
         <ul class="dropdown" role="menu">
-          <li><a href="#light-and-language" role="menuitem" style="color: #8b1c1c;">Light and Language (new)</a></li>
+          <li><a href="#light-and-language" role="menuitem" style="color: #8b1c1c;">Small Language Model (new)</a></li>
           <li><a href="#adagio" role="menuitem" style="color: #8b1c1c;">Adagio (new)</a></li>
           <li><a href="#sotto-voce" role="menuitem">Sotto Voce</a></li>
           <li><a href="#fin-del-mundo" role="menuitem">Fin del Mundo</a></li>
@@ -1177,7 +1178,7 @@
       <div class="mobile-nav-group">
         <button class="mobile-galleries-btn" data-i18n="nav_galleries">Galleries</button>
         <div id="mobile-galleries-sub">
-          <a href="#light-and-language" style="color: #8b1c1c;">Light and Language (new)</a>
+          <a href="#light-and-language" style="color: #8b1c1c;">Small Language Model (new)</a>
           <a href="#adagio" style="color: #8b1c1c;">Adagio (new)</a>
           <a href="#sotto-voce">Sotto Voce</a>
           <a href="#fin-del-mundo">Fin del Mundo</a>
@@ -1502,7 +1503,7 @@
         fullDisplay: true,
       },
       'light-and-language': {
-        name: 'Light and Language',
+        name: 'Small Language Model',
         images: [
           { type: 'text', content: 'I carried cardboard boxes filled with books, pots and pans, and clothes,\n\nup the stairs to my new apartment\n\nI counted each of the twenty four steps\n\nOne for each year it had been, since I last lived alone' },
           'War of Words and Images/2013 11 04_0365_edited-2.jpg',
