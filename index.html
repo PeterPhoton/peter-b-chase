@@ -266,7 +266,6 @@
       .logo { font-size: 1.5rem; }
       .logo-hyphen { display: none; }
       .logo-subtitle { display: block; padding-left: 0.5em; margin-top: 0.35em; }
-      #gallery-text { padding: 4rem 1.5rem 3rem 1.5rem; font-size: clamp(0.85rem, 3.5vw, 1rem); }
       .tagline { font-size: 1.1rem; margin-top: 0.6rem; }
     }
     @media (max-width: 899px) and (orientation: landscape) {
@@ -998,6 +997,9 @@
     #gallery.light #gallery-text { color: var(--ink); }
     #gallery-text p { margin: 0; }
     #gallery-text p + p { margin-top: 1.6em; }
+    @media (max-width: 899px) {
+      #gallery-text { padding: 4rem 1.5rem 3rem 1.5rem; font-size: clamp(0.85rem, 3.5vw, 1rem); }
+    }
   </style>
 </head>
 <body>
