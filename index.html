@@ -56,7 +56,7 @@
 
     :root {
       --cream: #f7f5f0;
-      --ink:   #19160f;
+      --ink:   #000000;
       --fade:  4200ms;
     }
 
@@ -225,7 +225,7 @@
       font-family: 'Cormorant', serif;
       font-weight: 400;
       font-size: clamp(1.01rem, 1.54vw, 1.54rem);
-      letter-spacing: 0.42em;
+      letter-spacing: 0.315em;
       line-height: 1;
       color: var(--ink);
       text-decoration: none;
@@ -246,11 +246,12 @@
     }
 
     .tagline {
-      font-family: 'Cormorant', serif;
-      font-size: clamp(0.75rem, 1vw, 1rem);
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(0.65rem, 0.85vw, 0.85rem);
       font-weight: 400;
       font-style: italic;
       letter-spacing: 0.04em;
+      text-transform: none;
       color: var(--ink);
       opacity: 1;
       margin-top: 0;
@@ -335,8 +336,10 @@
       color: var(--ink);
       text-decoration: none;
       white-space: nowrap;
+      text-align: left;
       transition: opacity 0.3s ease;
     }
+
 
     .dropdown li a:hover       { opacity: 0.40; }
     .dropdown li a:focus-visible {
@@ -382,6 +385,8 @@
     .lang-opt:hover { opacity: 0.40; }
     .lang-opt:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
     .lang-dropdown { min-width: 10rem; }
+    .nav-item-studio .dropdown { min-width: 12rem; max-width: 12rem; }
+    .nav-item-studio .dropdown li a { white-space: normal; line-height: 1.5; }
 
     /* ─── Hamburger ─────────────────────────────────────── */
     #hamburger {
@@ -1103,6 +1108,7 @@
       <div class="nav-item">
         <a href="#galleries" data-i18n="nav_galleries">Galleries</a>
         <ul class="dropdown" role="menu">
+          <li><a href="#adagio" role="menuitem" style="color: #8b1c1c;">Adagio (new)</a></li>
           <li><a href="#sotto-voce" role="menuitem">Sotto Voce</a></li>
           <li><a href="#fin-del-mundo" role="menuitem">Fin del Mundo</a></li>
           <li><a href="#solitaire" role="menuitem">Desert Solitaire</a></li>
@@ -1111,14 +1117,12 @@
           <li><a href="#elegy" role="menuitem">Elegy</a></li>
           <li><a href="#tiny-miracles" role="menuitem">Tiny Miracles</a></li>
           <li><a href="#still-lives" role="menuitem">Still Lives</a></li>
-          <li><a href="#adagio" role="menuitem" style="color: #8b1c1c;">Adagio (new)</a></li>
           <li><a href="#unintelligent-design" role="menuitem">Unintelligent Design</a></li>
         </ul>
       </div>
-      <div class="nav-item">
-        <a href="#studio">In the Studio</a>
+      <div class="nav-item nav-item-studio">
+        <a href="#studio">Light and Language</a>
         <ul class="dropdown" role="menu">
-          <li><a href="#sketches" role="menuitem">Sketches</a></li>
           <li><a href="#war-of-words" role="menuitem">War of Words and Images</a></li>
         </ul>
       </div>
@@ -1178,6 +1182,7 @@
       <div class="mobile-nav-group">
         <button class="mobile-galleries-btn" data-i18n="nav_galleries">Galleries</button>
         <div id="mobile-galleries-sub">
+          <a href="#adagio" style="color: #8b1c1c;">Adagio (new)</a>
           <a href="#sotto-voce">Sotto Voce</a>
           <a href="#fin-del-mundo">Fin del Mundo</a>
           <a href="#solitaire">Desert Solitaire</a>
@@ -1186,14 +1191,12 @@
           <a href="#elegy">Elegy</a>
           <a href="#tiny-miracles">Tiny Miracles</a>
           <a href="#still-lives">Still Lives</a>
-          <a href="#adagio" style="color: #8b1c1c;">Adagio (new)</a>
           <a href="#unintelligent-design">Unintelligent Design</a>
         </div>
       </div>
       <div class="mobile-nav-group">
-        <button class="mobile-studio-btn">In the Studio</button>
+        <button class="mobile-studio-btn">Light and Language</button>
         <div id="mobile-studio-sub">
-          <a href="#sketches">Sketches</a>
           <a href="#war-of-words">War of Words and Images</a>
         </div>
       </div>
@@ -1530,9 +1533,12 @@
         name: 'Elation',
         images: [
           'Elation/10.JPG',
+          'In the Studio/20260606-20260606_163855.jpg',
           'Elation/15.JPG',
           'Elation/30.jpg',
+          'In the Studio/20260608-20260608_071856~2.jpg',
           'Elation/35.jpg',
+          'In the Studio/20260525-20260525_074706.jpg',
           'Elation/70.jpg',
           'Elation/80.jpg',
           'Elation/82.jpg',
@@ -1542,6 +1548,7 @@
           'Elation/100.jpg',
         ],
         light:       true,
+        noSort:      true,
         fade:        false,
         fullDisplay: true,
       },
@@ -1550,10 +1557,15 @@
         images: [
           'Adagio/Adagio_10.jpg',
           'Adagio/Adagio_30.jpg',
+          'In the Studio/20260527-20260527_085033.jpg',
           'Adagio/Adagio_40.jpg',
+          'In the Studio/20260528-20260528_115247.jpg',
+          'In the Studio/20260525-P1139152.jpg',
           'Adagio/Adagio_50.jpg',
           'Adagio/Adagio_60.jpg',
+          'In the Studio/20260606-20260606_180914.jpg',
           'Adagio/Adagio_70.jpg',
+          'In the Studio/20260606-20260606_191149.jpg',
           'Adagio/Adagio_80.jpg',
           'In the Studio/20260608-P1150010.jpg',
           'Adagio/Adagio_90.jpg',
@@ -1561,6 +1573,7 @@
         light:           true,
         fade:            true,
         fadeOpenDuration:'5s',
+        fadeDuration:    1500,
         fullDisplay:     true,
         noSort:          true,
       },
@@ -1787,7 +1800,7 @@
       ['#elegy','elegy'], ['#fin-del-mundo','fin-del-mundo'],
       ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
       ['#elation','elation'], ['#adagio','adagio'],
-      ['#sketches','sketches'], ['#war-of-words','war-of-words-and-images'],
+      ['#war-of-words','war-of-words-and-images'],
     ].forEach(([href, key]) => {
       document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
         e.preventDefault(); if (galleries[key].images.length) galOpen(key);
