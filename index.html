@@ -1108,6 +1108,7 @@
       <div class="nav-item">
         <a href="#galleries" data-i18n="nav_galleries">Galleries</a>
         <ul class="dropdown" role="menu">
+          <li><a href="#light-and-language" role="menuitem" style="color: #8b1c1c;">Light and Language (new)</a></li>
           <li><a href="#adagio" role="menuitem" style="color: #8b1c1c;">Adagio (new)</a></li>
           <li><a href="#sotto-voce" role="menuitem">Sotto Voce</a></li>
           <li><a href="#fin-del-mundo" role="menuitem">Fin del Mundo</a></li>
@@ -1118,12 +1119,6 @@
           <li><a href="#tiny-miracles" role="menuitem">Tiny Miracles</a></li>
           <li><a href="#still-lives" role="menuitem">Still Lives</a></li>
           <li><a href="#unintelligent-design" role="menuitem">Unintelligent Design</a></li>
-        </ul>
-      </div>
-      <div class="nav-item nav-item-studio">
-        <a href="#studio">Light and Language</a>
-        <ul class="dropdown" role="menu">
-          <li><a href="#war-of-words" role="menuitem">War of Words and Images</a></li>
         </ul>
       </div>
       <a href="#why" data-i18n="nav_why">Why</a>
@@ -1182,6 +1177,7 @@
       <div class="mobile-nav-group">
         <button class="mobile-galleries-btn" data-i18n="nav_galleries">Galleries</button>
         <div id="mobile-galleries-sub">
+          <a href="#light-and-language" style="color: #8b1c1c;">Light and Language (new)</a>
           <a href="#adagio" style="color: #8b1c1c;">Adagio (new)</a>
           <a href="#sotto-voce">Sotto Voce</a>
           <a href="#fin-del-mundo">Fin del Mundo</a>
@@ -1192,12 +1188,6 @@
           <a href="#tiny-miracles">Tiny Miracles</a>
           <a href="#still-lives">Still Lives</a>
           <a href="#unintelligent-design">Unintelligent Design</a>
-        </div>
-      </div>
-      <div class="mobile-nav-group">
-        <button class="mobile-studio-btn">Light and Language</button>
-        <div id="mobile-studio-sub">
-          <a href="#war-of-words">War of Words and Images</a>
         </div>
       </div>
       <a href="#why" data-i18n="nav_why">Why</a>
@@ -1511,8 +1501,8 @@
         fade:        false,
         fullDisplay: true,
       },
-      'war-of-words-and-images': {
-        name: 'War of Words and Images',
+      'light-and-language': {
+        name: 'Light and Language',
         images: [
           { type: 'text', content: 'I carried cardboard boxes filled with books, pots and pans, and clothes,\n\nup the stairs to my new apartment\n\nI counted each of the twenty four steps\n\nOne for each year it had been, since I last lived alone' },
           'War of Words and Images/2013 11 04_0365_edited-2.jpg',
@@ -1800,7 +1790,7 @@
       ['#elegy','elegy'], ['#fin-del-mundo','fin-del-mundo'],
       ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
       ['#elation','elation'], ['#adagio','adagio'],
-      ['#war-of-words','war-of-words-and-images'],
+      ['#light-and-language','light-and-language'],
     ].forEach(([href, key]) => {
       document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
         e.preventDefault(); if (galleries[key].images.length) galOpen(key);
