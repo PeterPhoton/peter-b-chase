@@ -1593,7 +1593,7 @@
 
     function isTextSlide(s) { return s && typeof s === 'object' && s.type === 'text'; }
     function renderTextSlide(s) {
-      galTextEl.innerHTML = s.content.split('\n\n').map(p => `<p>${p}</p>`).join('');
+      galTextEl.innerHTML = s.content.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
     }
 
     function updateGalArrows() {
