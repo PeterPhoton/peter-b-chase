@@ -1320,6 +1320,7 @@
     const galleries = {
       'sotto-voce': {
         name: 'Sotto Voce',
+        seoDescription: 'Quiet, powerful landscapes from around the world — fine art photography by Peter B Chase',
         images: [
           'Sotto Voce/10.JPG',
           'Sotto Voce/20.jpg',
@@ -1340,6 +1341,7 @@
       },
       'continental-drift': {
         name: 'Continental Drift',
+        seoDescription: 'Eclectic and idiosyncratic portraits of modern Europeans — fine art photography by Peter B Chase',
         images: [
           'Continental Drift/5.jpg',
           'Continental Drift/7.JPG',
@@ -1363,6 +1365,7 @@
       },
       'unintelligent-design': {
         name: 'Unintelligent Design',
+        seoDescription: 'Humorous and absurd images — documentary surrealism by Peter B Chase',
         images: [
           'Unintelligent Design/20241126-20241126_120554~2-Edit.JPG',
           'Unintelligent Design/Italy 2023-1001083.jpg',
@@ -1378,6 +1381,7 @@
       },
       'solitaire': {
         name: 'Desert Solitaire',
+        seoDescription: 'Secret southwestern American landscapes — fine art photography by Peter B Chase',
         images: [
           'Desert Solitare/10.jpg',
           'Desert Solitare/20.JPG',
@@ -1408,6 +1412,7 @@
       },
       'elegy': {
         name: 'Elegy',
+        seoDescription: 'Poetic images of a fading Europe — fine art photography by Peter B Chase',
         images: [
           'Elegy/10.JPG',
           'Elegy/20.JPG',
@@ -1427,6 +1432,7 @@
       },
       'fin-del-mundo': {
         name: 'Fin del Mundo',
+        seoDescription: 'Dramatic Patagonian moments — fine art travel photography by Peter B Chase',
         images: [
           'Fin del Mundo/10.jpg',
           'Fin del Mundo/20.jpg',
@@ -1444,6 +1450,7 @@
       },
       'still-lives': {
         name: 'Still Lives',
+        seoDescription: 'Random perfection — found still life images by Peter B Chase',
         images: [
           'Still Lives/10.jpg',
           'Still Lives/20.JPG',
@@ -1462,6 +1469,7 @@
       },
       'tiny-miracles': {
         name: 'Tiny Miracles',
+        seoDescription: 'Exquisite macro photography — fine art detail photography by Peter B Chase',
         images: [
           'Tiny Miracles/10.JPG',
           'Tiny Miracles/20.jpg',
@@ -1512,6 +1520,7 @@
       },
       'light-and-language': {
         name: 'Small Language Model',
+        seoDescription: 'Photolyric: photo-poetry, verse combined with image — by Peter B Chase',
         images: [
           { type: 'text', content: 'I carried cardboard boxes filled with books, pots and pans, and clothes,\n\nup the stairs to my new apartment\n\nI counted each of the twenty four steps\n\nOne for each year it had been, since I last lived alone' },
           'War of Words and Images/2015 01 02_3565_edited-1.jpg',
@@ -1533,6 +1542,7 @@
       },
       'elation': {
         name: 'Elation',
+        seoDescription: 'Joyful motion landscapes — fine art photography by Peter B Chase',
         images: [
           'Elation/10.JPG',
           'In the Studio/20260606-20260606_163855.jpg',
@@ -1556,6 +1566,7 @@
       },
       'adagio': {
         name: 'Adagio',
+        seoDescription: 'Evocative high end Mediterranean travel photography by Peter B Chase',
         images: [
           'Adagio/Adagio_10.jpg',
           'Adagio/Adagio_30.jpg',
@@ -1665,7 +1676,7 @@
           const doFadeIn = (img) => {
             galImg.style.transition = 'none';
             galImg.src = img.src;
-            galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
+            galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
             void galImg.offsetWidth;
             galImg.style.transition = dur ? `opacity ${dur} ease` : '';
             requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1696,7 +1707,7 @@
           const loader = new Image();
           loader.onload = () => {
             galImg.src = loader.src;
-            galImg.alt = `${galMode.name}, 1 — Peter B Chase`;
+            galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
             galSection.classList.add('open');
             galSection.removeAttribute('aria-hidden');
             requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1754,7 +1765,7 @@
           } else {
             galImg.style.transition = 'none';
             galImg.src = encodeURI(galImages[next]);
-            galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
+            galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
             const fadeIn = () => {
               requestAnimationFrame(() => requestAnimationFrame(() => {
                 galImg.style.transition = `opacity ${fadeDur}ms ease`;
@@ -1784,7 +1795,7 @@
             galTextEl.style.opacity = '0';
             galTextEl.style.pointerEvents = 'none';
             galImg.src = loader.src;
-            galImg.alt = `${galMode.name}, ${galIndex + 1} — Peter B Chase`;
+            galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
             galImg.style.opacity = '1';
             galImg.style.pointerEvents = '';
             galBusy = false;
