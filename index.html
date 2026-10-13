@@ -147,7 +147,7 @@
       position: relative;
     }
 
-    #share-btn:hover { color: rgba(25, 22, 15, 0.40); }
+    #share-btn:hover { color: rgba(25, 22, 15, 1.0); }
     #share-btn:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
     #share-btn svg { display: block; width: 0.85rem; height: 0.85rem; }
 
@@ -188,7 +188,7 @@
       font-size: clamp(0.58rem, 0.72vw, 0.68rem);
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: rgba(25, 22, 15, 0.75);
+      color: rgba(25, 22, 15, 1.0);
       text-decoration: none;
       transition: color 0.25s ease;
     }
@@ -380,7 +380,7 @@
     }
 
     .lang-btn svg { display: block; width: 0.85rem; height: 0.85rem; }
-    .lang-btn:hover { color: rgba(25, 22, 15, 0.40); }
+    .lang-btn:hover { color: rgba(25, 22, 15, 1.0); }
     .lang-btn:focus-visible { outline: 1px solid var(--ink); outline-offset: 5px; }
     .lang-item { position: relative; }
 
@@ -916,30 +916,38 @@
       z-index: 10;
       background: none;
       border: none;
-      color: rgba(247, 245, 240, 0.30);
+      color: rgba(247, 245, 240, 0.75);
       font-family: 'Raleway', sans-serif;
       font-weight: 200;
       font-size: clamp(2.5rem, 4vw, 4rem);
       line-height: 1;
       cursor: pointer;
-      padding: 1rem clamp(1.5rem, 2.5vmin, 3rem);
+      padding: 1rem 0.5rem;
       transition: color 0.35s ease;
     }
 
-    .gal-arrow:hover        { color: rgba(247, 245, 240, 0.80); }
+    .gal-arrow:hover        { color: rgba(247, 245, 240, 1.0); }
     .gal-arrow:focus-visible { outline: 1px solid rgba(247,245,240,0.4); outline-offset: 4px; }
     #gallery-prev { left: 0; }
     #gallery-next { right: 0; }
 
-    #gallery-close {
+    #gallery-close-group {
       position: absolute;
-      top: 1.7rem;
-      left: 1.5rem;
-      padding: 0.5rem 1rem;
+      top: 1rem;
+      left: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
       z-index: 10;
+    }
+
+    #gallery-close {
+      position: static;
+      padding: 0.5rem 0;
       background: none;
       border: none;
-      color: rgba(247, 245, 240, 0.38);
+      color: rgba(247, 245, 240, 0.75);
       font-family: 'Raleway', sans-serif;
       font-weight: 300;
       font-size: 0.6rem;
@@ -949,23 +957,58 @@
       transition: color 0.35s ease;
     }
 
-    #gallery-close:hover        { color: rgba(247, 245, 240, 0.80); }
+    #gallery-close:hover        { color: rgba(247, 245, 240, 1.0); }
     #gallery-close:focus-visible { outline: 1px solid rgba(247,245,240,0.4); outline-offset: 5px; }
+
+    #gallery-bookmark-close {
+      display: none;
+      padding: 0.5rem 0;
+      background: none;
+      border: none;
+      color: rgba(247, 245, 240, 0.75);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      font-size: 0.6rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.35s ease;
+    }
+    #gallery-bookmark-close:hover        { color: rgba(247, 245, 240, 1.0); }
+    #gallery-bookmark-close:focus-visible { outline: 1px solid rgba(247,245,240,0.4); outline-offset: 5px; }
 
     /* Light mode overrides */
     #gallery.light               { background: #f7f5f0; }
-    #gallery.light .gal-arrow    { color: rgba(25, 22, 15, 0.28); }
-    #gallery.light .gal-arrow:hover    { color: rgba(25, 22, 15, 0.75); }
+    #gallery.light .gal-arrow    { color: rgba(25, 22, 15, 0.75); }
+    #gallery.light .gal-arrow:hover    { color: rgba(25, 22, 15, 0.60); }
 
-    #gallery.light #gallery-close      { color: rgba(25, 22, 15, 0.65); }
-    #gallery.light #gallery-close:hover { color: rgba(25, 22, 15, 0.90); }
+    #gallery.light #gallery-close,
+    #gallery.light #gallery-bookmark-close      { color: rgba(25, 22, 15, 0.25); }
+    #gallery.light #gallery-close:hover,
+    #gallery.light #gallery-bookmark-close:hover { color: rgba(25, 22, 15, 0.60); }
 
     /* Gray mode overrides */
     #gallery.gray               { background: #808080; }
-    #gallery.gray .gal-arrow    { color: rgba(247, 245, 240, 0.50); }
-    #gallery.gray .gal-arrow:hover    { color: rgba(247, 245, 240, 0.90); }
-    #gallery.gray #gallery-close      { color: rgba(247, 245, 240, 0.70); }
-    #gallery.gray #gallery-close:hover { color: rgba(247, 245, 240, 0.95); }
+    #gallery.gray .gal-arrow    { color: rgba(247, 245, 240, 0.75); }
+    #gallery.gray .gal-arrow:hover    { color: rgba(247, 245, 240, 1.0); }
+    #gallery.gray #gallery-close,
+    #gallery.gray #gallery-bookmark-close      { color: rgba(247, 245, 240, 0.75); }
+    #gallery.gray #gallery-close:hover,
+    #gallery.gray #gallery-bookmark-close:hover { color: rgba(247, 245, 240, 1.0); }
+
+    #gal-counter {
+      position: absolute;
+      bottom: 1.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: rgba(247, 245, 240, 1.0);
+      pointer-events: none;
+      display: none;
+    }
+    #gallery.gray #gal-counter { color: rgba(247, 245, 240, 1.0); }
 
     /* Close button fully opaque at end of sequence */
     #gallery-close.at-end,
@@ -977,28 +1020,28 @@
       position: absolute;
       inset: 0;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
       flex-direction: column;
-      text-align: left;
       font-family: 'Raleway', sans-serif;
       font-weight: 400;
       font-size: clamp(0.75rem, 1.4vw, 1rem);
-      line-height: 2.2;
+      line-height: 1.75;
       color: #f7f5f0;
-      padding: clamp(4rem, 12vh, 8rem) clamp(2rem, 8vw, 10rem) clamp(4rem, 8vh, 6rem) clamp(6rem, 18vw, 22rem);
+      padding: clamp(3.5rem, 6vh, 5rem) clamp(4rem, 8vw, 8rem) clamp(2.5rem, 4vh, 4rem);
       opacity: 0;
       pointer-events: none;
       letter-spacing: 0.18em;
       overflow-y: auto;
     }
     #gallery.light #gallery-text { color: var(--ink); }
-    #gallery-text p { margin: 0; }
-    #gallery-text p + p { margin-top: 1.6em; }
+    .poem-inner { text-align: left; width: fit-content; max-width: 100%; margin-top: auto; margin-bottom: auto; flex-shrink: 0; }
+    .poem-inner p { margin: 0; }
+    .poem-inner p + p { margin-top: 1.2em; }
     @media (max-width: 899px) {
-      #gallery-text { padding: 2rem 1.5rem 2rem 1.5rem; font-size: clamp(0.75rem, 3vw, 0.9rem); line-height: 1.6; align-items: center; justify-content: center; text-align: left; }
-      #gallery-text p { width: 100%; }
-      #gallery-text p + p { margin-top: 0.8em; }
+      #gallery-text { padding: 4rem 3.5rem 2rem; font-size: clamp(0.75rem, 3vw, 0.9rem); line-height: 1.6; }
+      .poem-inner { width: 100%; }
+      .poem-inner p + p { margin-top: 0.8em; }
     }
   </style>
 </head>
@@ -1059,7 +1102,7 @@
       <p style="font-style: italic; padding-left: 2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p>
       <p>Many years later I carried mother's beautiful Leica M3 around campus, and reveled in the analog alchemy of watching my images slowly materialize at the bottom of trays filled with liquid developer. I still believed in those frontier journeys. And I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages- physical and chemical - followed.</p>
       <p>My journeys are farther afield now, and this site is my message in a bottle.</p>
-      <p>Unfurl a few of the messages inside.</p>
+      <p>Unfurl a few of the notes inside.</p>
       <p>— pc, 2026</p>
     </div>
   </section>
@@ -1096,11 +1139,15 @@
 
   <!-- Sotto Voce gallery -->
   <section id="gallery" aria-hidden="true" aria-label="Sotto Voce gallery">
-    <button id="gallery-close">← Close</button>
+    <div id="gallery-close-group">
+      <button id="gallery-bookmark-close">⊕ BOOKMARK+CLOSE</button>
+      <button id="gallery-close">← Close</button>
+    </div>
     <img id="gallery-img" alt="Sotto Voce" />
     <div id="gallery-text"></div>
     <button id="gallery-prev" class="gal-arrow" aria-label="Previous image">&#8249;</button>
     <button id="gallery-next" class="gal-arrow" aria-label="Next image">&#8250;</button>
+    <div id="gal-counter"></div>
   </section>
 
   <!-- Header -->
@@ -1113,6 +1160,7 @@
       <div class="nav-item">
         <a href="#galleries" data-i18n="nav_galleries">Galleries</a>
         <ul class="dropdown" role="menu">
+          <li><a href="#sierra" role="menuitem">Sierra</a></li>
           <li><a href="#light-and-language" role="menuitem" style="color: #8b1c1c;" data-i18n="gallery_dreams">Dreams and Memories</a></li>
           <li><a href="#adagio" role="menuitem" style="color: #8b1c1c;" data-i18n="gallery_adagio">Adagio</a></li>
           <li><a href="#sotto-voce" role="menuitem" data-i18n="gallery_sotto">Sotto Voce</a></li>
@@ -1182,6 +1230,7 @@
       <div class="mobile-nav-group">
         <button class="mobile-galleries-btn" data-i18n="nav_galleries">Galleries</button>
         <div id="mobile-galleries-sub">
+          <a href="#sierra">Sierra</a>
           <a href="#light-and-language" style="color: #8b1c1c;" data-i18n="gallery_dreams">Dreams and Memories</a>
           <a href="#adagio" style="color: #8b1c1c;" data-i18n="gallery_adagio">Adagio</a>
           <a href="#sotto-voce" data-i18n="gallery_sotto">Sotto Voce</a>
@@ -1193,6 +1242,7 @@
           <a href="#tiny-miracles" data-i18n="gallery_miracles">Tiny Miracles</a>
           <a href="#still-lives" data-i18n="gallery_lives">Still Lives</a>
           <a href="#unintelligent-design" data-i18n="gallery_unintelligent">Unintelligent Design</a>
+          <a href="#sierra">Sierra</a>
         </div>
       </div>
       <a href="#why" data-i18n="nav_why">Why</a>
@@ -1328,6 +1378,7 @@
           'Sotto Voce/30.jpg',
           'Sotto Voce/35.JPG',
           'Sotto Voce/40.jpg',
+          { type: 'text', content: 'My Night\n\nIt was warm inside\nthe old chapel\nThe stained glass is so grey at night\nI said\n\nDon\'t you see! you said\nthe windows are so beautiful\nfrom the outside' },
           'Sotto Voce/45.jpg',
           'Sotto Voce/50.JPG',
           'Sotto Voce/70.JPG',
@@ -1339,6 +1390,7 @@
         fadeOpenDuration:'1.5s',
         fadeDuration:    800,
         fullDisplay:     true,
+        noSort:          true,
       },
       'continental-drift': {
         name: 'Continental Drift',
@@ -1351,6 +1403,7 @@
           'Continental Drift/30.JPG',
           'Continental Drift/33.JPG',
           'Continental Drift/35.jpg',
+          { type: 'text', content: 'The Little Man\n\nYou said you wished you wouldn\'t think\nthe same thoughts over and over\nand I agreed\nI too longed to silence\nthe homunculus trapped inside my head\nlooking disapprovingly out\nthrough the sockets of my skull\nI swept those twin beams over and over\nbut they were not cameras, not portals\njust hopelessly tiny filters\nthrough which not even Plato\'s shadows\ncould pass' },
           'Continental Drift/40.jpg',
           'Continental Drift/50.JPG',
           'Continental Drift/60.JPG',
@@ -1370,6 +1423,7 @@
         images: [
           'Unintelligent Design/20241126-20241126_120554~2-Edit.JPG',
           'Unintelligent Design/Italy 2023-1001083.jpg',
+          { type: 'text', content: 'A Good Plan\n\nI told you I wanted\nBach\'s Brandenburg number 3 played at my funeral\nI still think that\'s a good plan\nBetter than a eulogy, full of lies' },
           'Unintelligent Design/Patagonia 2019-1042043.jpg',
           'Unintelligent Design/B0002297.jpg',
           'Unintelligent Design/B0000788_edited-1.jpg',
@@ -1393,6 +1447,8 @@
           'Desert Solitare/70.JPG',
           'Desert Solitare/75.JPG',
           'Desert Solitare/80.JPG',
+          { type: 'text', content: 'The Well\n\nBrilliantly bleached\nSnickering two-inch canines,\na mohawk of boar bristle\nA find\n\nWe delighted and stashed him in my pack\nPicking our way down the arroyo\nsweat rolling into squinting eyes\nstepping over forgotten twists of rusted barbed wire\n\nThe desiccated outpost\njust a tumble of adobe bricks\na few flies buzzing around the crumbling well\nYou held my legs\nwhile I leaned over the edge\nthe stone dropped two seconds\nbefore the miraculous tiny splash' },
+          { type: 'text', content: 'I sketched that skull\nmany decades on\nin a desultory still life or two\n\nI posted you its image\nbut you registered nothing\nNot the days on the road, not the week in the desert\n\nSome time later I was drunk\nand threw that skull off my balcony\ninto the pond' },
           'Desert Solitare/85.JPG',
           'Desert Solitare/90.JPG',
           'Desert Solitare/100.JPG',
@@ -1410,6 +1466,7 @@
         fade:        true,
         fadeDuration:500,
         fullDisplay: true,
+        noSort:      true,
       },
       'elegy': {
         name: 'Elegy',
@@ -1417,7 +1474,8 @@
         images: [
           'Elegy/10.JPG',
           'Elegy/20.JPG',
-          'Elegy/30.JPG',
+          { type: 'text', content: 'In Between\n\nIt was in the old hotel\nThe high whitewashed walls\nand tall windows\nwith the wet peeling sills\n\nIron rails clanking\nToy trains far below\nhorns unrelenting\nMist choking the hills\n\nThe small crusty loaf\ntorn in half\nthe crumbs scattered carelessly\nacross the stained table' },
+          { type: 'text', content: 'I heard the low rustling,\nthe harried pacing\nthrough the plaster walls\n\nI stopped, listened, fascinated, embarrassed\nThe voice was slow rising\nslowly pleading, slowly heaving\n\nBursting through he cried\n"Can\'t you just choose kindness first"\n\nA drop of rain\ntraced a long slow path down the pane' },
           'Elegy/40.JPG',
           'Elegy/50.JPG',
           'Elegy/60.JPG',
@@ -1430,6 +1488,7 @@
         gray:        true,
         fade:        true,
         fullDisplay: true,
+        noSort:      true,
       },
       'fin-del-mundo': {
         name: 'Fin del Mundo',
@@ -1442,12 +1501,14 @@
           'Fin del Mundo/45.jpg',
           'Fin del Mundo/50.jpg',
           'Fin del Mundo/60.jpg',
+          { type: 'text', content: 'Taking Pictures\n\nIt has been said my stock in trade\nis pulling everything out of context\nBut I continue putting little brackets\naround everything\n\nThere is truth to this\nAdd up all those shutter instants\nThe retrospective of my life\nis one hand of seconds\n\nI wrote your eulogy, in your basement\nDrinking your favorite - martini\nHunched over the curling picture album\nwords were useless trinkets' },
           'Fin del Mundo/70.jpg',
           'Fin del Mundo/80.jpg',
         ],
         light:       true,
         fade:        false,
         fullDisplay: true,
+        noSort:      true,
       },
       'still-lives': {
         name: 'Still Lives',
@@ -1458,6 +1519,8 @@
           'Still Lives/30.JPG',
           'Still Lives/35.JPG',
           'Still Lives/37.jpg',
+          { type: 'text', content: 'Ark of the Rootless\n\nPleading Quieting\nThanking Breathing\nIt was more than a petition, it was less,\nbegun when I was a fool, an equal among my peers.\n\nMy spine revealed\nthe thin cheap mat\non the cool hard floor,\nthe enormous old house\nan ark of the rootless.' },
+          { type: 'text', content: 'Insufferably seductive the voice intoned\nclimb up through chakras\none by one\nseems my kundalini just smiled\nthe serpent\'s eye remained on Judy\nin her lovely leotard.\n\nQuieting breathing\nthird eye closed\npleading and thanking\nsoul unrevealed.\n\nJudy drifted away from me,\nshe went to pray\nand speak in tongues\nkneeling in places I couldn\'t follow.' },
           'Still Lives/40.JPG',
           'Still Lives/45.jpg',
           'Still Lives/47.jpg',
@@ -1467,6 +1530,7 @@
         light:       true,
         fade:        false,
         fullDisplay: true,
+        noSort:      true,
       },
       'tiny-miracles': {
         name: 'Tiny Miracles',
@@ -1491,19 +1555,14 @@
         name: 'Small Language Model',
         seoDescription: 'Photolyric work — merging verse and imagery into a new third form — by Peter B Chase',
         images: [
-          { type: 'text', content: 'I carried cardboard boxes filled with books, pots and pans, and clothes,\n\nup the stairs to my new apartment\n\nI counted each of the twenty four steps\n\nOne for each year it had been, since I last lived alone' },
+          { type: 'text', content: 'Boxes\n\nI carried cardboard boxes filled with books, pots and pans, and clothes,\n\nup the stairs to my new apartment\n\nI counted each of the twenty four steps\n\nOne for each year it had been, since I last lived alone' },
           'War of Words and Images/2015 01 02_3565_edited-1.jpg',
-          { type: 'text', content: 'I woke this morning and listened to you breathing\n\nin the stillness below the threshold of our consciousness\n\nThe rhythm of your breath was the cadence of grace\n\nA sparrow pierced the darkness with its tiny song,\n\nan act of faith that the sun would rise again,\n\nas my faith that you would still love me through another day' },
-          'War of Words and Images/20230307-P1442438-Edit.jpg',
-          { type: 'text', content: 'Giggling under the pine trees in the Arboretum\n\nthe joint revolved between us\n\nDave turned his bloodshot eyes to the sky and I heard the small plane far overhead\n\nFred exhaled a huge cloud looking up and exclaimed, "I hope they don\'t have a marijuana detector!"\n\nWe all collapsed in spasms of laughter and coughing\n\nOur careless and unlikely futures looking down on us' },
-          'War of Words and Images/2015 11 22_6533.jpg',
-          { type: 'text', content: 'Timmy lived in a house with an elevator, a baby grand piano and a spinning wheel\nHis family spent summers in Maine, sailing, and what else I have no idea\n\nI have a picture somewhere of us, each planted in high chairs, in the kitchen\n\nTimmy never took lessons but he would sometimes play the piano\nhead cocked, mouth slightly open\n\nTimmy didn\'t go to my regular school,\nwe didn\'t care or understand why\n\nWe built kingdoms under the shrubs\nand collected insects, stones and treasures\nwith our dirty little hands' },
+          { type: 'text', content: 'Dirty Hands\n\nTimmy lived in a house with an elevator, a baby grand piano and a spinning wheel\nHis family spent summers in Maine, sailing, and what else I have no idea\n\nI have a picture somewhere of us, each planted in high chairs, in the kitchen\n\nTimmy never took lessons but he would sometimes play the piano\nhead cocked, mouth slightly open\n\nTimmy didn\'t go to my regular school,\nwe didn\'t care or understand why\n\nWe built kingdoms under the shrubs\nand collected insects, stones and treasures\nwith our dirty little hands' },
           { type: 'text', content: 'Timmy had a strict bedtime, I asked him once why he didn\'t protest,\nbut he couldn\'t understand the question\n\nThe neighbor girl revealed her mysterious treasure to us behind the garage\nof course we honored the pact and did the same\n\nI slowly lost that invisible thread that bound us\nbuilding the defensive kingdoms of boys and girls,\nembarrassment and competition,\nthat Timmy couldn\'t understand' },
+          'War of Words and Images/B0000002_edited-2.jpg',
+          'War of Words and Images/20230307-P1442438-Edit.jpg',
           'War of Words and Images/P1186647.jpg',
-          { type: 'text', content: 'The bitter crust of rock ground to dust under my boots\nas I finally emerged into the wind\n\nAlone shivering\nI pulled the coarse wool sweater from the orange rucksack\nover my head\nsmelling whiskey and campfire smoke\nand a hundred other trips without you\n\nYou were older, you should have helped me\nfind trails through the canyon\n\nBut I had to search for you\nat the back of the old cemetery\nmy grief washing the dust off your stone' },
-          { type: 'text', content: 'I told you I wanted\nBach\'s Brandenburg number 3 played at my funeral\nI still think that\'s a good plan\nBetter than a eulogy, full of lies' },
-          { type: 'text', content: 'Brilliantly bleached\nSnickering two-inch canines,\na mohawk of boar bristle\nA find\n\nWe delighted and stashed him in my pack\nPicking our way down the arroyo\nsweat rolling into squinting eyes\nstepping over forgotten twists of rusted barbed wire\n\nThe desiccated outpost\njust a tumble of adobe bricks\na few flies buzzing around the crumbling well' },
-          { type: 'text', content: 'You held my legs\nwhile I leaned over the edge\nthe stone dropped two seconds\nbefore the miraculous tiny splash\n\nI sketched that skull\nmany decades on\nin a desultory still life or two\n\nI posted you its image\nbut you registered nothing\nNot the days on the road, not the week in the desert\n\nSome time later I was drunk\nand threw that skull off my balcony\ninto the pond' },
+          'War of Words and Images/20181115-_1010298.jpg',
         ],
         light:           false,
         gray:            true,
@@ -1522,6 +1581,7 @@
           'Elation/30.jpg',
           'Elation/35.jpg',
           'Elation/70.jpg',
+          { type: 'text', content: 'Whiskey\n\nThe bitter crust of rock ground to dust under my boots\nas I finally emerged into the wind\n\nAlone shivering\nI pulled the coarse wool sweater from the orange rucksack\nover my head\nsmelling whiskey and campfire smoke\nand a hundred other trips without you\n\nYou were older, you should have helped me\nfind trails through the canyon\n\nBut I had to search for you\nat the back of the old cemetery\nmy grief washing the dust off your stone' },
           'Elation/80.jpg',
           'Elation/82.jpg',
           'Elation/85.jpg',
@@ -1541,8 +1601,8 @@
           'Adagio/Adagio_10.jpg',
           'Adagio/Adagio_30.jpg',
           'Adagio/Adagio_40.jpg',
-          'Adagio/Adagio_50.jpg',
           'Adagio/Adagio_60.jpg',
+          { type: 'text', content: 'Breathing\n\nI woke this morning and listened to you breathing\n\nin the stillness below the threshold of our consciousness\n\nThe rhythm of your breath was the cadence of grace\n\nA sparrow pierced the darkness with its tiny song,\n\nan act of faith that the sun would rise again,\n\nas my faith that you would still love me through another day' },
           'Adagio/Adagio_70.jpg',
           'Adagio/Adagio_80.jpg',
           'Adagio/Adagio_90.jpg',
@@ -1554,6 +1614,30 @@
         fullDisplay:     true,
         noSort:          true,
       },
+      'sierra': {
+        name: 'Sierra',
+        seoDescription: 'Sierra Nevada and California landscapes — fine art photography by Peter B Chase',
+        images: [
+          'Sierra/Cali 2026 Folio/0.jpg',
+          'Sierra/Cali 2026 Folio/2.jpg',
+          'Sierra/Cali 2026 Folio/3.jpg',
+          'Sierra/Cali 2026 Folio/4.jpg',
+          'Sierra/Cali 2026 Folio/5.jpg',
+          'Sierra/Cali 2026 Folio/5.5.jpg',
+          'Sierra/Cali 2026 Folio/7.jpg',
+          { type: 'text', content: 'The Arb\n\nGiggling under the pine trees in the Arboretum\n\nthe joint revolved between us\n\nDave turned his bloodshot eyes to the sky and I heard the small plane far overhead\n\nFred exhaled a huge cloud looking up and exclaimed, "I hope they don\'t have a marijuana detector!"\n\nWe all collapsed in spasms of laughter and coughing\n\nOur careless and unlikely futures looking down on us' },
+          'Sierra/Cali 2026 Folio/8.jpg',
+          'Sierra/Cali 2026 Folio/9.jpg',
+          'Sierra/Cali 2026 Folio/10.jpg',
+          'Sierra/Cali 2026 Folio/11.jpg',
+          'Sierra/Cali 2026 Folio/12.jpg',
+          'Sierra/Cali 2026 Folio/15.jpg',
+        ],
+        light:       true,
+        fade:        false,
+        fullDisplay: true,
+        noSort:      true,
+      },
     };
 
     const galSection = document.getElementById('gallery');
@@ -1562,15 +1646,18 @@
     let galMode   = {};
     let galIndex  = 0;
     let galBusy   = false;
+    let galKey    = '';
+    const galCounter = document.getElementById('gal-counter');
 
     const galPrevBtn  = document.getElementById('gallery-prev');
     const galNextBtn  = document.getElementById('gallery-next');
-    const galCloseBtn = document.getElementById('gallery-close');
-    const galTextEl   = document.getElementById('gallery-text');
+    const galCloseBtn        = document.getElementById('gallery-close');
+    const galBookmarkCloseBtn = document.getElementById('gallery-bookmark-close');
+    const galTextEl          = document.getElementById('gallery-text');
 
     function isTextSlide(s) { return s && typeof s === 'object' && s.type === 'text'; }
     function renderTextSlide(s) {
-      galTextEl.innerHTML = s.content.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+      galTextEl.innerHTML = `<div class="poem-inner">${s.content.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('')}</div>`;
     }
 
     function updateGalArrows() {
@@ -1583,20 +1670,29 @@
       };
 
       if (isLast) {
-        setArrow(galPrevBtn, false);
+        setArrow(galPrevBtn, !isFirst);
         setArrow(galNextBtn, false);
         galCloseBtn.classList.add('at-end');
-        galCloseBtn.focus();
       } else {
         setArrow(galPrevBtn, !isFirst);
         setArrow(galNextBtn, true);
         galCloseBtn.classList.remove('at-end');
+      }
+
+      if (galKey === 'light-and-language' && isTextSlide(galImages[galIndex])) {
+        const total   = galImages.filter(isTextSlide).length;
+        const current = galImages.slice(0, galIndex + 1).filter(isTextSlide).length;
+        galCounter.textContent = `${current} of ${total}`;
+        galCounter.style.display = '';
+      } else {
+        galCounter.style.display = 'none';
       }
     }
 
     function galOpen(key) {
       container.style.visibility = 'hidden';
       galBusy   = false;
+      galKey    = key;
       galMode   = galleries[key];
       galSection.classList.toggle('full-display', !!galMode.fullDisplay);
       galImages = galMode.noSort ? galMode.images.slice() : galMode.images.slice().sort((a, b) => {
@@ -1606,7 +1702,10 @@
         if (!isNaN(na) && !isNaN(nb)) return na - nb;
         return fa < fb ? -1 : fa > fb ? 1 : 0;
       });
-      galIndex  = 0;
+      galIndex = 0;
+      const saved = parseInt(localStorage.getItem('gallery-pos-' + key) || '0', 10);
+      if (saved > 0 && saved < galImages.length) galIndex = saved;
+      galBookmarkCloseBtn.style.display = 'block';
       galSection.classList.toggle('light', !!galMode.light);
       galSection.classList.toggle('gray',  !!galMode.gray);
       galImages.forEach(slide => { if (!isTextSlide(slide)) new Image().src = encodeURI(slide); });
@@ -1620,7 +1719,7 @@
       galTextEl.style.pointerEvents = 'none';
       void galImg.offsetWidth;
 
-      const firstIsText = isTextSlide(galImages[0]);
+      const firstIsText = isTextSlide(galImages[galIndex]);
 
       if (galMode.fade) {
         galSection.classList.add('open');
@@ -1628,7 +1727,7 @@
         updateGalArrows();
         const dur = galMode.fadeOpenDuration || '';
         if (firstIsText) {
-          renderTextSlide(galImages[0]);
+          renderTextSlide(galImages[galIndex]);
           void galTextEl.offsetWidth;
           galTextEl.style.transition = dur ? `opacity ${dur} ease` : '';
           requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1655,11 +1754,11 @@
             else { doFadeIn(loader); }
           };
           loader.onerror = () => doFadeIn(loader);
-          loader.src = encodeURI(galImages[0]);
+          loader.src = encodeURI(galImages[galIndex]);
         }
       } else {
         if (firstIsText) {
-          renderTextSlide(galImages[0]);
+          renderTextSlide(galImages[galIndex]);
           galSection.classList.add('open');
           galSection.removeAttribute('aria-hidden');
           requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1687,7 +1786,7 @@
             galImg.style.pointerEvents = '';
             updateGalArrows();
           };
-          loader.src = encodeURI(galImages[0]);
+          loader.src = encodeURI(galImages[galIndex]);
         }
       }
     }
@@ -1699,6 +1798,11 @@
       galTextEl.style.opacity = '0';
       galTextEl.style.pointerEvents = 'none';
       container.style.visibility = '';
+    }
+
+    function galCloseAndClear() {
+      localStorage.removeItem('gallery-pos-' + galKey);
+      galClose();
     }
 
     function galGoTo(index) {
@@ -1778,16 +1882,21 @@
       ['#still-lives','still-lives'], ['#tiny-miracles','tiny-miracles'],
       ['#elation','elation'], ['#adagio','adagio'],
       ['#light-and-language','light-and-language'],
+      ['#sierra','sierra'],
     ].forEach(([href, key]) => {
       document.querySelectorAll(`a[href="${href}"]`).forEach(el => el.addEventListener('click', e => {
         e.preventDefault(); if (galleries[key].images.length) galOpen(key);
       }));
     });
 
-    document.getElementById('gallery-close').addEventListener('click', galClose);
+    document.getElementById('gallery-close').addEventListener('click', galCloseAndClear);
+    galBookmarkCloseBtn.addEventListener('click', () => {
+      localStorage.setItem('gallery-pos-' + galKey, galIndex);
+      galClose();
+    });
     galPrevBtn.addEventListener('click', () => galGoTo(galIndex - 1));
     galNextBtn.addEventListener('click', () => galGoTo(galIndex + 1));
-    galImg.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); });
+    galImg.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); else galCloseAndClear(); });
     galTextEl.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); });
 
     let touchStartX = 0, touchStartY = 0;
@@ -1809,7 +1918,7 @@
       if (!galSection.classList.contains('open')) return;
       if (e.key === 'ArrowRight') galGoTo(galIndex + 1);
       if (e.key === 'ArrowLeft')  galGoTo(galIndex - 1);
-      if (e.key === 'Escape')     galClose();
+      if (e.key === 'Escape')     galCloseAndClear();
     });
 
     // ── Contact panel ─────────────────────────────────────
@@ -1920,7 +2029,7 @@
         contact_intro: 'Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.',
         contact_name: 'Name', contact_email: 'Email', contact_message: 'Message', contact_send: 'Send',
         gallery_dreams: 'Dreams and Memories', gallery_adagio: 'Adagio', gallery_sotto: 'Sotto Voce', gallery_fin: 'Fin del Mundo', gallery_solitaire: 'Desert Solitaire', gallery_elation: 'Elation', gallery_continental: 'Continental Drift', gallery_elegy: 'Elegy', gallery_miracles: 'Tiny Miracles', gallery_lives: 'Still Lives', gallery_unintelligent: 'Unintelligent Design',
-        why_html: `<p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel slide projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p><p style="font-style:italic;padding-left:2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p><p>Many years later I carried mother's beautiful Leica M3 around campus, and reveled in the analog alchemy of watching my images slowly materialize at the bottom of trays filled with liquid developer. I still believed in those frontier journeys. And I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages — physical and chemical — followed.</p><p>My journeys are farther afield now, and this site is my message in a bottle.</p><p>Unfurl a few of the messages inside.</p><p>— pc, 2026</p>`,
+        why_html: `<p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel slide projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p><p style="font-style:italic;padding-left:2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p><p>Many years later I carried mother's beautiful Leica M3 around campus, and reveled in the analog alchemy of watching my images slowly materialize at the bottom of trays filled with liquid developer. I still believed in those frontier journeys. And I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages — physical and chemical — followed.</p><p>My journeys are farther afield now, and this site is my message in a bottle.</p><p>Unfurl a few of the notes inside.</p><p>— pc, 2026</p>`,
         notes_html: `<p class="notes-date">May 2026</p><p class="notes-heading">Hello World!</p><p>Welcome to version 1.0. Building a site has been on the old mental to-do list for some time, but as I've zero web design background instead my energy had been spent inventing excuses and polishing my procrastination skills. But as luck would have it AI technology finally caught up with my ignorance! I can sincerely say diving into the deep end of the internet pool has been a bracing experience I've truly enjoyed — my sincerest thanks go to my (literally) tireless and infinitely patient assistant Claude.</p><p class="notes-heading">Stay Tuned</p><p>Periodically I'll be adding new images, new functionality and hopefully fix more things than I break. All of the current photos are from, I believe, the last 4 years, but before long I'll be digging in the archives and post some "classics". :-)</p><p class="notes-heading">Contact Page</p><p>Any comments, suggestions, sycophantic praise or basically anything on this side of mean comments about my mental health are encouraged and appreciated.</p><img src="Behind the Curtain/20211031-IMG_1196.jpg" class="notes-photo" alt="Peter B Chase"><p class="notes-copyright">© 2026 Peter B Chase. All rights reserved. All images on this site are the exclusive property of Peter B Chase and may not be reproduced, copied, transmitted, or manipulated without written permission. Unauthorized use is a violation of federal copyright law and will be prosecuted to the full extent of the law, including but not limited to, a full body wax administered by a really rough, six-foot-tall Swedish woman, those really really cringy photographs your girlfriend took of you in high school being published online and possibly something involving a plague of locusts, or other bad stuff.</p>`,
         art_html: `<p>These photographs are of course, spontaneous improvisations, but then... they're not: landscapes verging on transcendent, urban moments grabbed mid-breath, tiny shards of found beauty — all made with the same restless instinct, whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley. But then you look a little deeper and find some highly intentional composition, feel some Shanshui ink-wash stillness or the unflinching directness of Diane Arbus — all morphed through a guy who's been at it since the 1970s, and still hasn't decided what he wants to be when he grows up.</p><p>Mr. Chase calls it "Documentary Surrealism," which is either a authentic aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both?</p><p>Mr. Chase studied art and photography properly, at actual universities, so there's concept and technique under the chaos. But his real education has been in the decades since, traveling the world chasing wonder with a camera. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy.</p><p>So is it art? Pity, but you'll have to decide. Peter's just going to keep making the pictures either way.</p>`,
       },
