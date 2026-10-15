@@ -1408,7 +1408,7 @@
           'Continental Drift/30.JPG',
           'Continental Drift/33.JPG',
           'Continental Drift/35.jpg',
-          { type: 'text', content: 'The Little Man\n\nYou said you wished you wouldn\'t think\nthe same thoughts over and over\nand I agreed\nI too longed to silence\nthe homunculus trapped inside my head\nlooking disapprovingly out\nthrough the sockets of my skull\nI swept those twin beams over and over\nbut they were not cameras, not portals\njust hopelessly tiny filters\nthrough which not even Plato\'s shadows\ncould pass' },
+          { type: 'text', content: 'The Little Man\n\nYou said you wished you wouldn\'t think\nthe same thoughts over and over\nand I agreed\n\nI too longed to silence\nthe homunculus trapped inside my head\nlooking disapprovingly out\nthrough the sockets of my skull\n\nI swept those twin beams over and over\nbut they were not cameras, not portals\n\njust hopelessly tiny filters\nthrough which not even Plato\'s shadows\ncould pass' },
           'Continental Drift/40.jpg',
           'Continental Drift/50.JPG',
           'Continental Drift/60.JPG',
@@ -1702,6 +1702,7 @@
       galMode   = galleries[key];
       galSection.classList.toggle('full-display', !!galMode.fullDisplay);
       galImages = galMode.noSort ? galMode.images.slice() : galMode.images.slice().sort((a, b) => {
+        if (typeof a !== 'string' || typeof b !== 'string') return 0;
         const fa = a.split('/').pop().toLowerCase();
         const fb = b.split('/').pop().toLowerCase();
         const na = parseFloat(fa), nb = parseFloat(fb);
@@ -1864,10 +1865,10 @@
           galBusy = false;
           updateGalArrows();
         } else {
+          galTextEl.style.opacity = '0';
+          galTextEl.style.pointerEvents = 'none';
           const loader = new Image();
           loader.onload = () => {
-            galTextEl.style.opacity = '0';
-            galTextEl.style.pointerEvents = 'none';
             galImg.src = loader.src;
             galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
             galImg.style.opacity = '1';
@@ -1875,7 +1876,7 @@
             galBusy = false;
             updateGalArrows();
           };
-          loader.onerror = () => { galBusy = false; };
+          loader.onerror = () => { galBusy = false; updateGalArrows(); };
           loader.src = encodeURI(galImages[next]);
         }
       }
