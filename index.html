@@ -37,16 +37,141 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "mainEntity": {
-      "@type": "Person",
-      "name": "Peter B Chase",
-      "url": "https://peterbchase.com",
-      "jobTitle": "Fine Art Photographer",
-      "description": "Fine art photographer working in documentary surrealism — landscapes, travel, and photo-poetry.",
-      "image": "https://peterbchase.com/Behind the Curtain/20211031-IMG_1196.jpg",
-      "sameAs": ["https://www.flickr.com/photos/peterbchase"]
-    }
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "mainEntity": {
+          "@id": "https://peterbchase.com/#peter",
+          "@type": "Person",
+          "name": "Peter B Chase",
+          "url": "https://peterbchase.com",
+          "jobTitle": "Fine Art Photographer and Poet",
+          "description": "Fine art photographer and poet working in documentary surrealism — landscapes, travel, and photo-poetry.",
+          "image": "https://peterbchase.com/Behind%20the%20Curtain/20211031-IMG_1196.jpg",
+          "sameAs": ["https://www.flickr.com/photos/peterbchase"]
+        }
+      },
+      {
+        "@type": "ImageGallery", "name": "Sierra", "url": "https://peterbchase.com/#sierra",
+        "description": "Sierra Nevada and California landscapes — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Desert Solitaire", "url": "https://peterbchase.com/#solitaire",
+        "description": "Southwestern American desert landscapes — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Fin del Mundo", "url": "https://peterbchase.com/#fin-del-mundo",
+        "description": "Dramatic Patagonian landscapes — fine art travel photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Adagio", "url": "https://peterbchase.com/#adagio",
+        "description": "Evocative Mediterranean travel photography — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Sotto Voce", "url": "https://peterbchase.com/#sotto-voce",
+        "description": "Quiet, powerful landscapes from around the world — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Continental Drift", "url": "https://peterbchase.com/#continental-drift",
+        "description": "Impressionistic world travel photography — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Elegy", "url": "https://peterbchase.com/#elegy",
+        "description": "Poetic images of a fading Europe — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Elation", "url": "https://peterbchase.com/#elation",
+        "description": "Joyful motion landscapes — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Still Lives", "url": "https://peterbchase.com/#still-lives",
+        "description": "Found still life photography — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Tiny Miracles", "url": "https://peterbchase.com/#tiny-miracles",
+        "description": "Exquisite macro photography — fine art detail photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Unintelligent Design", "url": "https://peterbchase.com/#unintelligent-design",
+        "description": "Humorous and absurd documentary surrealism — fine art photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "ImageGallery", "name": "Dreams and Memories", "url": "https://peterbchase.com/#light-and-language",
+        "description": "Photolyric work merging verse and imagery — poetry and photography by Peter B Chase",
+        "author": {"@id": "https://peterbchase.com/#peter"}
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "Whiskey",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "The bitter crust of rock ground to dust under my boots as I finally emerged into the wind. Alone shivering I pulled the coarse wool sweater from the orange rucksack over my head smelling whiskey and campfire smoke and a hundred other trips without you. You were older, you should have helped me find trails through the canyon. But I had to search for you at the back of the old cemetery my grief washing the dust off your stone."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "The Little Man",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "You said you wished you wouldn't think the same thoughts over and over and I agreed. I too longed to silence the homunculus trapped inside my head looking disapprovingly out through the sockets of my skull. I swept those twin beams over and over but they were not cameras, not portals — just hopelessly tiny filters through which not even Plato's shadows could pass."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "A Good Plan",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "I told you I wanted Bach's Brandenburg number 3 played at my funeral. I still think that's a good plan. Better than a eulogy, full of lies."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "The Well",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "Brilliantly bleached. Snickering two-inch canines, a mohawk of boar bristle. A find. We delighted and stashed him in my pack. Picking our way down the arroyo sweat rolling into squinting eyes stepping over forgotten twists of rusted barbed wire. The desiccated outpost just a tumble of adobe bricks a few flies buzzing around the crumbling well. You held my legs while I leaned over the edge the stone dropped two seconds before the miraculous tiny splash. I sketched that skull many decades on in a desultory still life or two. I posted you its image but you registered nothing. Not the days on the road, not the week in the desert. Some time later I was drunk and threw that skull off my balcony into the pond."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "In Between",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "It was in the old hotel. The high whitewashed walls and tall windows with the wet peeling sills. Iron rails clanking. Toy trains far below, horns unrelenting. Mist choking the hills. The small crusty loaf torn in half the crumbs scattered carelessly across the stained table. I heard the low rustling, the harried pacing, through the plaster walls. I stopped, listened, fascinated, embarrassed. The voice was slow rising, slowly pleading, slowly heaving. Bursting through he cried: Can't you just choose kindness first. A drop of rain traced a long slow path down the pane."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "Taking Pictures",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "It has been said my stock in trade is pulling everything out of context. But I continue putting little brackets around everything. There is truth to this. Add up all those shutter instants. The retrospective of my life is one hand of seconds. I wrote your eulogy, in your basement. Drinking your favorite — martini. Hunched over the curling picture album words were useless trinkets."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "Ark of the Rootless",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "Pleading Quieting Thanking Breathing. It was more than a petition, it was less, begun when I was a fool, an equal among my peers. My spine revealed the thin cheap mat on the cool hard floor, the enormous old house an ark of the rootless. Insufferably seductive the voice intoned climb up through chakras one by one. Seems my kundalini just smiled, the serpent's eye remained on Judy in her lovely leotard. Quieting breathing, third eye closed, pleading and thanking, soul unrevealed. Judy drifted away from me, she went to pray and speak in tongues kneeling in places I couldn't follow."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "Boxes",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "I carried cardboard boxes filled with books, pots and pans, and clothes, up the stairs to my new apartment. I counted each of the twenty four steps. One for each year it had been, since I last lived alone."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "My Night",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "It was warm inside the old chapel. The stained glass is so grey at night I said. Don't you see! you said, the windows are so beautiful from the outside."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "Breathing",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "I woke this morning and listened to you breathing. In the stillness below the threshold of our consciousness. The rhythm of your breath was the cadence of grace. A sparrow pierced the darkness with its tiny song, an act of faith that the sun would rise again, as my faith that you would still love me through another day."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "The Arb",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "Giggling under the pine trees in the Arboretum. The joint revolved between us. Dave turned his bloodshot eyes to the sky and I heard the small plane far overhead. Fred exhaled a huge cloud looking up and exclaimed: I hope they don't have a marijuana detector! We all collapsed in spasms of laughter and coughing. Our careless and unlikely futures looking down on us."
+      },
+      {
+        "@type": "CreativeWork", "genre": "Poetry", "name": "Dirty Hands",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "text": "Timmy lived in a house with an elevator, a baby grand piano and a spinning wheel. His family spent summers in Maine, sailing, and what else I have no idea. I have a picture somewhere of us, each planted in high chairs, in the kitchen. Timmy never took lessons but he would sometimes play the piano, head cocked, mouth slightly open. Timmy didn't go to my regular school, we didn't care or understand why. We built kingdoms under the shrubs and collected insects, stones and treasures with our dirty little hands. Timmy had a strict bedtime, I asked him once why he didn't protest, but he couldn't understand the question. The neighbor girl revealed her mysterious treasure to us behind the garage, of course we honored the pact and did the same. I slowly lost that invisible thread that bound us building the defensive kingdoms of boys and girls, embarrassment and competition, that Timmy couldn't understand."
+      }
+    ]
   }
   </script>
 
