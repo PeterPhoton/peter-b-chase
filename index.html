@@ -50,17 +50,6 @@
   }
   </script>
 
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Peter B Chase",
-    "url": "https://peterbchase.com",
-    "jobTitle": "Fine Art Photographer",
-    "sameAs": ["https://peterbchase.com", "https://www.flickr.com/photos/peterbchase"]
-  }
-  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,6 +72,17 @@
       width: 100%;
       overflow: hidden;
       background: var(--cream);
+    }
+
+    .seo-text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
     }
 
     /* ─── Slideshow ─────────────────────────────────────── */
@@ -1010,6 +1010,23 @@
     }
     #gallery.gray #gal-counter { color: rgba(247, 245, 240, 1.0); }
 
+    #gal-info {
+      position: absolute;
+      bottom: 3.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: rgba(247, 245, 240, 0.9);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    #gallery.light #gal-info { color: rgba(25, 22, 15, 0.9); background: rgba(247, 245, 240, 0.7); }
+
     /* Close button fully opaque at end of sequence */
     #gallery-close.at-end,
     #gallery.light #gallery-close.at-end { color: rgba(25, 22, 15, 1.0) !important; }
@@ -1154,6 +1171,7 @@
     <button id="gallery-prev" class="gal-arrow" aria-label="Previous image">&#8249;</button>
     <button id="gallery-next" class="gal-arrow" aria-label="Next image">&#8250;</button>
     <div id="gal-counter"></div>
+    <div id="gal-info" hidden></div>
   </section>
 
   <!-- Header -->
@@ -1443,29 +1461,29 @@
         name: 'Desert Solitaire',
         seoDescription: 'Secret southwestern American landscapes — fine art photography by Peter B Chase',
         images: [
-          'Desert Solitare/10.jpg',
-          'Desert Solitare/20.JPG',
-          'Desert Solitare/30.JPG',
-          'Desert Solitare/40.JPG',
-          'Desert Solitare/50.JPG',
-          'Desert Solitare/60.JPG',
-          'Desert Solitare/70.JPG',
-          'Desert Solitare/75.JPG',
-          'Desert Solitare/80.JPG',
+          { src: 'Desert Solitare/10.jpg', alt: 'Zabriskie Point, Death Valley National Park, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/20.JPG', alt: 'Escalante Grand Staircase National Monument, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/30.JPG', alt: 'Bear Mountain, Red Rock Secret Mountain Wilderness, Arizona — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/40.JPG', alt: 'Wilson Mountain, Red Rock Secret Mountain Wilderness, Arizona — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/50.JPG', alt: 'Bear Mountain, Red Rock Secret Mountain Wilderness, Arizona — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/60.JPG', alt: 'Mummy Cave, Canyon de Chelly National Monument, Arizona — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/70.JPG', alt: 'Roadside shrine, Arizona — fine art documentary photography by Peter B Chase' },
+          { src: 'Desert Solitare/75.JPG', alt: 'Zabriskie Point, Death Valley National Park, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/80.JPG', alt: 'Canyonlands National Park, Utah — fine art landscape photography by Peter B Chase' },
           { type: 'text', content: 'The Well\n\nBrilliantly bleached\nSnickering two-inch canines,\na mohawk of boar bristle\nA find\n\nWe delighted and stashed him in my pack\nPicking our way down the arroyo\nsweat rolling into squinting eyes\nstepping over forgotten twists of rusted barbed wire\n\nThe desiccated outpost\njust a tumble of adobe bricks\na few flies buzzing around the crumbling well\nYou held my legs\nwhile I leaned over the edge\nthe stone dropped two seconds\nbefore the miraculous tiny splash' },
           { type: 'text', content: 'I sketched that skull\nmany decades on\nin a desultory still life or two\n\nI posted you its image\nbut you registered nothing\nNot the days on the road, not the week in the desert\n\nSome time later I was drunk\nand threw that skull off my balcony\ninto the pond' },
-          'Desert Solitare/85.JPG',
-          'Desert Solitare/90.JPG',
-          'Desert Solitare/100.JPG',
-          'Desert Solitare/102.JPG',
-          'Desert Solitare/105.JPG',
-          'Desert Solitare/107.JPG',
-          'Desert Solitare/110.JPG',
-          'Desert Solitare/120.JPG',
-          'Desert Solitare/125.JPG',
-          'Desert Solitare/130.JPG',
-          'Desert Solitare/140.JPG',
-          'Desert Solitare/150.JPG',
+          { src: 'Desert Solitare/85.JPG', alt: 'Red Rock Canyon National Conservation Area, Nevada — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/90.JPG', alt: 'Navajo Nation, Arizona — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/100.JPG', alt: 'Henry Mountains, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/102.JPG', alt: 'Aspen grove, Scenic Byway 12, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/105.JPG', alt: 'Red Rock Canyon National Conservation Area, Nevada — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/107.JPG', alt: 'Arches National Park, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/110.JPG', alt: 'Escalante Grand Staircase National Monument, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/120.JPG', alt: 'Escalante Grand Staircase National Monument, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/125.JPG', alt: 'Escalante Grand Staircase National Monument, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/130.JPG', alt: 'Arches National Park, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/140.JPG', alt: 'Buckskin Gulch, Utah — fine art landscape photography by Peter B Chase' },
+          { src: 'Desert Solitare/150.JPG', alt: 'Antelope Canyon, Arizona — fine art landscape photography by Peter B Chase' },
         ],
         light:       true,
         fade:        true,
@@ -1499,16 +1517,16 @@
         name: 'Fin del Mundo',
         seoDescription: 'Dramatic Patagonian moments — fine art travel photography by Peter B Chase',
         images: [
-          'Fin del Mundo/10.jpg',
-          'Fin del Mundo/20.jpg',
-          'Fin del Mundo/30.jpg',
-          'Fin del Mundo/40.jpg',
-          'Fin del Mundo/45.jpg',
-          'Fin del Mundo/50.jpg',
-          'Fin del Mundo/60.jpg',
+          { src: 'Fin del Mundo/10.jpg', alt: 'Monumento Natural Los Pingüinos, Chile — fine art travel photography by Peter B Chase' },
+          { src: 'Fin del Mundo/20.jpg', alt: 'Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase' },
+          { src: 'Fin del Mundo/30.jpg', alt: 'Recoleta Cemetery, Buenos Aires, Argentina — fine art travel photography by Peter B Chase' },
+          { src: 'Fin del Mundo/40.jpg', alt: 'Patagonia, Argentina — fine art landscape photography by Peter B Chase' },
+          { src: 'Fin del Mundo/45.jpg', alt: 'Buenos Aires, Argentina — fine art travel photography by Peter B Chase' },
+          { src: 'Fin del Mundo/50.jpg', alt: 'Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase' },
+          { src: 'Fin del Mundo/60.jpg', alt: 'Condor Glacier, Chile — fine art landscape photography by Peter B Chase' },
           { type: 'text', content: 'Taking Pictures\n\nIt has been said my stock in trade\nis pulling everything out of context\nBut I continue putting little brackets\naround everything\n\nThere is truth to this\nAdd up all those shutter instants\nThe retrospective of my life\nis one hand of seconds\n\nI wrote your eulogy, in your basement\nDrinking your favorite - martini\nHunched over the curling picture album\nwords were useless trinkets' },
-          'Fin del Mundo/70.jpg',
-          'Fin del Mundo/80.jpg',
+          { src: 'Fin del Mundo/70.jpg', alt: 'Cuernos del Paine, Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase' },
+          { src: 'Fin del Mundo/80.jpg', alt: 'Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase' },
         ],
         light:       true,
         fade:        false,
@@ -1604,14 +1622,14 @@
         name: 'Adagio',
         seoDescription: 'Evocative high end Mediterranean travel photography — by Peter B Chase',
         images: [
-          'Adagio/Adagio_10.jpg',
-          'Adagio/Adagio_30.jpg',
-          'Adagio/Adagio_40.jpg',
-          'Adagio/Adagio_60.jpg',
+          { src: 'Adagio/Adagio_10.jpg', alt: 'Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
+          { src: 'Adagio/Adagio_30.jpg', alt: 'Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
+          { src: 'Adagio/Adagio_40.jpg', alt: 'Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
+          { src: 'Adagio/Adagio_60.jpg', alt: 'Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
           { type: 'text', content: 'Breathing\n\nI woke this morning and listened to you breathing\n\nin the stillness below the threshold of our consciousness\n\nThe rhythm of your breath was the cadence of grace\n\nA sparrow pierced the darkness with its tiny song,\n\nan act of faith that the sun would rise again,\n\nas my faith that you would still love me through another day' },
-          'Adagio/Adagio_70.jpg',
-          'Adagio/Adagio_80.jpg',
-          'Adagio/Adagio_90.jpg',
+          { src: 'Adagio/Adagio_70.jpg', alt: 'Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
+          { src: 'Adagio/Adagio_80.jpg', alt: 'Milos, Greece — fine art travel photography by Peter B Chase' },
+          { src: 'Adagio/Adagio_90.jpg', alt: 'Greek Orthodox Chapel, Milos, Greece — fine art travel photography by Peter B Chase' },
         ],
         light:           true,
         fade:            true,
@@ -1624,20 +1642,20 @@
         name: 'Sierra',
         seoDescription: 'Sierra Nevada and California landscapes — fine art photography by Peter B Chase',
         images: [
-          'Sierra/Cali 2026 Folio/0.jpg',
-          'Sierra/Cali 2026 Folio/2.jpg',
-          'Sierra/Cali 2026 Folio/3.jpg',
-          'Sierra/Cali 2026 Folio/4.jpg',
-          'Sierra/Cali 2026 Folio/5.jpg',
-          'Sierra/Cali 2026 Folio/5.5.jpg',
-          'Sierra/Cali 2026 Folio/7.jpg',
+          { src: 'Sierra/Cali 2026 Folio/0.jpg', alt: 'Kearsarge Lakes, Kings Canyon National Park, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/2.jpg', alt: 'Alabama Hills with Mount Whitney, Kings Canyon National Park, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/3.jpg', alt: 'Rae Lakes, Kings Canyon National Park, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/4.jpg', alt: 'Preserved foxtail pine trunk at eleven thousand feet, Kings Canyon National Park, Sierra Nevada, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/5.jpg', alt: 'Kearsarge Pass, Big Pothole Lake, John Muir Wilderness, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/5.5.jpg', alt: 'Rae Lakes, Kings Canyon National Park, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/7.jpg', alt: 'Kearsarge Lakes, Kings Canyon National Park, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
           { type: 'text', content: 'The Arb\n\nGiggling under the pine trees in the Arboretum\n\nthe joint revolved between us\n\nDave turned his bloodshot eyes to the sky and I heard the small plane far overhead\n\nFred exhaled a huge cloud looking up and exclaimed, "I hope they don\'t have a marijuana detector!"\n\nWe all collapsed in spasms of laughter and coughing\n\nOur careless and unlikely futures looking down on us' },
-          'Sierra/Cali 2026 Folio/8.jpg',
-          'Sierra/Cali 2026 Folio/9.jpg',
-          'Sierra/Cali 2026 Folio/10.jpg',
-          'Sierra/Cali 2026 Folio/11.jpg',
-          'Sierra/Cali 2026 Folio/12.jpg',
-          'Sierra/Cali 2026 Folio/15.jpg',
+          { src: 'Sierra/Cali 2026 Folio/8.jpg', alt: 'Alabama Hills with Mount Whitney, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/9.jpg', alt: 'Wildfire smoke over Yosemite National Park, Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/10.jpg', alt: 'Rae Lakes at sunset, Kings Canyon National Park, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/11.jpg', alt: 'Buck Rock Fire Lookout, Kings Canyon National Park, Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/12.jpg', alt: 'Wildfire smoke over Yosemite National Park, Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/15.jpg', alt: 'Rae Lakes at dawn, Eastern Sierra Nevada Mountains, California — fine art landscape photography by Peter B Chase' },
         ],
         light:       true,
         fade:        false,
@@ -1662,6 +1680,8 @@
     const galTextEl          = document.getElementById('gallery-text');
 
     function isTextSlide(s) { return s && typeof s === 'object' && s.type === 'text'; }
+    function slideUrl(s)  { return encodeURI(typeof s === 'string' ? s : s.src); }
+    function slideAlt(s, mode) { return (typeof s === 'object' && s.alt) ? s.alt : (mode.seoDescription || `${mode.name} — Peter B Chase`); }
     function renderTextSlide(s) {
       galTextEl.innerHTML = `<div class="poem-inner">${s.content.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('')}</div>`;
     }
@@ -1715,7 +1735,7 @@
       galBookmarkCloseBtn.style.display = 'block';
       galSection.classList.toggle('light', !!galMode.light);
       galSection.classList.toggle('gray',  !!galMode.gray);
-      galImages.forEach(slide => { if (!isTextSlide(slide)) new Image().src = encodeURI(slide); });
+      galImages.forEach(slide => { if (!isTextSlide(slide)) new Image().src = slideUrl(slide); });
 
       // Snap old content away instantly so it can't flash when a new gallery opens
       galImg.style.transition = 'none';
@@ -1761,7 +1781,7 @@
             else { doFadeIn(loader); }
           };
           loader.onerror = () => doFadeIn(loader);
-          loader.src = encodeURI(galImages[galIndex]);
+          loader.src = slideUrl(galImages[galIndex]);
         }
       } else {
         if (firstIsText) {
@@ -1777,7 +1797,7 @@
           const loader = new Image();
           loader.onload = () => {
             galImg.src = loader.src;
-            galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
+            galImg.alt = slideAlt(galImages[galIndex], galMode);
             galSection.classList.add('open');
             galSection.removeAttribute('aria-hidden');
             requestAnimationFrame(() => requestAnimationFrame(() => {
@@ -1793,7 +1813,7 @@
             galImg.style.pointerEvents = '';
             updateGalArrows();
           };
-          loader.src = encodeURI(galImages[galIndex]);
+          loader.src = slideUrl(galImages[galIndex]);
         }
       }
     }
@@ -1839,8 +1859,8 @@
             }));
           } else {
             galImg.style.transition = 'none';
-            galImg.src = encodeURI(galImages[next]);
-            galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
+            galImg.src = slideUrl(galImages[next]);
+            galImg.alt = slideAlt(galImages[next], galMode);
             const fadeIn = () => {
               requestAnimationFrame(() => requestAnimationFrame(() => {
                 galImg.style.transition = `opacity ${fadeDur}ms ease`;
@@ -1870,14 +1890,14 @@
           const loader = new Image();
           loader.onload = () => {
             galImg.src = loader.src;
-            galImg.alt = galMode.seoDescription || `${galMode.name} — Peter B Chase`;
+            galImg.alt = slideAlt(galImages[next], galMode);
             galImg.style.opacity = '1';
             galImg.style.pointerEvents = '';
             galBusy = false;
             updateGalArrows();
           };
           loader.onerror = () => { galBusy = false; updateGalArrows(); };
-          loader.src = encodeURI(galImages[next]);
+          loader.src = slideUrl(galImages[next]);
         }
       }
     }
@@ -1921,11 +1941,19 @@
       }
     }, { passive: true });
 
+    const galInfoEl = document.getElementById('gal-info');
     document.addEventListener('keydown', e => {
       if (!galSection.classList.contains('open')) return;
       if (e.key === 'ArrowRight') galGoTo(galIndex + 1);
       if (e.key === 'ArrowLeft')  galGoTo(galIndex - 1);
       if (e.key === 'Escape')     galCloseAndClear();
+      if (e.key === 'i' || e.key === 'I') {
+        const slide = galImages[galIndex];
+        if (isTextSlide(slide)) return;
+        const filename = (typeof slide === 'string' ? slide : slide.src).split('/').pop();
+        galInfoEl.textContent = filename;
+        galInfoEl.hidden = !galInfoEl.hidden;
+      }
     });
 
     // ── Contact panel ─────────────────────────────────────
@@ -2165,5 +2193,114 @@
   </script>
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
+  <!-- Static content for search engine indexing -->
+  <section class="seo-text">
+    <h1>Peter B Chase — Fine Art Photographer and Poet</h1>
+    <p>Fine art photography by Peter B Chase — landscape, travel, and documentary surrealism from around the world. Galleries, poetry, and visual storytelling.</p>
+
+    <article>
+      <h2>Why Photography — Peter B Chase</h2>
+      <p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel slide projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions: Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p>
+      <p>Many years later I carried mother's beautiful Leica M3 around campus, and reveled in the analog alchemy of watching my images slowly materialize at the bottom of trays filled with liquid developer. I still believed in those frontier journeys. And I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages — physical and chemical — followed.</p>
+      <p>My journeys are farther afield now, and this site is my message in a bottle. Unfurl a few of the notes inside. — pc, 2026</p>
+    </article>
+
+    <article>
+      <h2>But Is It Art? — Photography and Poetry by Peter B Chase</h2>
+      <p>Peter B. Chase's poems have a fondness for life's physical and emotional flotsam: cardboard boxes, old sweaters, an elevator, a baby grand piano, a spinning wheel, a skull thrown from a balcony. Chase trusts the reader and almost never announces the significance of these objects, but lets the metaphorical weight accumulate as the highly personal verse unfolds.</p>
+      <p>His photographer's instinct — to put "little brackets" around things — is also his poet's instinct. The images are likewise highly eclectic — from exotic landscapes to surreal macro worlds to urban street photography. They are all made with the same restless instinct — to reveal what is evocative — whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley.</p>
+      <p>Initially it all seems a bit of a dog's breakfast, but when you look a little deeper surprises surface: the stillness of a Shan shui painting, the unflinching directness of a Diane Arbus, or even, in his very best landscapes, the sweep of a Sebastião Salgado — all refracted through the vision of a guy who's been at it since the 1970s, and still hasn't decided what he wants to be when he grows up.</p>
+      <p>This melding of Light and Language — poetry and photography — does not come with a familiar formula. We cannot say the images illustrate the poetry or that the poetry is an explanation of the pictures. Seemingly random juxtapositions create unresolved tension that entices the viewer to envision the connection between the two — the results can be singular.</p>
+      <p>Mr. Chase calls it "Documentary Surrealism," which is either an authentic aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both? Mr. Chase studied art and photography properly, at actual universities, so there's concept and technique under the chaos. But his real education has been in the decades since, traveling the world second guessing his choice to carry a heavy pack with camera gear. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy. So is it art? Pity, but you'll have to decide. Peter's just going to keep making the pictures either way.</p>
+    </article>
+
+    <section>
+      <h2>Photography and Poetry Galleries</h2>
+
+      <article>
+        <h3>Sotto Voce — Quiet World Landscapes</h3>
+        <p>Quiet, powerful landscapes from around the world — fine art photography by Peter B Chase</p>
+        <h4>Whiskey — poem by Peter B Chase</h4>
+        <p>The bitter crust of rock ground to dust under my boots as I finally emerged into the wind. Alone shivering I pulled the coarse wool sweater from the orange rucksack over my head smelling whiskey and campfire smoke and a hundred other trips without you. You were older, you should have helped me find trails through the canyon. But I had to search for you at the back of the old cemetery my grief washing the dust off your stone.</p>
+      </article>
+
+      <article>
+        <h3>Continental Drift — International Travel Photography</h3>
+        <p>Impressionistic world travel photography — fine art photography by Peter B Chase</p>
+        <h4>The Little Man — poem by Peter B Chase</h4>
+        <p>You said you wished you wouldn't think the same thoughts over and over and I agreed. I too longed to silence the homunculus trapped inside my head looking disapprovingly out through the sockets of my skull. I swept those twin beams over and over but they were not cameras, not portals — just hopelessly tiny filters through which not even Plato's shadows could pass.</p>
+      </article>
+
+      <article>
+        <h3>Unintelligent Design — Surreal and Absurd Photography</h3>
+        <p>Humorous and absurd images — documentary surrealism by Peter B Chase</p>
+        <h4>A Good Plan — poem by Peter B Chase</h4>
+        <p>I told you I wanted Bach's Brandenburg number 3 played at my funeral. I still think that's a good plan. Better than a eulogy, full of lies.</p>
+      </article>
+
+      <article>
+        <h3>Desert Solitaire — American Southwest Landscape Photography</h3>
+        <p>Secret southwestern American landscapes — fine art photography by Peter B Chase</p>
+        <h4>The Well — poem by Peter B Chase</h4>
+        <p>Brilliantly bleached. Snickering two-inch canines, a mohawk of boar bristle. A find. We delighted and stashed him in my pack. Picking our way down the arroyo sweat rolling into squinting eyes stepping over forgotten twists of rusted barbed wire. The desiccated outpost just a tumble of adobe bricks a few flies buzzing around the crumbling well. You held my legs while I leaned over the edge the stone dropped two seconds before the miraculous tiny splash. I sketched that skull many decades on in a desultory still life or two. I posted you its image but you registered nothing. Not the days on the road, not the week in the desert. Some time later I was drunk and threw that skull off my balcony into the pond.</p>
+      </article>
+
+      <article>
+        <h3>Elegy — European Fine Art Photography</h3>
+        <p>Poetic images of a fading Europe — fine art photography by Peter B Chase</p>
+        <h4>In Between — poem by Peter B Chase</h4>
+        <p>It was in the old hotel. The high whitewashed walls and tall windows with the wet peeling sills. Iron rails clanking. Toy trains far below, horns unrelenting. Mist choking the hills. The small crusty loaf torn in half the crumbs scattered carelessly across the stained table. I heard the low rustling, the harried pacing, through the plaster walls. I stopped, listened, fascinated, embarrassed. The voice was slow rising, slowly pleading, slowly heaving. Bursting through he cried "Can't you just choose kindness first." A drop of rain traced a long slow path down the pane.</p>
+      </article>
+
+      <article>
+        <h3>Fin del Mundo — Patagonia Landscape Photography</h3>
+        <p>Dramatic Patagonian moments — fine art travel photography by Peter B Chase</p>
+        <h4>Taking Pictures — poem by Peter B Chase</h4>
+        <p>It has been said my stock in trade is pulling everything out of context. But I continue putting little brackets around everything. There is truth to this. Add up all those shutter instants. The retrospective of my life is one hand of seconds. I wrote your eulogy, in your basement. Drinking your favorite — martini. Hunched over the curling picture album words were useless trinkets.</p>
+      </article>
+
+      <article>
+        <h3>Still Lives — Found Object Fine Art Photography</h3>
+        <p>Random perfection — found still life images by Peter B Chase</p>
+        <h4>Ark of the Rootless — poem by Peter B Chase</h4>
+        <p>Pleading Quieting Thanking Breathing. It was more than a petition, it was less, begun when I was a fool, an equal among my peers. My spine revealed the thin cheap mat on the cool hard floor, the enormous old house an ark of the rootless. Insufferably seductive the voice intoned climb up through chakras one by one. Seems my kundalini just smiled, the serpent's eye remained on Judy in her lovely leotard. Quieting breathing, third eye closed, pleading and thanking, soul unrevealed. Judy drifted away from me, she went to pray and speak in tongues kneeling in places I couldn't follow.</p>
+      </article>
+
+      <article>
+        <h3>Dreams and Memories — Photolyric Photography and Poetry</h3>
+        <p>Intimate and evocative photographic memories — photo-poetry by Peter B Chase</p>
+        <h4>Boxes — poem by Peter B Chase</h4>
+        <p>I carried cardboard boxes filled with books, pots and pans, and clothes, up the stairs to my new apartment. I counted each of the twenty four steps. One for each year it had been, since I last lived alone.</p>
+      </article>
+
+      <article>
+        <h3>Elation — Joyful Fine Art Landscape Photography</h3>
+        <p>Joyful motion landscapes — fine art photography by Peter B Chase</p>
+        <h4>My Night — poem by Peter B Chase</h4>
+        <p>It was warm inside the old chapel. The stained glass is so grey at night I said. Don't you see! you said, the windows are so beautiful from the outside.</p>
+      </article>
+
+      <article>
+        <h3>Adagio — Mediterranean Travel Photography</h3>
+        <p>Evocative Mediterranean travel photography — fine art photography by Peter B Chase</p>
+        <h4>Breathing — poem by Peter B Chase</h4>
+        <p>I woke this morning and listened to you breathing. In the stillness below the threshold of our consciousness. The rhythm of your breath was the cadence of grace. A sparrow pierced the darkness with its tiny song, an act of faith that the sun would rise again, as my faith that you would still love me through another day.</p>
+      </article>
+
+      <article>
+        <h3>Sierra — California and Sierra Nevada Landscape Photography</h3>
+        <p>Sierra Nevada and California landscapes — fine art photography by Peter B Chase</p>
+        <h4>The Arb — poem by Peter B Chase</h4>
+        <p>Giggling under the pine trees in the Arboretum. The joint revolved between us. Dave turned his bloodshot eyes to the sky and I heard the small plane far overhead. Fred exhaled a huge cloud looking up and exclaimed "I hope they don't have a marijuana detector!" We all collapsed in spasms of laughter and coughing. Our careless and unlikely futures looking down on us.</p>
+      </article>
+
+      <article>
+        <h3>Tiny Miracles — Macro Fine Art Photography</h3>
+        <p>Exquisite macro photography — fine art detail photography by Peter B Chase</p>
+        <h4>Dirty Hands — poem by Peter B Chase</h4>
+        <p>Timmy lived in a house with an elevator, a baby grand piano and a spinning wheel. His family spent summers in Maine, sailing, and what else I have no idea. I have a picture somewhere of us, each planted in high chairs, in the kitchen. Timmy never took lessons but he would sometimes play the piano, head cocked, mouth slightly open. Timmy didn't go to my regular school, we didn't care or understand why. We built kingdoms under the shrubs and collected insects, stones and treasures with our dirty little hands. Timmy had a strict bedtime, I asked him once why he didn't protest, but he couldn't understand the question. The neighbor girl revealed her mysterious treasure to us behind the garage, of course we honored the pact and did the same. I slowly lost that invisible thread that bound us building the defensive kingdoms of boys and girls, embarrassment and competition, that Timmy couldn't understand.</p>
+      </article>
+    </section>
+  </section>
 </body>
 </html>
