@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
@@ -1326,6 +1326,7 @@
       <a href="#why" data-i18n="nav_why">Why</a>
       <a href="#art" data-i18n="nav_art">But Is It Art?</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="licensing.html" data-i18n="nav_licensing">Licensing</a>
       <button id="share-btn" aria-label="Share this site" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
@@ -1396,6 +1397,7 @@
       <a href="#why" data-i18n="nav_why">Why</a>
       <a href="#art" data-i18n="nav_art">But Is It Art?</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="licensing.html" data-i18n="nav_licensing">Licensing</a>
       <div class="mobile-lang">
         <button class="mobile-lang-opt" data-lang="en">🇺🇸 EN</button>
         <button class="mobile-lang-opt" data-lang="de">🇩🇪 DE</button>
@@ -1663,7 +1665,6 @@
         seoDescription: 'Random perfection — found still life images by Peter B Chase',
         images: [
           'Still Lives/10.jpg',
-          'Still Lives/20.JPG',
           'Still Lives/30.JPG',
           'Still Lives/35.JPG',
           'Still Lives/37.jpg',
@@ -1671,6 +1672,7 @@
           { type: 'text', content: 'Insufferably seductive the voice intoned\nclimb up through chakras\none by one\nseems my kundalini just smiled\nthe serpent\'s eye remained on Judy\nin her lovely leotard.\n\nQuieting breathing\nthird eye closed\npleading and thanking\nsoul unrevealed.\n\nJudy drifted away from me,\nshe went to pray\nand speak in tongues\nkneeling in places I couldn\'t follow.' },
           'Still Lives/40.JPG',
           'Still Lives/45.jpg',
+          'Still Lives/20.JPG',
           'Still Lives/47.jpg',
           'Still Lives/50.jpg',
           'Still Lives/60.jpg',
@@ -2184,7 +2186,7 @@
     // ── Language / i18n ───────────────────────────────────
     const translations = {
       en: {
-        nav_galleries: 'Galleries', nav_why: 'Why', nav_notes: 'Notes', nav_art: 'But Is It Art?', nav_contact: 'Contact',
+        nav_galleries: 'Galleries', nav_why: 'Why', nav_notes: 'Notes', nav_art: 'But Is It Art?', nav_contact: 'Contact', nav_licensing: 'Purchasing',
         close: '← Close',
         contact_intro: 'Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.',
         contact_name: 'Name', contact_email: 'Email', contact_message: 'Message', contact_send: 'Send',
@@ -2194,7 +2196,7 @@
         art_html: `<p>Peter B. Chase's poems have a fondness for life's physical and emotional flotsam: cardboard boxes, old sweaters, an elevator, a baby grand piano, a spinning wheel, a skull thrown from a balcony. Chase trusts the reader and almost never announces the significance of these objects, but lets the metaphorical weight accumulate as the highly personal verse unfolds.</p><p>His photographer's instinct — to put "little brackets" around things — is also his poet's instinct. The images are likewise highly eclectic — from exotic landscapes to surreal macro worlds to urban street photography. They are all made with the same restless instinct — to reveal what is evocative — whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley.</p><p>Initially it all seems a bit of a dog's breakfast, but when you look a little deeper surprises surface: the stillness of a Shan shui painting, the unflinching directness of a Diane Arbus, or even, in his very best landscapes, the sweep of a Sebastião Salgado — all refracted through the vision of a guy who's been at it since the 1970s, and still hasn't decided what he wants to be when he grows up.</p><p>This melding of Light and Language — poetry and photography — does not come with a familiar formula. We cannot say the images illustrate the poetry or that the poetry is an explanation of the pictures. Seemingly random juxtapositions create unresolved tension that entices the viewer to envision the connection between the two — the results can be singular.</p><p>The gallery Dreams and Memories begins with this short but highly evocative poem.</p><p style="font-style:italic;padding-left:2em;">Boxes<br>I carried cardboard boxes filled with books, pots and pans, and clothes,<br>up the stairs to my new apartment<br>I counted each of the twenty four steps<br>One for each year it had been, since I last lived alone</p><p>It's followed by a photograph of a sketch of a young boy, staring directly at the viewer. However it appears decayed and is falling out of its frame. The face is partially obscured by an adult hand that seems to be waving the viewer away, yet the direct gaze of the boy penetrates effortlessly. The result is unsettling but strangely poignant.</p><p>Mr. Chase calls it "Documentary Surrealism," which is either an authentic aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both?</p><p>Mr. Chase studied art and photography properly, at actual universities, so there's concept and technique under the chaos. But his real education has been in the decades since, traveling the world second guessing his choice to carry a heavy pack with camera gear. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy.</p><p>So is it art? Pity, but you'll have to decide. Peter's just going to keep making the pictures either way.</p>`,
       },
       de: {
-        nav_galleries: 'Galerien', nav_why: 'Warum', nav_notes: 'Notizen', nav_art: 'Aber ist es Kunst?', nav_contact: 'Kontakt',
+        nav_galleries: 'Galerien', nav_why: 'Warum', nav_notes: 'Notizen', nav_art: 'Aber ist es Kunst?', nav_contact: 'Kontakt', nav_licensing: 'Kauf',
         close: '← Schließen',
         contact_intro: 'Durchdachte Kommunikation wird sehr geschätzt. Flammendes oder ignorantes Schimpfen wird in den 4. Höllenkreis verbannt, wo es hingehört.',
         contact_name: 'Name', contact_email: 'E-Mail', contact_message: 'Nachricht', contact_send: 'Senden',
@@ -2204,7 +2206,7 @@
         art_html: `<p>Diese Fotografien sind sowohl Improvisationen als auch Kompositionen. Sie erfassen die Dramatik von Landschaften und spontane urbane Momente mit der Unmittelbarkeit der Dokumentarfotografie und schöpfen dabei aus Traditionen, die von chinesischen Shanshui-Tuschemalerei-Landschaften bis zu den Werken von Diane Arbus und Sebastião Salgado reichen. Mr. Chase bezeichnet seinen Ansatz als „Dokumentarischer Surrealismus".</p><p>Mr. Chase macht seit den 1970er Jahren Bilder. Er studierte Kunst und Fotografie an der Universität und verbringt nun einen Großteil seiner Zeit damit, die Welt zu bereisen und die Fotografie zu nutzen, um so viel Staunen wie möglich zu erleben.</p><p>Mr. Chase lebt derzeit in Virginia mit seiner bemerkenswerten Freundin — und absolut ohne Haustiere.</p>`,
       },
       es: {
-        nav_galleries: 'Galerías', nav_why: 'Por Qué', nav_notes: 'Notas', nav_art: '¿Pero es Arte?', nav_contact: 'Contacto',
+        nav_galleries: 'Galerías', nav_why: 'Por Qué', nav_notes: 'Notas', nav_art: '¿Pero es Arte?', nav_contact: 'Contacto', nav_licensing: 'Compra',
         close: '← Cerrar',
         contact_intro: 'La comunicación reflexiva es muy apreciada. Los insultos o las diatribas ignorantes serán desterrados al 4.° círculo del infierno, donde pertenecen.',
         contact_name: 'Nombre', contact_email: 'Correo', contact_message: 'Mensaje', contact_send: 'Enviar',
@@ -2214,7 +2216,7 @@
         art_html: `<p>Estas fotografías son tanto improvisaciones como composiciones. Capturan el drama de los paisajes y los momentos urbanos espontáneos con la inmediatez de la fotografía documental, al tiempo que se nutren de tradiciones que van desde las paisajes chinos de tinta Shanshui hasta el trabajo de Diane Arbus y Sebastião Salgado. El señor Chase denomina su enfoque «Surrealismo Documental».</p><p>El señor Chase lleva haciendo imágenes desde los años 70. Estudió arte y fotografía en la universidad y ahora dedica gran parte de su tiempo a viajar por el mundo, utilizando la fotografía para experimentar todo el asombro posible.</p><p>El señor Chase vive actualmente en Virginia con su extraordinaria novia — y sin mascotas en absoluto.</p>`,
       },
       fr: {
-        nav_galleries: 'Galeries', nav_why: 'Pourquoi', nav_notes: 'Notes', nav_art: "Mais est-ce de l'Art ?", nav_contact: 'Contact',
+        nav_galleries: 'Galeries', nav_why: 'Pourquoi', nav_notes: 'Notes', nav_art: "Mais est-ce de l'Art ?", nav_contact: 'Contact', nav_licensing: 'Achat',
         close: '← Fermer',
         contact_intro: "La communication réfléchie est très appréciée. Les insultes ou les diatribes ignorantes seront bannies au 4e cercle de l'enfer, où elles méritent d'être.",
         contact_name: 'Nom', contact_email: 'E-mail', contact_message: 'Message', contact_send: 'Envoyer',
@@ -2224,7 +2226,7 @@
         art_html: `<p>Ces photographies sont à la fois des improvisations et des compositions. Elles capturent le drame des paysages et des moments urbains spontanés avec l'immédiateté de la photographie documentaire, tout en puisant dans des traditions allant des paysages chinois à l'encre Shanshui aux œuvres de Diane Arbus et Sebastião Salgado. M. Chase désigne son approche comme le « Surréalisme Documentaire ».</p><p>M. Chase fait des images depuis les années 1970. Il a étudié l'art et la photographie à l'université et passe maintenant une grande partie de son temps à voyager à travers le monde, utilisant la photographie pour vivre autant d'émerveillement que possible.</p><p>M. Chase vit actuellement en Virginie avec sa remarquable compagne — et absolument aucun animal de compagnie.</p>`,
       },
       zh: {
-        nav_galleries: '画廊', nav_why: '为何', nav_notes: '笔记', nav_art: '这是艺术吗？', nav_contact: '联系',
+        nav_galleries: '画廊', nav_why: '为何', nav_notes: '笔记', nav_art: '这是艺术吗？', nav_contact: '联系', nav_licensing: '购买',
         close: '← 关闭',
         contact_intro: '欢迎深思熟虑的交流。无礼或无知的谩骂将被打入地狱第四层，那是它们应得的归宿。',
         contact_name: '姓名', contact_email: '电子邮件', contact_message: '留言', contact_send: '发送',
