@@ -31,36 +31,18 @@
 
     /* ── Header ── */
     .doc-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
       border-bottom: 2px solid var(--ink);
       padding-bottom: 1.25rem;
       margin-bottom: 2rem;
+      text-align: center;
     }
 
-    .doc-logo {
+.doc-title {
       font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .doc-logo-sub {
-      font-weight: 400;
-      font-size: 0.65rem;
-      letter-spacing: 0.10em;
-      color: var(--ink-muted);
-      margin-top: 0.2rem;
-    }
-
-    .doc-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      text-align: right;
+      font-size: 1.6rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      text-align: center;
     }
 
     /* ── Parties block ── */
@@ -96,13 +78,63 @@
       line-height: 1.5;
     }
 
+    /* Editable input fields — look like underlines on screen, print as filled values */
     .field {
       display: inline-block;
-      min-width: 160px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.88rem;
+      font-style: normal;
+      color: var(--ink);
+      background: transparent;
+      border: none;
       border-bottom: 1px solid var(--ink-muted);
+      outline: none;
+      padding: 0 2px 1px;
+      min-width: 160px;
+      vertical-align: baseline;
+      line-height: inherit;
+    }
+
+    .field:focus {
+      border-bottom-color: var(--ink);
+      background: rgba(25,22,15,0.03);
+    }
+
+    .field::placeholder {
       color: var(--ink-muted);
       font-style: italic;
-      font-size: 0.85rem;
+    }
+
+    .field.wide { min-width: 280px; width: 100%; }
+    .field.full  { width: 100%; display: block; }
+
+    textarea.field {
+      display: block;
+      width: 100%;
+      resize: vertical;
+      min-height: 3.5rem;
+      border: none;
+      border-bottom: 1px solid var(--ink-muted);
+      padding: 2px 2px 4px;
+      line-height: 1.6;
+    }
+
+    textarea.field:focus { border-bottom-color: var(--ink); background: rgba(25,22,15,0.03); }
+
+    select.field {
+      -webkit-appearance: none;
+      appearance: none;
+      padding-right: 1.2rem;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 2px center;
+      cursor: pointer;
+    }
+
+    @media print {
+      .field { border-bottom-color: var(--ink); background: transparent; }
+      .field:placeholder-shown { border-bottom-color: var(--border); }
+      select.field { background-image: none; -webkit-appearance: none; appearance: none; }
     }
 
     /* ── Agreement date ── */
@@ -253,8 +285,7 @@
 
     @media (max-width: 600px) {
       body { padding: 1.25rem; }
-      .doc-header { flex-direction: column; gap: 1rem; }
-      .doc-title { text-align: left; }
+      .doc-title { font-size: 1.2rem; }
       .parties { grid-template-columns: 1fr; }
       .signatures { grid-template-columns: 1fr; }
     }
@@ -270,17 +301,13 @@
 
   <!-- Header -->
   <div class="doc-header">
-    <div>
-      <div class="doc-logo">Peter B Chase</div>
-      <div class="doc-logo-sub">peterbchase.com &nbsp;·&nbsp; Fine Art Photography</div>
-    </div>
     <div class="doc-title">Photography License Agreement</div>
   </div>
 
   <!-- Agreement date -->
   <p class="agreement-date">
-    This Agreement is entered into as of <span class="field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    &nbsp;between the parties identified below.
+    This Agreement is entered into as of <input type="text" class="field" placeholder="Month DD, YYYY" style="min-width:180px;">
+    between the parties identified below.
   </p>
 
   <!-- Parties -->
@@ -295,11 +322,11 @@
     </div>
     <div>
       <div class="party-label">Licensee</div>
-      <div class="party-name"><span class="field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-      <div class="party-detail">
-        Company: <span class="field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
-        Address: <span class="field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br>
-        Email: <span class="field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <div class="party-name"><input type="text" class="field" placeholder="Licensee name" style="min-width:260px;font-weight:700;font-size:0.95rem;"></div>
+      <div class="party-detail" style="display:grid;grid-template-columns:max-content 1fr;gap:0.15rem 0.5rem;align-items:baseline;">
+        <span>Company:</span> <input type="text" class="field" placeholder="Company name" style="width:100%;">
+        <span>Address:</span> <input type="text" class="field" placeholder="Street, City, State ZIP" style="width:100%;">
+        <span>Email:</span>   <input type="email" class="field" placeholder="email@example.com" style="width:100%;">
       </div>
     </div>
   </div>
@@ -309,20 +336,20 @@
     <div class="section-title">1. The Work</div>
     <table class="work-table">
       <tr>
-        <td>File / Title</td>
-        <td><span class="field" style="min-width:280px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+        <td>File / Title(s)</td>
+        <td><textarea class="field" placeholder="List each image on its own line, e.g.:&#10;Sierra Nevada — Storm Light&#10;Quiet Landscapes — Morning Fog" rows="3"></textarea></td>
       </tr>
       <tr>
         <td>Description</td>
-        <td><span class="field" style="min-width:280px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+        <td><textarea class="field" placeholder="Brief description of the work(s)" rows="2"></textarea></td>
       </tr>
       <tr>
         <td>Series / Gallery</td>
-        <td><span class="field" style="min-width:280px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+        <td><input type="text" class="field wide" placeholder="e.g. Sierra Nevada, Quiet Landscapes"></td>
       </tr>
       <tr>
         <td>Number of images</td>
-        <td><span class="field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+        <td><input type="number" class="field" placeholder="1" min="1" style="min-width:80px;"></td>
       </tr>
     </table>
   </div>
@@ -331,20 +358,24 @@
   <div class="section">
     <div class="section-title">2. Grant of License</div>
     <p>Subject to the terms of this Agreement and receipt of the License Fee, Licensor grants Licensee a
-      <strong>[ &nbsp;exclusive &nbsp;/&nbsp; non-exclusive&nbsp; ]</strong> (circle one),
+      <select class="field" style="min-width:140px;cursor:pointer;">
+        <option value="">— select —</option>
+        <option>exclusive</option>
+        <option>non-exclusive</option>
+      </select>,
       non-transferable license to reproduce and display the Work as follows:</p>
     <table class="work-table" style="margin-top:0.65rem;">
       <tr>
         <td>Permitted Use</td>
-        <td><span class="field" style="min-width:280px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+        <td><input type="text" class="field wide" placeholder="e.g. Interior display at hotel lobby, editorial print"></td>
       </tr>
       <tr>
         <td>Territory</td>
-        <td><span class="field" style="min-width:280px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+        <td><input type="text" class="field wide" placeholder="e.g. United States, Worldwide"></td>
       </tr>
       <tr>
         <td>Term / Duration</td>
-        <td><span class="field" style="min-width:280px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+        <td><input type="text" class="field wide" placeholder="e.g. 3 years from execution date, Perpetual"></td>
       </tr>
     </table>
   </div>
@@ -366,9 +397,14 @@
   <div class="section">
     <div class="section-title">4. License Fee &amp; Payment</div>
     <p>Licensee shall pay Licensor a one-time license fee of
-      <strong>$<span class="field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></strong>,
+      <strong>$<input type="text" class="field" placeholder="0,000" style="min-width:90px;font-weight:700;"></strong>,
       due upon execution of this Agreement. Payment shall be made by:
-      <strong>[ &nbsp;check payable to Peter B Chase &nbsp;/&nbsp; Zelle &nbsp;/&nbsp; wire transfer&nbsp; ]</strong> (circle one).
+      <select class="field" style="min-width:220px;cursor:pointer;font-weight:700;">
+        <option value="">— select method —</option>
+        <option>check payable to Peter B Chase</option>
+        <option>Zelle</option>
+        <option>wire transfer</option>
+      </select>.
       This Agreement becomes effective upon receipt of payment in full.</p>
   </div>
 
