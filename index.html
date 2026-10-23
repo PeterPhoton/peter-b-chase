@@ -1149,6 +1149,19 @@
       border-radius: 3px;
       pointer-events: none;
       white-space: nowrap;
+      max-width: 80vw;
+    }
+    #gal-info.expanded {
+      white-space: normal;
+      text-align: left;
+      line-height: 1.6;
+    }
+    #gal-info .gal-info-alt {
+      display: block;
+      margin-top: 0.3rem;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      opacity: 0.85;
     }
     #gallery.light #gal-info { color: rgba(25, 22, 15, 0.9); background: rgba(247, 245, 240, 0.7); }
 
@@ -1175,6 +1188,7 @@
       pointer-events: none;
       letter-spacing: 0.18em;
       overflow-y: auto;
+      cursor: pointer;
     }
     #gallery.light #gallery-text { color: var(--ink); }
     .poem-inner { text-align: left; width: fit-content; max-width: 100%; margin-top: auto; margin-bottom: auto; flex-shrink: 0; }
@@ -1648,7 +1662,7 @@
           { src: 'Fin del Mundo/20.jpg', alt: 'Waterfall cascading in white threads down dark layered rock into lush bright green lenga beech forest, Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase' },
           { src: 'Fin del Mundo/30.jpg', alt: 'Looking up through an ornate Gothic iron gate of a mausoleum, intricate scrollwork in a pointed arch with glimpses of blue stained glass inside, Recoleta Cemetery, Buenos Aires, Argentina — fine art travel photography by Peter B Chase' },
           { src: 'Fin del Mundo/40.jpg', alt: 'Portrait of a young child with dark curly hair and large dark eyes, wearing a blue puffer coat and patterned scarf, leaning against a yellow doorframe, Buenos Aires, Argentina — fine art travel photography by Peter B Chase' },
-          { src: 'Fin del Mundo/45.jpg', alt: 'Two shirtless young men sleeping pressed together on cardboard on a city sidewalk, one\'s hand clenched in a fist, Buenos Aires, Argentina — fine art documentary photography by Peter B Chase' },
+          { src: 'Fin del Mundo/45.jpg', alt: 'Homeless couple sleeping pressed together on cardboard on a city sidewalk, tragic yet tender, Buenos Aires, Argentina — fine art documentary photography by Peter B Chase' },
           { src: 'Fin del Mundo/50.jpg', alt: 'The three massive granite towers of Torres del Paine rising into blue sky with snow at their base, turquoise glacial lake visible in the foreground, Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase' },
           { src: 'Fin del Mundo/60.jpg', alt: 'Small inflatable zodiac with orange-suited passengers dwarfed by the towering blue-white seracs of Condor Glacier, icebergs floating in the dark water below, Chile — fine art landscape photography by Peter B Chase' },
           { type: 'text', content: 'Taking Pictures\n\nIt has been said my stock in trade\nis pulling everything out of context\nBut I continue putting little brackets\naround everything\n\nThere is truth to this\nAdd up all those shutter instants\nThe retrospective of my life\nis one hand of seconds\n\nI wrote your eulogy, in your basement\nDrinking your favorite - martini\nHunched over the curling picture album\nwords were useless trinkets' },
@@ -1670,8 +1684,8 @@
           { src: 'Still Lives/37.jpg', alt: 'Color macro of a decaying seed pod densely packed with seeds and draped in spider silk against a pure black background, dark and dramatic — fine art still life photography by Peter B Chase' },
           { type: 'text', content: 'Ark of the Rootless\n\nPleading Quieting\nThanking Breathing\nIt was more than a petition, it was less,\nbegun when I was a fool, an equal among my peers.\n\nMy spine revealed\nthe thin cheap mat\non the cool hard floor,\nthe enormous old house\nan ark of the rootless.' },
           { type: 'text', content: 'Insufferably seductive the voice intoned\nclimb up through chakras\none by one\nseems my kundalini just smiled\nthe serpent\'s eye remained on Judy\nin her lovely leotard.\n\nQuieting breathing\nthird eye closed\npleading and thanking\nsoul unrevealed.\n\nJudy drifted away from me,\nshe went to pray\nand speak in tongues\nkneeling in places I couldn\'t follow.' },
-          { src: 'Still Lives/40.JPG', alt: 'Close-up macro of a translucent golden-brown autumn leaf floating in still dark water, its intricate vein structure glowing with warm color — fine art still life photography by Peter B Chase' },
-          { src: 'Still Lives/45.jpg', alt: 'Overhead color view of a weathered amber glass bottle resting in dark shallow water amid bright green aquatic grasses — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/40.JPG', alt: 'Close-up macro of a translucent golden-brown autumn leaf floating in still dark water, its intricate sculptural vein structure glowing with warm color — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/45.jpg', alt: 'Overhead color view of a weathered amber antique glass bottle resting in dark shallow water amid bright green aquatic grasses — fine art still life photography by Peter B Chase' },
           { src: 'Still Lives/20.JPG', alt: 'Sepia-toned macro of a curled, desiccated dead leaf suspended on bare twigs with cobweb threads catching the light — fine art still life photography by Peter B Chase' },
           { src: 'Still Lives/47.jpg', alt: 'Color overhead still life of sculpted driftwood and wet black volcanic pebbles on a beach, accented by a single vivid red leaf, Hawaii — fine art still life photography by Peter B Chase' },
           { src: 'Still Lives/50.jpg', alt: 'Dried vine tendrils cascade against a graffiti-covered wall of vivid blue paint and rust-stained concrete, a vibrant urban found still life — fine art still life photography by Peter B Chase' },
@@ -1687,11 +1701,11 @@
         seoDescription: 'Exquisite macro photography — fine art detail photography by Peter B Chase',
         images: [
           { src: 'Tiny Miracles/10.JPG', alt: 'Close-up color macro of a long-jawed orb-weaver spider with amber legs and patterned abdomen resting on dark wet slate — fine art macro photography by Peter B Chase' },
-          { src: 'Tiny Miracles/20.jpg', alt: 'Extreme macro of a deep red rose center revealing golden stamens and magenta pistils encircled by velvety crimson petals against a dark background — fine art macro photography by Peter B Chase' },
+          { src: 'Tiny Miracles/20.jpg', alt: 'Extreme macro of a deep red hibiscus blossom revealing golden stamens and magenta pistils encircled by velvety crimson petals against a dark background — fine art macro photography by Peter B Chase' },
           { src: 'Tiny Miracles/30.JPG', alt: 'Color macro of a house centipede with translucent amber legs and iridescent segmented body on a wet gray surface, compound eye sharply detailed — fine art macro photography by Peter B Chase' },
           { src: 'Tiny Miracles/40.JPG', alt: 'Rows of whole black peppercorns against a muted sage-green background reveal their wrinkled sculptural surfaces in rich close-up detail — fine art macro photography by Peter B Chase' },
           { src: 'Tiny Miracles/50.JPG', alt: 'Black and white profile of a praying mantis in silver tones against pure black, its folded forelegs and exoskeleton rendered with stark sculptural clarity — fine art macro photography by Peter B Chase' },
-          { src: 'Tiny Miracles/52.jpg', alt: 'Minimalist black and white silhouette of a dragonfly clinging to a bare curved branch against bright white, its lace-like wings backlit and shadow-doubled — fine art macro photography by Peter B Chase' },
+          { src: 'Tiny Miracles/52.jpg', alt: 'Minimalist black and white Art Deco like silhouette of a dragonfly clinging to a bare curved branch against bright white, its lace-like wings — fine art macro photography by Peter B Chase' },
           { type: 'text', content: 'Dirty Hands\n\nTimmy lived in a house with an elevator, a baby grand piano and a spinning wheel\nHis family spent summers in Maine, sailing, and what else I have no idea\n\nI have a picture somewhere of us, each planted in high chairs, in the kitchen\n\nTimmy never took lessons but he would sometimes play the piano\nhead cocked, mouth slightly open\n\nTimmy didn\'t go to my regular school,\nwe didn\'t care or understand why\n\nWe built kingdoms under the shrubs\nand collected insects, stones and treasures\nwith our dirty little hands' },
           { type: 'text', content: 'Timmy had a strict bedtime, I asked him once why he didn\'t protest,\nbut he couldn\'t understand the question\n\nThe neighbor girl revealed her mysterious treasure to us behind the garage\nof course we honored the pact and did the same\n\nI slowly lost that invisible thread that bound us\nbuilding the defensive kingdoms of boys and girls,\nembarrassment and competition,\nthat Timmy couldn\'t understand' },
           { src: 'Tiny Miracles/55.JPG', alt: 'Color macro of a black thread-waisted wasp with vivid orange abdomen feeding on white wildflowers, sharp detail against a soft green bokeh background — fine art macro photography by Peter B Chase' },
@@ -1713,7 +1727,7 @@
           { src: 'War of Words and Images/B0000002_edited-2.jpg', alt: 'Color photograph of a blond boy peering through gaps in rusty iron fence bars, dappled tree shadows crossing the metal in warm afternoon light — fine art photography by Peter B Chase' },
           { src: 'War of Words and Images/20230307-P1442438-Edit.jpg', alt: 'Black and white alpine landscape of snow-streaked cliffs above dark conifer forest on a steep mountainside, stark diagonal bands of white cutting through the trees — fine art photography by Peter B Chase' },
           { src: 'War of Words and Images/P1186647.jpg', alt: 'Black and white silhouette of a lone figure walking rocky summit terrain against layered misty mountains and low clouds, contemplative and vast in scale — fine art photography by Peter B Chase' },
-          { src: 'War of Words and Images/20181115-_1010298.jpg', alt: 'Color close-up of a blue-purple mineral-veined stone resting on cracked parched earth, vivid sodalite hues radiating against pale dried clay — fine art photography by Peter B Chase' },
+          { src: 'War of Words and Images/20181115-_1010298.jpg', alt: 'Color close-up of a blue-purple mineral-veined death mask like stone resting on cracked parched earth, vivid sodalite hues radiating against pale dried clay — fine art photography by Peter B Chase' },
         ],
         light:           false,
         gray:            true,
@@ -1727,7 +1741,7 @@
         name: 'Elation',
         seoDescription: 'Joyful motion landscapes — fine art photography by Peter B Chase',
         images: [
-          { src: 'Elation/10.JPG', alt: 'Silhouetted figure with arms raised amid red rock spires at sunset, dramatic sunburst and swirling clouds above, Sedona, Arizona — fine art landscape photography by Peter B Chase' },
+          { src: 'Elation/10.JPG', alt: 'Silhouetted figure with arms jubilantly raised amid red rock spires at sunset, dramatic sunburst and swirling clouds above, Sedona, Arizona — fine art landscape photography by Peter B Chase' },
           { src: 'Elation/15.JPG', alt: 'Sweeping panorama of Zion Canyon\'s red sandstone walls and green valley floor under vivid blue sky with wispy cirrus clouds, Zion National Park, Utah — fine art landscape photography by Peter B Chase' },
           { src: 'Elation/30.jpg', alt: 'Granite boulder cairn in alpine meadow with jagged rocky peaks rising against a bright blue summer sky, Wind River Range, Wyoming — fine art landscape photography by Peter B Chase' },
           { src: 'Elation/35.jpg', alt: 'Panoramic winter view of the Matterhorn and snow-draped Swiss Alps under a deep blue sky with a lone lenticular cloud, Zermatt, Switzerland — fine art landscape photography by Peter B Chase' },
@@ -1737,7 +1751,7 @@
           { src: 'Elation/82.jpg', alt: 'Panoramic view of Kolob Canyons\' towering red sandstone cathedral formations rising above lush green vegetation, Zion National Park, Utah — fine art landscape photography by Peter B Chase' },
           { src: 'Elation/85.jpg', alt: 'Helicopter in flight above snow-covered Alpine peaks conveying freedom and motion against a vast mountain panorama, Swiss Alps — fine art landscape photography by Peter B Chase' },
           { src: 'Elation/90.jpg', alt: 'Blazing golden sunset above the cloud layer from Mauna Kea summit, observatory domes silhouetted against a glowing orange horizon, Hawaii — fine art landscape photography by Peter B Chase' },
-          { src: 'Elation/95.jpg', alt: 'Tiny climbers cross a knife-edge snowy ridge at Aiguille du Midi with vast glaciers and jagged Alpine peaks beyond, Chamonix, France — fine art landscape photography by Peter B Chase' },
+          { src: 'Elation/95.jpg', alt: 'Tiny skiers cross a knife-edge snowy ridge at Aiguille du Midi with vast glaciers and jagged Alpine peaks beyond, Chamonix, France — fine art landscape photography by Peter B Chase' },
           { src: 'Elation/100.jpg', alt: 'Milky Way arching in vivid purple and blue over silhouetted observatory telescope domes above the clouds on Mauna Kea summit, Hawaii — fine art landscape photography by Peter B Chase' },
         ],
         light:       true,
@@ -1750,9 +1764,9 @@
         seoDescription: 'Evocative high end Mediterranean travel photography — by Peter B Chase',
         images: [
           { src: 'Adagio/Adagio_10.jpg', alt: 'A lone figure with a backpack walks across the vast white volcanic tuff landscape of Sarakiniko in golden late afternoon light, casting a long shadow, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
-          { src: 'Adagio/Adagio_30.jpg', alt: 'A woman in a flowing teal dress walks up a slope of white volcanic rock in warm golden light, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
+          { src: 'Adagio/Adagio_30.jpg', alt: 'A woman in a long flowing teal dress walks up a slope of white volcanic rock in warm golden light, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
           { src: 'Adagio/Adagio_40.jpg', alt: 'Elevated view of Sarakiniko\'s white volcanic formations bathed in warm golden light, cobalt Aegean Sea beyond with rocky outcrops and water channels cutting through the pale rock, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
-          { src: 'Adagio/Adagio_60.jpg', alt: 'Black and white — volcanic tuff plateau extending to the shimmering Aegean Sea, sea stack at the edge, lone sailboat and distant island silhouettes on the horizon, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
+          { src: 'Adagio/Adagio_60.jpg', alt: 'Black and white — Sinuously curving volcanic tuff plateau extending to the shimmering Aegean Sea, sea stack at the edge, lone sailboat and distant island silhouettes on the horizon, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
           { type: 'text', content: 'Breathing\n\nI woke this morning and listened to you breathing\n\nin the stillness below the threshold of our consciousness\n\nThe rhythm of your breath was the cadence of grace\n\nA sparrow pierced the darkness with its tiny song,\n\nan act of faith that the sun would rise again,\n\nas my faith that you would still love me through another day' },
           { src: 'Adagio/Adagio_70.jpg', alt: 'Black and white close-up of a sinuous tide pool in volcanic tuff rock, its S-curve of dark water winding across pale pitted stone, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase' },
           { src: 'Adagio/Adagio_80.jpg', alt: 'Black and white silhouette view from a sea cave, two rounded sea stacks rising from the shimmering Aegean with a lone sailboat mast at right and island silhouettes beyond, Milos, Greece — fine art travel photography by Peter B Chase' },
@@ -1781,7 +1795,7 @@
           { src: 'Sierra/Cali 2026 Folio/9.jpg', alt: 'Wildfire smoke transforms Yosemite Valley into cathedral light, crepuscular rays slanting through golden haze past Cathedral Spires, silhouetted pines below, Yosemite National Park, California — fine art landscape photography by Peter B Chase' },
           { src: 'Sierra/Cali 2026 Folio/10.jpg', alt: 'Lone granite dome catches brilliant alpenglow at sunset, its golden summit reflected in still Rae Lakes with a single boulder in the water and cirrus clouds above, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase' },
           { src: 'Sierra/Cali 2026 Folio/11.jpg', alt: 'Buck Rock Fire Lookout station perched atop a bare granite dome with American flag flying, towering cumulus clouds filling the sky behind it, Sequoia National Forest, Sierra Nevada, California — fine art landscape photography by Peter B Chase' },
-          { src: 'Sierra/Cali 2026 Folio/12.jpg', alt: 'Black and white: El Capitan\'s near-vertical granite face looming overhead through wildfire smoke, crepuscular light rays cutting diagonally through haze, silhouetted pines below, Yosemite National Park, California — fine art landscape photography by Peter B Chase' },
+          { src: 'Sierra/Cali 2026 Folio/12.jpg', alt: 'Black and white: Near-vertical granite face looming overhead through wildfire smoke, crepuscular light rays cutting diagonally through haze, silhouetted pines below, Yosemite National Park, California — fine art landscape photography by Peter B Chase' },
           { src: 'Sierra/Cali 2026 Folio/15.jpg', alt: 'Panoramic dawn view at Rae Lakes, serrated granite ridgeline lit gold by first light reflected symmetrically in crystal-clear water, smooth boulders visible through transparent shallows, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase' },
         ],
         light:       true,
@@ -1793,11 +1807,12 @@
 
     const galSection = document.getElementById('gallery');
     const galImg     = document.getElementById('gallery-img');
-    let galImages = [];
-    let galMode   = {};
-    let galIndex  = 0;
-    let galBusy   = false;
-    let galKey    = '';
+    let galImages  = [];
+    let galMode    = {};
+    let galIndex   = 0;
+    let galBusy    = false;
+    let galPending = null;
+    let galKey     = '';
     const galCounter = document.getElementById('gal-counter');
 
     const galPrevBtn  = document.getElementById('gallery-prev');
@@ -1844,8 +1859,9 @@
 
     function galOpen(key) {
       container.style.visibility = 'hidden';
-      galBusy   = false;
-      galKey    = key;
+      galBusy    = false;
+      galPending = null;
+      galKey     = key;
       galMode   = galleries[key];
       galSection.classList.toggle('full-display', !!galMode.fullDisplay);
       galImages = galMode.noSort ? galMode.images.slice() : galMode.images.slice().sort((a, b) => {
@@ -1948,7 +1964,8 @@
     function galClose() {
       galSection.classList.remove('open');
       galSection.setAttribute('aria-hidden', 'true');
-      galBusy = false;
+      galBusy    = false;
+      galPending = null;
       galTextEl.style.opacity = '0';
       galTextEl.style.pointerEvents = 'none';
       container.style.visibility = '';
@@ -1959,9 +1976,20 @@
       galClose();
     }
 
+    function galDone() {
+      galBusy = false;
+      updateGalArrows();
+      if (galPending !== null) {
+        const p = galPending;
+        galPending = null;
+        galGoTo(p);
+      }
+    }
+
     function galGoTo(index) {
       const next = Math.max(0, Math.min(index, galImages.length - 1));
-      if (next === galIndex || galBusy) return;
+      if (next === galIndex) return;
+      if (galBusy) { galPending = next; return; }
 
       const fromText = isTextSlide(galImages[galIndex]);
       const toText   = isTextSlide(galImages[next]);
@@ -1982,7 +2010,7 @@
             requestAnimationFrame(() => requestAnimationFrame(() => {
               galTextEl.style.opacity = '1';
               galTextEl.style.pointerEvents = 'auto';
-              setTimeout(() => { galBusy = false; galTextEl.style.transition = ''; updateGalArrows(); }, fadeDur + 50);
+              setTimeout(() => { galTextEl.style.transition = ''; galDone(); }, fadeDur + 50);
             }));
           } else {
             galImg.style.transition = 'none';
@@ -1993,7 +2021,7 @@
                 galImg.style.transition = `opacity ${fadeDur}ms ease`;
                 galImg.style.opacity = '1';
                 galImg.style.pointerEvents = '';
-                setTimeout(() => { galBusy = false; galImg.style.transition = ''; updateGalArrows(); }, fadeDur + 50);
+                setTimeout(() => { galImg.style.transition = ''; galDone(); }, fadeDur + 50);
               }));
             };
             if (galImg.decode) { galImg.decode().then(fadeIn).catch(fadeIn); }
@@ -2009,8 +2037,7 @@
           renderTextSlide(galImages[next]);
           galTextEl.style.opacity = '1';
           galTextEl.style.pointerEvents = 'auto';
-          galBusy = false;
-          updateGalArrows();
+          galDone();
         } else {
           galTextEl.style.opacity = '0';
           galTextEl.style.pointerEvents = 'none';
@@ -2020,10 +2047,9 @@
             galImg.alt = slideAlt(galImages[next], galMode);
             galImg.style.opacity = '1';
             galImg.style.pointerEvents = '';
-            galBusy = false;
-            updateGalArrows();
+            galDone();
           };
-          loader.onerror = () => { galBusy = false; updateGalArrows(); };
+          loader.onerror = () => { galDone(); };
           loader.src = slideUrl(galImages[next]);
         }
       }
@@ -2051,7 +2077,7 @@
     galPrevBtn.addEventListener('click', () => galGoTo(galIndex - 1));
     galNextBtn.addEventListener('click', () => galGoTo(galIndex + 1));
     galImg.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); else galCloseAndClear(); });
-    galTextEl.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); });
+    galTextEl.addEventListener('click', () => { if (galIndex < galImages.length - 1) galGoTo(galIndex + 1); else galCloseAndClear(); });
 
     let touchStartX = 0, touchStartY = 0;
     document.addEventListener('touchstart', e => {
@@ -2079,6 +2105,17 @@
         if (isTextSlide(slide)) return;
         const filename = (typeof slide === 'string' ? slide : slide.src).split('/').pop();
         galInfoEl.textContent = filename;
+        galInfoEl.classList.remove('expanded');
+        galInfoEl.hidden = !galInfoEl.hidden;
+      }
+      if ((e.key === 'a' || e.key === 'A') && location.hostname === 'localhost') {
+        const slide = galImages[galIndex];
+        if (isTextSlide(slide)) return;
+        const src      = typeof slide === 'string' ? slide : slide.src;
+        const filename = src.split('/').pop();
+        const alt      = (typeof slide === 'object' && slide.alt) ? slide.alt : galMode.seoDescription || '';
+        galInfoEl.innerHTML = filename + (alt ? '<span class="gal-info-alt">' + alt + '</span>' : '');
+        galInfoEl.classList.add('expanded');
         galInfoEl.hidden = !galInfoEl.hidden;
       }
     });
