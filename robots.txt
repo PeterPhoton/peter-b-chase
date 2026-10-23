@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /license-template.html
 Sitemap: https://peterbchase.com/sitemap.xml
