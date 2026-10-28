@@ -1,10 +1,824 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://peterbchase.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Slideshow panoramas (homepage only) -->
+    <image:image>
+      <image:loc>https://peterbchase.com/20250823-_DSF8675-Pano-Edit-2.jpg</image:loc>
+      <image:caption>Panoramic landscape fine art photography by Peter B Chase</image:caption>
+      <image:title>Fine Art Photography — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Italy%202023-30.JPG</image:loc>
+      <image:caption>Travel photograph from Italy 2023 by Peter B Chase</image:caption>
+      <image:title>Fine Art Photography — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/20211029-P1331254-Pano.JPG</image:loc>
+      <image:caption>Panoramic landscape fine art photograph by Peter B Chase</image:caption>
+      <image:title>Fine Art Photography — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/20250307-20250307_145257-Pano-2.jpg</image:loc>
+      <image:caption>Panoramic landscape fine art photograph by Peter B Chase</image:caption>
+      <image:title>Fine Art Photography — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/20250929-P1138786-Pano-Edit.jpg</image:loc>
+      <image:caption>Panoramic landscape fine art photograph by Peter B Chase</image:caption>
+      <image:title>Fine Art Photography — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Sotto Voce -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/10.JPG</image:loc>
+      <image:caption>Misty forested mountain slopes with evergreen trees vanishing into thick cloud, cool greens and grays creating a hushed, atmospheric mood — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/20.jpg</image:loc>
+      <image:caption>Dramatic layered green ridgelines of tropical mountains piercing low golden clouds above a hidden waterfall, Kauai, Hawaii — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/25.JPG</image:loc>
+      <image:caption>Sweeping panorama of snow-capped alpine peaks and sheer cliffs under electric blue skies with billowing clouds, European Alps — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/30.jpg</image:loc>
+      <image:caption>The iconic Tre Cime di Lavaredo rock spires rising through swirling mist under brooding blue-gray skies, Dolomites, Italy — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/35.JPG</image:loc>
+      <image:caption>Lone silhouetted figure stands on a rocky summit above a vast glowing sea of clouds at dusk, Picos de Europa, northern Spain — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/40.jpg</image:loc>
+      <image:caption>Black-and-white panorama of a vast glacier flanked by jagged dark peaks under storm clouds, Mont Blanc massif, France — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/45.jpg</image:loc>
+      <image:caption>Panoramic color view of a rugged limestone high-mountain valley dusted with snow under deep blue skies, Picos de Europa, Spain — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/50.JPG</image:loc>
+      <image:caption>Sinuous water-sculpted sandstone walls swirling in warm earth tones of red, rose, and purple, Buckskin Gulch, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/70.JPG</image:loc>
+      <image:caption>Glowing shaft of light pierces a narrow slot canyon opening, illuminating fire-red sandstone walls rising from deep shadow, Antelope Canyon, Arizona — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/80.jpg</image:loc>
+      <image:caption>Black-and-white close-up of sharply eroded sea cliffs with blade-like vertical ridges and deep striations, Na Pali Coast, Kauai — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sotto%20Voce/110.jpg</image:loc>
+      <image:caption>Blue-toned panorama of jagged Dolomite peaks receding into haze under dramatic storm clouds, northern Italy — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sotto Voce — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Continental Drift -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/5.jpg</image:loc>
+      <image:caption>Smiling woman in orange jacket and wide-brimmed sun hat rides a vintage Ape tuk-tuk through a sunlit Italian piazza — fine art portrait photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/7.JPG</image:loc>
+      <image:caption>Two boys in white martial arts uniforms play street soccer before a wall of torn concert posters in Bilbao, Spain — fine art street photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/10.jpg</image:loc>
+      <image:caption>Sun-drenched close-up of a young blonde woman in oversized tortoiseshell sunglasses, face turned in profile against green foliage — fine art portrait photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/15.JPG</image:loc>
+      <image:caption>Father and two children ride a blue Vespa through a narrow Sicilian alley, warm and candid — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/30.JPG</image:loc>
+      <image:caption>Silver-haired man in a tan coat smokes a cigar in profile against a weathered terracotta wall and aged green door in Venice — fine art portrait photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/33.JPG</image:loc>
+      <image:caption>Grinning bald man stands beside hanging carcasses at a bustling open-air meat market in Palermo, Sicily — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/35.jpg</image:loc>
+      <image:caption>Young woman in white dress gazes from a marble balcony over a formal French Riviera garden toward the sea, Villa Ephrussi de Rothschild — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/40.jpg</image:loc>
+      <image:caption>Two women gesticulate animatedly at a Paris café terrace, a small dog in a knit sweater seated between them — fine art street photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/50.JPG</image:loc>
+      <image:caption>Black and white: two young women rest on ornate iron steps in Paris, one in a fur coat holding a drink, the other scrolling her phone — fine art street photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/60.JPG</image:loc>
+      <image:caption>Man in a bright orange beanie and denim jacket leans on a graffiti wall checking his phone on a sun-drenched Palermo street corner — fine art street photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/65.JPG</image:loc>
+      <image:caption>Black and white: five young men share an animated late-night conversation around a dim table strewn with espresso cups in Italy — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/67.jpg</image:loc>
+      <image:caption>Minimalist black and white elevated view of a beach fitness area with gymnastic bars and scattered figures on pale white sand — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/War%20of%20Words%20and%20Images/20230325-P1011317-Edit.jpg</image:loc>
+      <image:caption>Wide-eyed street accordionist with white mustache stares into the camera while playing his white accordion on an Italian street — fine art portrait photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Continental%20Drift/70.JPG</image:loc>
+      <image:caption>Black and white close-up of a gray cat crouched on stone steps under ornate wrought-iron railings, mouth open in a defiant hiss — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Continental Drift — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Unintelligent Design -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Unintelligent%20Design/20241126-20241126_120554~2-Edit.JPG</image:loc>
+      <image:caption>A person wearing a realistic horse-head mask earnestly plays a red Hohner accordion on a European city street — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Unintelligent Design — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Unintelligent%20Design/Italy%202023-1001083.jpg</image:loc>
+      <image:caption>A full-size Vespa scooter sculpted entirely from wicker and rattan parked on an Italian city sidewalk as if ready to ride — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Unintelligent Design — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Unintelligent%20Design/Patagonia%202019-1042043.jpg</image:loc>
+      <image:caption>Five weathered nude mannequins propped shoulder-to-shoulder among rusted signs and junk at an outdoor market in Patagonia, Argentina — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Unintelligent Design — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Unintelligent%20Design/B0002297.jpg</image:loc>
+      <image:caption>Shirtless skier in only a Speedo and helmet carves a triumphant turn on a bright alpine slope as fully clothed skiers descend behind him — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Unintelligent Design — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Unintelligent%20Design/B0000788_edited-1.jpg</image:loc>
+      <image:caption>Sepia-toned Sacred Heart of Jesus statue beneath a white cross topped with a bold No Trespassing sign in the American suburbs — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Unintelligent Design — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Unintelligent%20Design/So%20Cal%202015_7265_edited-1.jpg</image:loc>
+      <image:caption>A battered yellow END road sign stands centered between red rock canyon walls under a vivid blue sky in the Southern California desert — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Unintelligent Design — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Desert Solitaire -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/10.jpg</image:loc>
+      <image:caption>Black and white close-up of eroded mineral formations at Zabriskie Point, undulating ridges of ancient lakebed creating abstract geological patterns, Death Valley National Park, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/20.JPG</image:loc>
+      <image:caption>Black and white interior of a slot canyon, smooth sinuous sandstone walls with flowing layered lines and sandy floor, Escalante Grand Staircase National Monument, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/30.JPG</image:loc>
+      <image:caption>Wide view of Bear Mountain and surrounding red rock buttes seen through desert scrub with a solitary dry century plant stalk, deep blue sky with white clouds, Red Rock Secret Mountain Wilderness, Arizona — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/40.JPG</image:loc>
+      <image:caption>Vertiginous view from Wilson Mountain summit looking down over red rock spires and canyon depths toward Sedona and distant purple mountains, dead white branches in foreground, Red Rock Secret Mountain Wilderness, Arizona — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/50.JPG</image:loc>
+      <image:caption>Hiker standing on pale sandstone ledge gazing over the sweeping red rock canyon landscape of Sedona and the Verde Valley below, Bear Mountain, Red Rock Secret Mountain Wilderness, Arizona — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/60.JPG</image:loc>
+      <image:caption>Ancestral Puebloan multi-story stone structures nestled under a massive overhanging red sandstone alcove, Mummy Cave cliff dwelling, Canyon de Chelly National Monument, Arizona — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/70.JPG</image:loc>
+      <image:caption>Roadside memorial cross with black boxing gloves hanging by rope and plastic flowers at its base, Agathla Peak rising in the red desert behind, Navajo Nation, Arizona — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/75.JPG</image:loc>
+      <image:caption>Wide color panorama of the eroded golden badlands of Zabriskie Point, layered ridges and gullies stretching to dark volcanic mountains under deep blue sky, Death Valley National Park, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/80.JPG</image:loc>
+      <image:caption>Vast sunset view from Island in the Sky, deeply carved canyon landscape of mesas and sheer drops in golden light, juniper trees in the foreground, Canyonlands National Park, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/85.JPG</image:loc>
+      <image:caption>Sepia-toned dusk landscape with yucca plants and desert scrub in foreground, dramatic striated red rock escarpment backlit by a starburst sun, Red Rock Canyon National Conservation Area, Nevada — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/90.JPG</image:loc>
+      <image:caption>Large-scale outdoor mural portrait of a Native American child wearing a Blue Bird flour sack as a face mask, bold and confrontational on a weathered building wall under blue sky, Navajo Nation, Arizona — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/100.JPG</image:loc>
+      <image:caption>Vivid autumn cottonwood trees in brilliant gold foliage at the base of a massive wall of deep blue-purple eroded badlands ridges, a striking color contrast, Henry Mountains, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/102.JPG</image:loc>
+      <image:caption>Black and white aerial view of a dense bare-branched aspen grove in winter, countless pale vertical trunks creating an abstract graphic pattern across rolling hillside terrain, Scenic Byway 12, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/105.JPG</image:loc>
+      <image:caption>Wide panoramic view of the Red Rock escarpment, red and buff sandstone peaks stretching across the horizon above pale desert foreground under deep blue sky, Red Rock Canyon National Conservation Area, Nevada — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/107.JPG</image:loc>
+      <image:caption>Looking straight up through a sandstone arch, deep rust-red stone framing a blue sky with wispy clouds, sunburst peeking through at lower left, Arches National Park, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/110.JPG</image:loc>
+      <image:caption>Solitary cottonwood tree in full autumn gold glowing against a towering burnt-orange sandstone cliff under deep blue sky, Escalante Grand Staircase National Monument, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/120.JPG</image:loc>
+      <image:caption>Interior of a narrow slot canyon with parallel cross-bedded striations fanning outward from center in warm pink and mauve tones, Escalante Grand Staircase National Monument, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/125.JPG</image:loc>
+      <image:caption>Dark moody interior of Buckskin Gulch slot canyon, deep blue-toned swirling water-carved walls narrowing to a sinuous passage, Buckskin Gulch, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/130.JPG</image:loc>
+      <image:caption>Looking up along the soaring leg of a sandstone arch at sunrise, brilliant orange-red stone rising against deep blue sky with a sunburst at the base, Arches National Park, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/140.JPG</image:loc>
+      <image:caption>Color interior of Buckskin Gulch slot canyon, warm terracotta and mauve horizontal banding curving symmetrically through a narrow passage, Buckskin Gulch, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Desert%20Solitare/150.JPG</image:loc>
+      <image:caption>Antelope Canyon interior — twisting orange-red sandstone walls curve and overlap in sensuous S-curves, light falling through the narrow opening above, Antelope Canyon, Arizona — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Desert Solitaire — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Elegy -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/10.JPG</image:loc>
+      <image:caption>Black-and-white interior of an ancient stone-vaulted church, a single bright window glowing beneath layered arches, Europe — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/20.JPG</image:loc>
+      <image:caption>Black-and-white wall of weathered Spanish burial niches overgrown with weeds and backed by dense trees, Galicia, Spain — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/40.JPG</image:loc>
+      <image:caption>Ancient stone church bell tower with a faded red cross fresco set against snow-capped Dolomite peaks, northern Italy — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/50.JPG</image:loc>
+      <image:caption>Geometric facade of a whitewashed Spanish manor with stone-framed windows and an ornate iron balcony casting sharp noon shadows, Spain — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/60.JPG</image:loc>
+      <image:caption>Sepia-toned lone stone hut beneath wind-bent pines on a steep misty hillside, northern Spain — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/70.JPG</image:loc>
+      <image:caption>Sepia-toned stone chapel bearing a weathered cross against dramatic rocky mountain peaks, Picos de Europa, Spain — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/80.JPG</image:loc>
+      <image:caption>Fiery orange dusk sky over jagged mountain silhouettes with a crumbling stone building and green traffic light below, northern Spain — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/85.JPG</image:loc>
+      <image:caption>Rows of candles illuminate a gilded crucifix in the warm amber darkness of an ornate baroque church interior, Italy — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elegy/90.JPG</image:loc>
+      <image:caption>Black-and-white close-up of massive ancient iron bars, twisted and moss-encrusted, framing a baroque courtyard beyond, Europe — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Elegy — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Fin del Mundo -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/10.jpg</image:loc>
+      <image:caption>Magellanic penguin standing on green coastal grass, a red-and-white lighthouse softly blurred in the background, Monumento Natural Los Pinguinos, Chile — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/20.jpg</image:loc>
+      <image:caption>Waterfall cascading in white threads down dark layered rock into lush bright green lenga beech forest, Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/30.jpg</image:loc>
+      <image:caption>Looking up through an ornate Gothic iron gate of a mausoleum, intricate scrollwork in a pointed arch with glimpses of blue stained glass inside, Recoleta Cemetery, Buenos Aires, Argentina — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/40.jpg</image:loc>
+      <image:caption>Portrait of a young child with dark curly hair and large dark eyes, wearing a blue puffer coat and patterned scarf, leaning against a yellow doorframe, Buenos Aires, Argentina — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/45.jpg</image:loc>
+      <image:caption>Homeless couple sleeping pressed together on cardboard on a city sidewalk, tragic yet tender, Buenos Aires, Argentina — fine art documentary photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/50.jpg</image:loc>
+      <image:caption>The three massive granite towers of Torres del Paine rising into blue sky with snow at their base, turquoise glacial lake visible in the foreground, Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/60.jpg</image:loc>
+      <image:caption>Small inflatable zodiac with orange-suited passengers dwarfed by the towering blue-white seracs of Condor Glacier, icebergs floating in the dark water below, Chile — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/70.jpg</image:loc>
+      <image:caption>Wide panoramic reflection of the Cuernos del Paine and full mountain range in a still Patagonian lake, blue sky with clouds above, Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Fin%20del%20Mundo/80.jpg</image:loc>
+      <image:caption>Black and white panorama from a remote ridge, dark tundra foreground, a glacial lake gleaming silver in the valley, layered mountains receding to the horizon in atmospheric haze, Torres del Paine National Park, Chile — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Fin del Mundo — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Still Lives -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/10.jpg</image:loc>
+      <image:caption>Dark water seeping through white snow in organic ink-blot shapes, minimalist color composition evoking winter stillness — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/20.JPG</image:loc>
+      <image:caption>Sepia-toned macro of a curled, desiccated dead leaf suspended on bare twigs with cobweb threads catching the light — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/30.JPG</image:loc>
+      <image:caption>Sepia-toned macro of a withered S-curved dead leaf with intricate crinkled texture against a softly blurred background — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/35.JPG</image:loc>
+      <image:caption>Black and white close-up of dried clematis seed heads with ethereal wispy tendrils radiating outward against a softly blurred winter background — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/37.jpg</image:loc>
+      <image:caption>Color macro of a decaying seed pod densely packed with seeds and draped in spider silk against a pure black background, dark and dramatic — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/40.JPG</image:loc>
+      <image:caption>Close-up macro of a translucent golden-brown autumn leaf floating in still dark water, its intricate sculptural vein structure glowing with warm color — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/45.jpg</image:loc>
+      <image:caption>Overhead color view of a weathered amber antique glass bottle resting in dark shallow water amid bright green aquatic grasses — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/47.jpg</image:loc>
+      <image:caption>Color overhead still life of sculpted driftwood and wet black volcanic pebbles on a beach, accented by a single vivid red leaf, Hawaii — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/50.jpg</image:loc>
+      <image:caption>Dried vine tendrils cascade against a graffiti-covered wall of vivid blue paint and rust-stained concrete, a vibrant urban found still life — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Still%20Lives/60.jpg</image:loc>
+      <image:caption>Black and white calligraphic tangle of bare curved twigs with delicate hooked tips against a pure black background, graphic and minimalist — fine art still life photography by Peter B Chase</image:caption>
+      <image:title>Still Lives — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Tiny Miracles -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/10.JPG</image:loc>
+      <image:caption>Close-up color macro of a long-jawed orb-weaver spider with amber legs and patterned abdomen resting on dark wet slate — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/20.jpg</image:loc>
+      <image:caption>Extreme macro of a deep red hibiscus blossom revealing golden stamens and magenta pistils encircled by velvety crimson petals against a dark background — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/30.JPG</image:loc>
+      <image:caption>Color macro of a house centipede with translucent amber legs and iridescent segmented body on a wet gray surface, compound eye sharply detailed — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/40.JPG</image:loc>
+      <image:caption>Rows of whole black peppercorns against a muted sage-green background reveal their wrinkled sculptural surfaces in rich close-up detail — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/50.JPG</image:loc>
+      <image:caption>Black and white profile of a praying mantis in silver tones against pure black, its folded forelegs and exoskeleton rendered with stark sculptural clarity — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/52.jpg</image:loc>
+      <image:caption>Minimalist black and white Art Deco like silhouette of a dragonfly clinging to a bare curved branch against bright white, its lace-like wings — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/55.JPG</image:loc>
+      <image:caption>Color macro of a black thread-waisted wasp with vivid orange abdomen feeding on white wildflowers, sharp detail against a soft green bokeh background — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/60.JPG</image:loc>
+      <image:caption>Macro of oyster mushroom gills in soft lavender-mauve, the pleated fan-like structures cascading across the frame in abstract sculptural detail — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/70.JPG</image:loc>
+      <image:caption>Color macro of a jewel-toned green orb-weaver spider with yellow and teal patterning suspended at the center of its geometric web against deep black — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Tiny%20Miracles/80.JPG</image:loc>
+      <image:caption>Close-up color portrait of a jumping spider facing the camera, showing four reflective eyes and metallic green chelicerae framed by white-furred legs — fine art macro photography by Peter B Chase</image:caption>
+      <image:title>Tiny Miracles — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Dreams and Memories -->
+    <image:image>
+      <image:loc>https://peterbchase.com/War%20of%20Words%20and%20Images/2015%2001%2002_3565_edited-1.jpg</image:loc>
+      <image:caption>Color photograph of a blurred hand passing over an aged pastel portrait of a young boy behind spotted glass, the living gesture obscuring the painted face — fine art photography by Peter B Chase</image:caption>
+      <image:title>Dreams and Memories — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/War%20of%20Words%20and%20Images/B0000002_edited-2.jpg</image:loc>
+      <image:caption>Color photograph of a blond boy peering through gaps in rusty iron fence bars, dappled tree shadows crossing the metal in warm afternoon light — fine art photography by Peter B Chase</image:caption>
+      <image:title>Dreams and Memories — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/War%20of%20Words%20and%20Images/20230307-P1442438-Edit.jpg</image:loc>
+      <image:caption>Black and white alpine landscape of snow-streaked cliffs above dark conifer forest on a steep mountainside, stark diagonal bands of white cutting through the trees — fine art photography by Peter B Chase</image:caption>
+      <image:title>Dreams and Memories — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/War%20of%20Words%20and%20Images/P1186647.jpg</image:loc>
+      <image:caption>Black and white silhouette of a lone figure walking rocky summit terrain against layered misty mountains and low clouds, contemplative and vast in scale — fine art photography by Peter B Chase</image:caption>
+      <image:title>Dreams and Memories — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/War%20of%20Words%20and%20Images/20181115-_1010298.jpg</image:loc>
+      <image:caption>Color close-up of a blue-purple mineral-veined death mask like stone resting on cracked parched earth, vivid sodalite hues radiating against pale dried clay — fine art photography by Peter B Chase</image:caption>
+      <image:title>Dreams and Memories — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Elation -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/10.JPG</image:loc>
+      <image:caption>Silhouetted figure with arms jubilantly raised amid red rock spires at sunset, dramatic sunburst and swirling clouds above, Sedona, Arizona — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/15.JPG</image:loc>
+      <image:caption>Sweeping panorama of Zion Canyon's red sandstone walls and green valley floor under vivid blue sky with wispy cirrus clouds, Zion National Park, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/30.jpg</image:loc>
+      <image:caption>Granite boulder cairn in alpine meadow with jagged rocky peaks rising against a bright blue summer sky, Wind River Range, Wyoming — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/35.jpg</image:loc>
+      <image:caption>Panoramic winter view of the Matterhorn and snow-draped Swiss Alps under a deep blue sky with a lone lenticular cloud, Zermatt, Switzerland — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/70.jpg</image:loc>
+      <image:caption>Close-up of Mont Blanc's icy glaciers and granite needle spires bathed in cool blue light against a vivid sky, Chamonix, French Alps — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/80.jpg</image:loc>
+      <image:caption>Aerial view of turquoise reef with breaking white surf and golden sand beaches framed by tropical jungle, Kauai, Hawaii — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/82.jpg</image:loc>
+      <image:caption>Panoramic view of Kolob Canyons' towering red sandstone cathedral formations rising above lush green vegetation, Zion National Park, Utah — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/85.jpg</image:loc>
+      <image:caption>Helicopter in flight above snow-covered Alpine peaks conveying freedom and motion against a vast mountain panorama, Swiss Alps — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/90.jpg</image:loc>
+      <image:caption>Blazing golden sunset above the cloud layer from Mauna Kea summit, observatory domes silhouetted against a glowing orange horizon, Hawaii — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/95.jpg</image:loc>
+      <image:caption>Tiny skiers cross a knife-edge snowy ridge at Aiguille du Midi with vast glaciers and jagged Alpine peaks beyond, Chamonix, France — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Elation/100.jpg</image:loc>
+      <image:caption>Milky Way arching in vivid purple and blue over silhouetted observatory telescope domes above the clouds on Mauna Kea summit, Hawaii — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Elation — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Adagio -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Adagio/Adagio_10.jpg</image:loc>
+      <image:caption>A lone figure with a backpack walks across the vast white volcanic tuff landscape of Sarakiniko in golden late afternoon light, casting a long shadow, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Adagio — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Adagio/Adagio_30.jpg</image:loc>
+      <image:caption>A woman in a long flowing teal dress walks up a slope of white volcanic rock in warm golden light, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Adagio — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Adagio/Adagio_40.jpg</image:loc>
+      <image:caption>Elevated view of Sarakiniko's white volcanic formations bathed in warm golden light, cobalt Aegean Sea beyond with rocky outcrops and water channels cutting through the pale rock, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Adagio — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Adagio/Adagio_60.jpg</image:loc>
+      <image:caption>Black and white — Sinuously curving volcanic tuff plateau extending to the shimmering Aegean Sea, sea stack at the edge, lone sailboat and distant island silhouettes on the horizon, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Adagio — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Adagio/Adagio_70.jpg</image:loc>
+      <image:caption>Black and white close-up of a sinuous tide pool in volcanic tuff rock, its S-curve of dark water winding across pale pitted stone, Sarakiniko, Milos, Greece — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Adagio — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Adagio/Adagio_80.jpg</image:loc>
+      <image:caption>Black and white silhouette view from a sea cave, two rounded sea stacks rising from the shimmering Aegean with a lone sailboat mast at right and island silhouettes beyond, Milos, Greece — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Adagio — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Adagio/Adagio_90.jpg</image:loc>
+      <image:caption>Interior of a Greek Orthodox chapel, whitewashed arched window beside three painted Byzantine icons on a lavender-tinted plaster wall in warm light, Greek Orthodox Chapel, Milos, Greece — fine art travel photography by Peter B Chase</image:caption>
+      <image:title>Adagio — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+
+    <!-- Sierra -->
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/0.jpg</image:loc>
+      <image:caption>Black and white reflection of jagged granite peaks in still Kearsarge Lakes, sedge grass and boulders in the foreground, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/2.jpg</image:loc>
+      <image:caption>Lone hiker dwarfed by rounded Alabama Hills boulders with Mount Whitney and the Sierra Nevada crest rising behind under deep blue sky, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/3.jpg</image:loc>
+      <image:caption>Color panorama of Rae Lakes perfect mirror reflection of golden-lit granite dome under wispy cirrus clouds, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/4.jpg</image:loc>
+      <image:caption>Ancient foxtail pine trunk seen from below at eleven thousand feet, dramatic upward perspective of warm twisted wood grain against deep blue sky, Kings Canyon National Park, Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/5.jpg</image:loc>
+      <image:caption>Small teal alpine lake nestled in granite cirque seen from Kearsarge Pass, broken boulder foreground, Big Pothole Lake, John Muir Wilderness, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/5.5.jpg</image:loc>
+      <image:caption>Blue-toned duotone panorama of solitary wind-sculpted pine with exposed roots beside jagged Rae Lakes peaks, sun flare at horizon, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/7.jpg</image:loc>
+      <image:caption>Luminous white-barked trees illuminated on a granite cliff ledge above a dark lake, mysterious and moonlit, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/8.jpg</image:loc>
+      <image:caption>Black and white: dead skeletal tree branches arc dramatically across the foreground framing rugged granite spires and pinnacles of the Mount Whitney region, Alabama Hills, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/9.jpg</image:loc>
+      <image:caption>Wildfire smoke transforms Yosemite Valley into cathedral light, crepuscular rays slanting through golden haze past Cathedral Spires, silhouetted pines below, Yosemite National Park, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/10.jpg</image:loc>
+      <image:caption>Lone granite dome catches brilliant alpenglow at sunset, its golden summit reflected in still Rae Lakes with a single boulder in the water and cirrus clouds above, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/11.jpg</image:loc>
+      <image:caption>Buck Rock Fire Lookout station perched atop a bare granite dome with American flag flying, towering cumulus clouds filling the sky behind it, Sequoia National Forest, Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/12.jpg</image:loc>
+      <image:caption>Black and white: Near-vertical granite face looming overhead through wildfire smoke, crepuscular light rays cutting diagonally through haze, silhouetted pines below, Yosemite National Park, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://peterbchase.com/Sierra/Cali%202026%20Folio/15.jpg</image:loc>
+      <image:caption>Panoramic dawn view at Rae Lakes, serrated granite ridgeline lit gold by first light reflected symmetrically in crystal-clear water, smooth boulders visible through transparent shallows, Kings Canyon National Park, Eastern Sierra Nevada, California — fine art landscape photography by Peter B Chase</image:caption>
+      <image:title>Sierra — Peter B Chase</image:title>
+      <image:license>https://peterbchase.com/licensing.html</image:license>
+    </image:image>
   </url>
+
   <url>
     <loc>https://peterbchase.com/licensing.html</loc>
     <changefreq>monthly</changefreq>
