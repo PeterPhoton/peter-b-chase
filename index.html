@@ -15,29 +15,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peter B Chase — Fine Art Photography</title>
   <meta name="description" content="Fine art photography by Peter B Chase — landscape, travel, and documentary surrealism from around the world. Galleries, poetry, and visual storytelling.">
-  <meta name="keywords" content="fine art photography, Peter B Chase, documentary surrealism, landscape photography, travel photography, black and white photography, photo poetry, photolyric">
   <meta name="author" content="Peter B Chase">
   <meta name="google-site-verification" content="gnhuKxpfd729QLFeZpGeWyhOLU6TDlxS4EjXWDFX3sU">
   <link rel="canonical" href="https://peterbchase.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <!-- Preload first slideshow image -->
+  <link rel="preload" as="image" href="20250823-_DSF8675-Pano-Edit-2.jpg" media="(min-width: 900px)">
+  <link rel="preload" as="image" href="Sotto%20Voce/50.JPG" media="(max-width: 899px)">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://peterbchase.com/">
   <meta property="og:title" content="Peter B Chase — Fine Art Photography">
   <meta property="og:description" content="Personal and evocative images from around the world — fine art photography by Peter B Chase.">
-  <meta property="og:image" content="https://peterbchase.com/20250823-_DSF8675-Pano-Edit-2.jpg">
+  <meta property="og:image" content="https://peterbchase.com/og-image.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Peter B Chase — Fine Art Photography">
   <meta name="twitter:description" content="Personal and evocative images from around the world — fine art photography by Peter B Chase.">
-  <meta name="twitter:image" content="https://peterbchase.com/20250823-_DSF8675-Pano-Edit-2.jpg">
+  <meta name="twitter:image" content="https://peterbchase.com/og-image.jpg">
 
   <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://peterbchase.com/#website",
+        "name": "Peter B Chase — Fine Art Photography",
+        "url": "https://peterbchase.com",
+        "description": "Fine art photography and poetry by Peter B Chase — documentary surrealism in landscape, travel, and visual storytelling.",
+        "author": {"@id": "https://peterbchase.com/#peter"},
+        "publisher": {"@id": "https://peterbchase.com/#peter"},
+        "inLanguage": "en-US"
+      },
       {
         "@type": "ProfilePage",
         "mainEntity": {
@@ -226,14 +243,19 @@
       opacity: 0;
       transition: opacity var(--fade) cubic-bezier(0.45, 0, 0.55, 1);
       background-color: var(--cream);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
       will-change: opacity;
     }
-    .slide-std {
-      padding: 0 0 0.75rem;
-      background-origin: content-box;
+    .slide img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .slide-std img {
+      bottom: 0.75rem;
+      height: auto;
     }
 
     .slide.on {
@@ -1492,10 +1514,55 @@
       window.addEventListener('resize', setTop);
     }
 
+    const slideshowAlt = {
+      '20250823-_DSF8675-Pano-Edit-2.jpg': 'Panoramic landscape fine art photography by Peter B Chase',
+      'Sotto Voce/50.JPG': 'Fine art photograph from Sotto Voce series by Peter B Chase',
+      'Desert Solitare/70.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Elation/80.jpg': 'Landscape photograph from Elation series by Peter B Chase',
+      'Continental Drift/65.JPG': 'Landscape from Continental Drift series by Peter B Chase',
+      'Desert Solitare/90.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Italy 2023-30.JPG': 'Travel photograph from Italy 2023 by Peter B Chase',
+      '20211029-P1331254-Pano.JPG': 'Panoramic landscape fine art photograph by Peter B Chase',
+      'Desert Solitare/75.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Unintelligent Design/Patagonia 2019-1042043.jpg': 'Patagonia landscape from Unintelligent Design series by Peter B Chase',
+      '20250307-20250307_145257-Pano-2.jpg': 'Panoramic landscape fine art photograph by Peter B Chase',
+      '20250929-P1138786-Pano-Edit.jpg': 'Panoramic landscape fine art photograph by Peter B Chase',
+      'Continental Drift/67.jpg': 'Landscape from Continental Drift series by Peter B Chase',
+      'Continental Drift/70.JPG': 'Landscape from Continental Drift series by Peter B Chase',
+      'Desert Solitare/10.jpg': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Desert Solitare/105.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Desert Solitare/140.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Elation/82.jpg': 'Landscape from Elation series by Peter B Chase',
+      'Elation/90.jpg': 'Landscape from Elation series by Peter B Chase',
+      'Elation/100.jpg': 'Landscape from Elation series by Peter B Chase',
+      'Fin del Mundo/60.jpg': 'Landscape from Fin del Mundo series by Peter B Chase',
+      'Fin del Mundo/80.jpg': 'Landscape from Fin del Mundo series by Peter B Chase',
+      'Still Lives/60.jpg': 'Still life photograph from Still Lives series by Peter B Chase',
+      'Desert Solitare/110.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Desert Solitare/130.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Desert Solitare/150.JPG': 'Desert landscape from Desert Solitaire series by Peter B Chase',
+      'Elation/10.JPG': 'Landscape from Elation series by Peter B Chase',
+      'Elation/85.jpg': 'Landscape from Elation series by Peter B Chase',
+      'Elation/95.jpg': 'Landscape from Elation series by Peter B Chase',
+      'Elegy/10.JPG': 'Fine art photograph from Elegy series by Peter B Chase',
+      'Elegy/90.JPG': 'Fine art photograph from Elegy series by Peter B Chase',
+      'Fin del Mundo/20.jpg': 'Landscape from Fin del Mundo series by Peter B Chase',
+      'Fin del Mundo/30.jpg': 'Landscape from Fin del Mundo series by Peter B Chase',
+      'Fin del Mundo/40.jpg': 'Landscape from Fin del Mundo series by Peter B Chase',
+      'Sotto Voce/10.JPG': 'Fine art photograph from Sotto Voce series by Peter B Chase',
+      'Sotto Voce/70.JPG': 'Fine art photograph from Sotto Voce series by Peter B Chase',
+      'Still Lives/40.JPG': 'Still life photograph from Still Lives series by Peter B Chase',
+      'Tiny Miracles/52.jpg': 'Fine art photograph from Tiny Miracles series by Peter B Chase',
+      'Unintelligent Design/B0000788_edited-1.jpg': 'Landscape from Unintelligent Design series by Peter B Chase',
+    };
     slideshowImages.forEach(src => {
       const slide = document.createElement('div');
       slide.className = src.toLowerCase().includes('pano') ? 'slide' : 'slide slide-std';
-      slide.style.backgroundImage = "url('" + encodeURI(src) + "')";
+      const img = document.createElement('img');
+      img.src = encodeURI(src);
+      img.alt = slideshowAlt[src] || 'Fine art photography by Peter B Chase';
+      img.decoding = 'async';
+      slide.appendChild(img);
       container.appendChild(slide);
     });
 

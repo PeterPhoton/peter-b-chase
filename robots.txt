@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /license-template.html
+Disallow: /alt-text-reference.txt
+Disallow: /alt-text-reference
+Disallow: /Alt%20Text%20Reference.html
 Sitemap: https://peterbchase.com/sitemap.xml

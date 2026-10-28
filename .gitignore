@@ -1,5 +1,9 @@
 .claude/
 *.png
+!apple-touch-icon.png
+!favicon.png
 *.zip
 *.exe
 node_modules/
+alt-text-reference*.txt
+Alt Text Reference*.html
