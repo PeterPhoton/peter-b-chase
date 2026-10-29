@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>Still Lives — Fine Art Photography by Peter B Chase</title>
+  <meta name="description" content="Random perfection — found still life images by Peter B Chase">
+  <link rel="canonical" href="https://peterbchase.com/still-lives/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website"><meta property="og:url" content="https://peterbchase.com/still-lives/"><meta property="og:title" content="Still Lives — Peter B Chase Fine Art Photography"><meta property="og:description" content="Random perfection — found still life images by Peter B Chase"><meta property="og:image" content="https://peterbchase.com/og-image.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Still Lives — Peter B Chase Fine Art Photography"><meta name="twitter:description" content="Random perfection — found still life images by Peter B Chase"><meta name="twitter:image" content="https://peterbchase.com/og-image.jpg">
+  <link rel="preload" as="image" href="Still%20Lives/10.jpg">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://peterbchase.com/#peter","name":"Peter B Chase","url":"https://peterbchase.com","jobTitle":"Fine Art Photographer and Poet"},{"@type":"ImageGallery","@id":"https://peterbchase.com/still-lives/#gallery","name":"Still Lives — Fine Art Photography by Peter B Chase","description":"Random perfection — found still life images by Peter B Chase","url":"https://peterbchase.com/still-lives/","author":{"@id":"https://peterbchase.com/#peter"},"license":"https://peterbchase.com/licensing.html","image":["https://peterbchase.com/Still%20Lives/10.jpg","https://peterbchase.com/Still%20Lives/30.JPG","https://peterbchase.com/Still%20Lives/35.JPG","https://peterbchase.com/Still%20Lives/37.jpg","https://peterbchase.com/Still%20Lives/40.JPG","https://peterbchase.com/Still%20Lives/45.jpg","https://peterbchase.com/Still%20Lives/20.JPG","https://peterbchase.com/Still%20Lives/47.jpg","https://peterbchase.com/Still%20Lives/50.jpg","https://peterbchase.com/Still%20Lives/60.jpg"]}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400&family=Playfair+Display:wght@400;600&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--cream:#f7f5f0;--ink:#000000}
+    html,body{height:100%;width:100%;overflow:hidden;background:var(--cream)}
+    .seo-text{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    #wash{position:fixed;inset:0;z-index:10;pointer-events:none;background:linear-gradient(to bottom,rgba(247,245,240,.95) 0%,rgba(247,245,240,.00) 20%)}
+    #share-btn{background:none;border:none;cursor:pointer;padding:0;color:rgba(25,22,15,.80);transition:color .35s ease;display:flex;align-items:center;position:relative}
+    #share-btn:hover{color:rgba(25,22,15,1)}#share-btn:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+    #share-btn svg{display:block;width:.85rem;height:.85rem}
+    #share-popover{position:absolute;top:calc(100% + 1rem);right:0;background:rgba(247,245,240,.97);border:1px solid rgba(25,22,15,.12);padding:.9rem 1.2rem;display:flex;flex-direction:column;gap:.75rem;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity .25s ease,transform .25s ease;white-space:nowrap;min-width:10rem}
+    #share-popover.open{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .share-option{display:flex;align-items:center;gap:.7rem;background:none;border:none;cursor:pointer;padding:0;font-family:'Raleway',sans-serif;font-weight:400;font-size:clamp(.58rem,.72vw,.68rem);letter-spacing:.28em;text-transform:uppercase;color:rgba(25,22,15,1);text-decoration:none;transition:color .25s ease}
+    .share-option svg{width:.85rem;height:.85rem;flex-shrink:0}
+    #notes-corner{position:fixed;bottom:1.25rem;right:1.5rem;z-index:50;font-family:inherit;font-size:.85rem;font-weight:400;letter-spacing:.04em;color:rgba(25,22,15,.45);background:none;border:none;padding:0;cursor:pointer;transition:color .25s ease}
+    #notes-corner:hover{color:rgba(25,22,15,.85)}
+    #grain{position:fixed;inset:0;z-index:20;pointer-events:none;opacity:.042;mix-blend-mode:multiply}
+    header{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:flex-start;justify-content:space-between;padding:clamp(.5rem,.7vw,.65rem) clamp(.75rem,1.5vw,1.5rem)}
+    .logo{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(.89rem,1.36vw,1.36rem);letter-spacing:.2em;line-height:1;color:var(--ink);text-decoration:none;display:block;transition:opacity .6s ease}
+    .logo:hover{opacity:.50}.logo:focus-visible{outline:1px solid var(--ink);outline-offset:7px}
+    .logo-group{display:flex;flex-direction:column;align-items:flex-start}
+    .tagline{font-family:'Raleway',sans-serif;font-size:clamp(.65rem,.85vw,.85rem);font-weight:400;font-style:italic;letter-spacing:.04em;color:var(--ink);opacity:1;margin-top:.6rem;margin-bottom:0;margin-left:2ch;pointer-events:none}
+    @media(max-width:899px){header{padding:.75rem clamp(1rem,4vw,2rem)}.logo{font-size:1.5rem}.logo-hyphen{display:none}.logo-subtitle{display:block;padding-left:.5em;margin-top:.35em}.tagline{font-size:1.1rem;margin-top:.6rem}}
+    @media(max-width:899px) and (orientation:landscape){header{padding:.4rem clamp(1rem,4vw,2rem)}.tagline{display:none}}
+    nav{display:flex;align-items:baseline;gap:clamp(1.2rem,1.9vw,2.2rem);padding-top:0;margin-top:clamp(.5rem,.77vw,.77rem)}
+    nav a{font-family:'Raleway',sans-serif;font-weight:600;font-size:clamp(.62rem,.8vw,.75rem);letter-spacing:.38em;text-transform:uppercase;color:var(--ink);text-decoration:none;transition:opacity .45s ease}
+    nav a:hover{opacity:.40}nav a:active{opacity:.25}nav a:focus-visible{outline:1px solid var(--ink);outline-offset:5px}
+    .nav-item{position:relative}
+    .dropdown{position:absolute;top:100%;right:-4.5rem;list-style:none;background:rgba(247,245,240,.97);padding:1.2rem 0 .9rem;min-width:15rem;opacity:0;pointer-events:none;transform:translateY(-5px);transition:opacity .35s ease,transform .35s ease}
+    .nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;pointer-events:auto;transform:translateY(0)}
+    .dropdown li a{display:block;padding:.6rem 1.8rem;font-family:'Raleway',sans-serif;font-weight:400;font-size:clamp(.58rem,.72vw,.68rem);letter-spacing:.32em;text-transform:uppercase;color:var(--ink);text-decoration:none;white-space:nowrap;text-align:left;transition:opacity .3s ease}
+    .dropdown li a:hover{opacity:.40}.dropdown li a:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+    .lang-btn{background:none;border:none;cursor:pointer;padding:0;color:rgba(25,22,15,.80);display:flex;align-items:center;transition:color .35s ease}
+    .lang-btn svg{display:block;width:.85rem;height:.85rem}.lang-btn:hover{color:rgba(25,22,15,1)}.lang-btn:focus-visible{outline:1px solid var(--ink);outline-offset:5px}
+    .lang-item{position:relative}
+    .lang-opt{display:block;width:100%;text-align:left;padding:.55rem 1.5rem;font-family:'Raleway',sans-serif;font-weight:400;font-size:clamp(.58rem,.72vw,.68rem);letter-spacing:.22em;text-transform:uppercase;color:var(--ink);background:none;border:none;cursor:pointer;white-space:nowrap;transition:opacity .3s ease}
+    .lang-opt:hover{opacity:.40}.lang-opt:focus-visible{outline:1px solid var(--ink);outline-offset:3px}.lang-dropdown{min-width:10rem}
+    #hamburger{display:none;background:none;border:none;cursor:pointer;padding:0;color:var(--ink);align-items:center}
+    #hamburger svg{width:1.1rem;height:1.1rem}#hamburger:focus-visible{outline:1px solid var(--ink);outline-offset:5px}
+    @media(max-width:900px){nav{display:none}#hamburger{display:flex}}
+    #mobile-menu{position:fixed;inset:0;z-index:500;background:var(--cream);opacity:0;pointer-events:none;transition:opacity .4s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow-y:auto}
+    #mobile-menu.open{opacity:1;pointer-events:auto}
+    #mobile-close{position:absolute;top:clamp(1.8rem,4vw,2.5rem);right:clamp(1.8rem,4vw,2.5rem);background:none;border:none;cursor:pointer;color:rgba(25,22,15,.65);transition:opacity .3s ease;padding:0}
+    #mobile-close svg{width:1rem;height:1rem;display:block}#mobile-close:hover{opacity:.4}
+    #mobile-nav{display:flex;flex-direction:column;align-items:center;gap:2rem;padding:5rem 2rem 3rem;width:100%}
+    #mobile-nav a,.mobile-galleries-btn{font-family:'Raleway',sans-serif;font-weight:400;font-size:clamp(.78rem,4vw,1rem);letter-spacing:.38em;text-transform:uppercase;color:var(--ink);text-decoration:none;background:none;border:none;cursor:pointer;padding:0;transition:opacity .3s ease}
+    #mobile-nav a:hover,.mobile-galleries-btn:hover{opacity:.4}
+    .mobile-nav-group{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+    #mobile-galleries-sub{display:flex;flex-direction:column;align-items:center;gap:.8rem;overflow:hidden;max-height:0;transition:max-height .4s ease}
+    #mobile-galleries-sub.open{max-height:35rem}
+    #mobile-galleries-sub a{font-size:clamp(.60rem,3vw,.72rem);letter-spacing:.28em;opacity:.65}
+    .mobile-lang{display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-top:.5rem}
+    .mobile-lang-opt{font-family:'Raleway',sans-serif;font-size:clamp(.60rem,3vw,.70rem);letter-spacing:.18em;background:none;border:none;cursor:pointer;color:rgba(25,22,15,.65);transition:opacity .3s ease;padding:0}
+    .mobile-lang-opt:hover{opacity:.4}
+    #contact-panel,#why-panel,#art-panel,#notes-panel{position:fixed;inset:0;z-index:300;background:#f7f5f0;opacity:0;pointer-events:none;transition:opacity .7s ease;overflow-y:auto}
+    #contact-panel.open,#why-panel.open,#art-panel.open,#notes-panel.open{opacity:1;pointer-events:auto}
+    #contact-close,#why-close,#art-close,#notes-close{position:absolute;top:2.2rem;left:clamp(2rem,4.5vw,4.5rem);background:none;border:none;cursor:pointer;font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.58rem,.72vw,.68rem);letter-spacing:.32em;text-transform:uppercase;color:rgba(25,22,15,.65);transition:opacity .3s ease}
+    #contact-close:hover,#why-close:hover,#art-close:hover,#notes-close:hover{opacity:.40}
+    #contact-close:focus-visible,#why-close:focus-visible,#art-close:focus-visible,#notes-close:focus-visible{outline:1px solid var(--ink);outline-offset:5px}
+    #contact-inner{max-width:34rem;margin:0 auto;padding:clamp(6rem,10vw,9rem) clamp(2rem,4.5vw,4.5rem) clamp(4rem,6vw,6rem)}
+    #contact-inner p{font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.78rem,1.05vw,.98rem);line-height:1.85;letter-spacing:.04em;color:var(--ink);margin-bottom:2.8rem}
+    .contact-field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.6rem}
+    .contact-field label{font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.55rem,.68vw,.64rem);letter-spacing:.32em;text-transform:uppercase;color:rgba(25,22,15,.55)}
+    .contact-field input,.contact-field textarea{background:transparent;border:none;border-bottom:1px solid rgba(25,22,15,.25);padding:.5rem 0;font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.78rem,1vw,.92rem);letter-spacing:.04em;color:var(--ink);outline:none;transition:border-color .3s ease;width:100%;resize:none}
+    .contact-field input:focus,.contact-field textarea:focus{border-bottom-color:rgba(25,22,15,.7)}.contact-field textarea{min-height:7rem}
+    #contact-submit{margin-top:2rem;background:none;border:1px solid rgba(25,22,15,.35);padding:.7rem 2.2rem;font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.55rem,.68vw,.64rem);letter-spacing:.32em;text-transform:uppercase;color:var(--ink);cursor:pointer;transition:opacity .3s ease,border-color .3s ease}
+    #contact-submit:hover{opacity:.55}#contact-submit:focus-visible{outline:1px solid var(--ink);outline-offset:5px}
+    #contact-status,#contact-error{margin-top:1.4rem;font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.62rem,.8vw,.75rem);letter-spacing:.08em;color:rgba(25,22,15,.6)}
+    #contact-status:empty,#contact-error:empty{display:none}
+    .fs-field-error{font-family:'Raleway',sans-serif;font-weight:300;font-size:.65rem;letter-spacing:.06em;color:rgba(160,60,40,.8);margin-top:.25rem}
+    #why-text{max-width:38rem;margin:0 auto;padding:clamp(6rem,10vw,9rem) clamp(2rem,4.5vw,4.5rem) clamp(4rem,6vw,6rem);font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(.78rem,1.05vw,.98rem);line-height:1.85;letter-spacing:.04em;color:var(--ink)}
+    #why-text p+p{margin-top:1.5em}
+    #art-text,#notes-text{max-width:38rem;margin:0 auto;padding:clamp(4rem,6vw,5.5rem) clamp(2rem,4.5vw,4.5rem) clamp(4rem,6vw,6rem);font-family:'Raleway',sans-serif;font-weight:400;font-size:clamp(.78rem,1.05vw,.98rem);line-height:1.85;letter-spacing:.04em;color:#19160f}
+    #art-text{padding-top:clamp(6rem,10vw,9rem)}#art-text p+p,#notes-text p+p{margin-top:1.5em}
+    .notes-date{font-size:clamp(.58rem,.72vw,.68rem);letter-spacing:.32em;text-transform:uppercase;color:#19160f;margin-bottom:2em}
+    .notes-heading{font-size:clamp(.62rem,.8vw,.75rem);letter-spacing:.28em;text-transform:uppercase;color:#19160f;font-weight:400;margin-top:2.5em!important;margin-bottom:-.5em}
+    .notes-photo{display:block;width:38%;max-width:260px;margin:2.5em auto 0;border-radius:2px;opacity:.88}
+    .notes-copyright{margin-top:8em!important;padding-top:2em;padding-bottom:2em;border-top:1px solid rgba(25,22,15,.35);border-bottom:1px solid rgba(25,22,15,.35);font-size:clamp(.62rem,.78vw,.72rem);color:#19160f;font-weight:400;line-height:1.9}
+    #gallery{position:fixed;inset:0;z-index:300;background:#0c0b09;opacity:0;pointer-events:none;transition:opacity .7s ease;touch-action:pan-y}
+    #gallery.open{opacity:1;pointer-events:auto}
+    #gallery-img{position:absolute;top:7vmin;bottom:7vmin;left:11vmin;right:11vmin;width:calc(100% - 22vmin);height:calc(100% - 14vmin);object-fit:contain;image-rendering:high-quality;cursor:pointer;transition:opacity 2s ease}
+    #gallery.full-display #gallery-img{top:0;bottom:0;left:0;right:0;width:100%;height:100%}
+    .gal-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:none;border:none;color:rgba(247,245,240,.75);font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(2.5rem,4vw,4rem);line-height:1;cursor:pointer;padding:1rem .5rem;transition:color .35s ease}
+    .gal-arrow:hover{color:rgba(247,245,240,1)}.gal-arrow:focus-visible{outline:1px solid rgba(247,245,240,.4);outline-offset:4px}
+    #gallery-prev{left:0}#gallery-next{right:0}
+    #gallery-close-group{position:absolute;top:1rem;left:.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:.4rem;z-index:10}
+    #gallery-close{position:static;padding:.5rem 0;background:none;border:none;color:rgba(247,245,240,.75);font-family:'Raleway',sans-serif;font-weight:300;font-size:.6rem;letter-spacing:.38em;text-transform:uppercase;cursor:pointer;transition:color .35s ease}
+    #gallery-close:hover{color:rgba(247,245,240,1)}#gallery-close:focus-visible{outline:1px solid rgba(247,245,240,.4);outline-offset:5px}
+    #gallery-bookmark-close{display:none;padding:.5rem 0;background:none;border:none;color:rgba(247,245,240,.75);font-family:'Raleway',sans-serif;font-weight:300;font-size:.6rem;letter-spacing:.38em;text-transform:uppercase;cursor:pointer;transition:color .35s ease}
+    #gallery-bookmark-close:hover{color:rgba(247,245,240,1)}#gallery-bookmark-close:focus-visible{outline:1px solid rgba(247,245,240,.4);outline-offset:5px}
+    #gallery.light{background:#f7f5f0}
+    #gallery.light .gal-arrow{color:rgba(25,22,15,.75)}#gallery.light .gal-arrow:hover{color:rgba(25,22,15,.60)}
+    #gallery.light #gallery-close,#gallery.light #gallery-bookmark-close{color:rgba(25,22,15,.25)}
+    #gallery.light #gallery-close:hover,#gallery.light #gallery-bookmark-close:hover{color:rgba(25,22,15,.60)}
+    #gallery.gray{background:#808080}
+    #gal-counter{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);font-family:'Raleway',sans-serif;font-size:.7rem;letter-spacing:.15em;color:rgba(247,245,240,1);pointer-events:none;display:none}
+    #gal-info{position:absolute;bottom:3.2rem;left:50%;transform:translateX(-50%);font-family:'Raleway',sans-serif;font-size:.65rem;letter-spacing:.12em;color:rgba(247,245,240,.9);background:rgba(0,0,0,.55);padding:.25rem .6rem;border-radius:3px;pointer-events:none;white-space:nowrap;max-width:80vw}
+    #gal-info.expanded{white-space:normal;text-align:left;line-height:1.6}
+    #gal-info .gal-info-alt{display:block;margin-top:.3rem;font-style:italic;letter-spacing:.04em;opacity:.85}
+    #gallery.light #gal-info{color:rgba(25,22,15,.9);background:rgba(247,245,240,.7)}
+    #gallery-close.at-end,#gallery.light #gallery-close.at-end{color:rgba(25,22,15,1)!important}
+    #gallery-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-start;flex-direction:column;font-family:'Raleway',sans-serif;font-weight:400;font-size:clamp(.75rem,1.4vw,1rem);line-height:1.75;color:#f7f5f0;padding:clamp(3.5rem,6vh,5rem) clamp(4rem,8vw,8rem) clamp(2.5rem,4vh,4rem);opacity:0;pointer-events:none;letter-spacing:.18em;overflow-y:auto;cursor:pointer}
+    #gallery.light #gallery-text{color:var(--ink)}
+    .poem-inner{text-align:left;width:fit-content;max-width:100%;margin-top:auto;margin-bottom:auto;flex-shrink:0}
+    .poem-inner p{margin:0}.poem-inner p+p{margin-top:1.2em}
+    @media(max-width:899px){#gallery-text{padding:4rem 3.5rem 2rem;font-size:clamp(.75rem,3vw,.9rem);line-height:1.6}.poem-inner{width:100%}.poem-inner p+p{margin-top:.8em}}
+  </style>
+</head>
+<body>
+  <button id="notes-corner">Behind the Curtain</button>
+  <div id="wash"></div>
+  <svg id="grain" aria-hidden="true"><filter id="gf" x="0%" y="0%" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.68" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#gf)"/></svg>
+
+  <section id="contact-panel" aria-hidden="true" aria-label="Contact">
+    <button id="contact-close">← Close</button>
+    <div id="contact-inner">
+      <p>Thoughtful communication is highly appreciated. Flaming or ignorant ranting will be banished to the 4th circle of hell where it belongs.</p>
+      <div id="contact-status" data-fs-success aria-live="polite"></div>
+      <div id="contact-error" data-fs-error aria-live="polite"></div>
+      <form id="contact-form">
+        <div class="contact-field"><label for="cf-name">Name</label><input type="text" id="cf-name" name="name" required autocomplete="name" data-fs-field></div>
+        <div class="contact-field"><label for="cf-email">Email</label><input type="email" id="cf-email" name="email" required autocomplete="email" data-fs-field><span data-fs-error="email" class="fs-field-error"></span></div>
+        <div class="contact-field"><label for="cf-message">Message</label><textarea id="cf-message" name="message" required data-fs-field></textarea><span data-fs-error="message" class="fs-field-error"></span></div>
+        <button type="submit" id="contact-submit" data-fs-submit-btn>Send</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="why-panel" aria-hidden="true" aria-label="Why">
+    <button id="why-close">← Close</button>
+    <div id="why-text">
+      <p>So long ago that dreams and memories have become difficult to distinguish, my love of photography began in a darkened room pierced by a beam of light, my father at the helm of the Kodak carousel slide projector. Initiation into that sacred suburban rite — the slide show — planted a tiny, tenacious idea that survives even now after thousands of revisions:</p>
+      <p style="font-style:italic;padding-left:2em;">Photography can bring back wonder, knowledge, and emotion from journeys to any frontier.</p>
+      <p>Many years later I carried mother's beautiful Leica M3 around campus, and reveled in the analog alchemy of my images slowly materializing at the bottom of trays filled with liquid developer. I still believed in those frontier journeys. And I still hoped to return with a roll of Pan X film capturing some gnosis unavailable in ordinary life. University, art school, and many pilgrimages- physical and chemical - followed.</p>
+      <p>My journeys are farther afield now, and this site is my message in a bottle.</p>
+      <p>Unfurl a few of the notes inside.</p>
+      <p>— pc, 2026</p>
+    </div>
+  </section>
+
+  <section id="art-panel" aria-hidden="true" aria-label="But Is It Art?">
+    <button id="art-close">← Close</button>
+    <div id="art-text">
+      <p>Peter B. Chase's poems have a fondness for life's physical and emotional flotsam: cardboard boxes, old sweaters, an elevator, a baby grand piano, a spinning wheel, a skull thrown from a balcony. Chase trusts the reader and almost never announces the significance of these objects, but lets the metaphorical weight accumulate as the highly personal verse unfolds.</p>
+      <p>His photographer's instinct — to put "little brackets" around things — is also his poet's instinct. The images are likewise highly eclectic — from exotic landscapes to surreal macro worlds to urban street photography. They are all made with the same restless instinct — to reveal what is evocative — whether the subject is a galaxy from a mountain top, or a naked mannequin in an alley.</p>
+      <p>Mr. Chase calls it "Documentary Surrealism," which is either an authentic aesthetic philosophy or a very clever way of saying "I make it up as I go." Possibly both?</p>
+      <p>Mr. Chase studied art and photography properly, at actual universities, so there's concept and technique under the chaos. But his real education has been in the decades since, traveling the world second guessing his choice to carry a heavy pack with camera gear. He now lives in Virginia with his remarkable girlfriend and a zero-pet policy.</p>
+      <p>So is it art? Pity, but you'll have to decide. Peter's just going to keep making the pictures either way.</p>
+    </div>
+  </section>
+
+  <section id="notes-panel" aria-hidden="true" aria-label="Notes">
+    <button id="notes-close">← Close</button>
+    <div id="notes-text">
+      <p class="notes-date">May 2026</p>
+      <p class="notes-heading">Hello World!</p>
+      <p>Welcome to version 1.0. Building a site has been on the old mental to-do list for some time, but as I've zero web design background instead my energy had been spent inventing excuses and polishing my procrastination skills. But as luck would have it AI technology finally caught up with my ignorance! I can sincerely say diving into the deep end of the internet pool has been a bracing experience I've truly enjoyed — my sincerest thanks go to my (literally) tireless and infinitely patient assistant Claude.</p>
+      <p class="notes-heading">Stay Tuned</p>
+      <p>Periodically I'll be adding new images, new functionality and hopefully fix more things than I break. All of the current photos are from, I believe, the last 4 years, but before long I'll be digging in the archives and post some "classics". :-)</p>
+      <p class="notes-heading">Contact Page</p>
+      <p>Any comments, suggestions, sycophantic praise or basically anything on this side of mean comments about my mental health are encouraged and appreciated.</p>
+      <img src="Behind the Curtain/20211031-IMG_1196.jpg" class="notes-photo" alt="Peter B Chase">
+      <p class="notes-copyright">© 2026 Peter B Chase. All rights reserved. All images on this site are the exclusive property of Peter B Chase and may not be reproduced, copied, transmitted, or manipulated without written permission. Unauthorized use is a violation of federal copyright law and will be prosecuted to the full extent of the law, including but not limited to, a full body wax administered by a really rough, six-foot-tall Swedish woman, those really really cringy photographs your girlfriend took of you in high school being published online and possibly something involving a plague of locusts, or other bad stuff.</p>
+    </div>
+  </section>
+
+  <section id="gallery" aria-hidden="true" aria-label="Still Lives gallery">
+    <div id="gallery-close-group">
+      <button id="gallery-bookmark-close">⊕ BOOKMARK+CLOSE</button>
+      <button id="gallery-close">← Close</button>
+    </div>
+    <img id="gallery-img" alt="Still Lives — Peter B Chase" />
+    <div id="gallery-text"></div>
+    <button id="gallery-prev" class="gal-arrow" aria-label="Previous image">&#8249;</button>
+    <button id="gallery-next" class="gal-arrow" aria-label="Next image">&#8250;</button>
+    <div id="gal-counter"></div>
+    <div id="gal-info" hidden></div>
+  </section>
+
+  <header>
+    <div class="logo-group">
+      <a href="/" class="logo" aria-label="Peter B Chase Photography">PETER B CHASE<span class="logo-hyphen"> - </span><span style="font-family:'Raleway',sans-serif;font-weight:400;letter-spacing:.05em;line-height:1;vertical-align:baseline;font-size:1em;" class="logo-subtitle">Light and Language</span></a>
+      <p class="tagline">Age sacrifices mystery to understanding,<br> wonder to indifference, perception to expectation.<br>Visit the galleries to resist.</p>
+    </div>
+    <nav aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="/#galleries">Galleries</a>
+        <ul class="dropdown" role="menu">
+          <li><a href="/sierra/" role="menuitem" style="color:#8b1c1c;">Sierra</a></li>
+          <li><a href="/light-and-language/" role="menuitem" style="color:#8b1c1c;">Dreams and Memories</a></li>
+          <li><a href="/adagio/" role="menuitem" style="color:#8b1c1c;">Adagio</a></li>
+          <li><a href="/sotto-voce/" role="menuitem">Sotto Voce</a></li>
+          <li><a href="/fin-del-mundo/" role="menuitem">Fin del Mundo</a></li>
+          <li><a href="/solitaire/" role="menuitem">Desert Solitaire</a></li>
+          <li><a href="/elation/" role="menuitem">Elation</a></li>
+          <li><a href="/continental-drift/" role="menuitem">Continental Drift</a></li>
+          <li><a href="/elegy/" role="menuitem">Elegy</a></li>
+          <li><a href="/tiny-miracles/" role="menuitem">Tiny Miracles</a></li>
+          <li><a href="/still-lives/" role="menuitem">Still Lives</a></li>
+          <li><a href="/unintelligent-design/" role="menuitem">Unintelligent Design</a></li>
+        </ul>
+      </div>
+      <a href="#why">Why</a><a href="#art">But Is It Art?</a><a href="#contact">Contact</a><a href="/licensing.html">Purchasing</a>
+      <button id="share-btn" aria-label="Share this gallery" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        <div id="share-popover" role="menu">
+          <a class="share-option" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fpeterbchase.com%2Fstill-lives%2F&text=Still+Lives+%E2%80%94+fine+art+photography+by+Peter+B+Chase." target="_blank" rel="noopener" role="menuitem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.261 5.632 5.903-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X / Twitter</a>
+          <a class="share-option" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpeterbchase.com%2Fstill-lives%2F" target="_blank" rel="noopener" role="menuitem"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>Facebook</a>
+          <a class="share-option" href="mailto:?subject=Still%20Lives%20%E2%80%94%20Peter%20B%20Chase%20Fine%20Art%20Photography&body=Random%20perfection%20%E2%80%94%20found%20still%20life%20images%20by%20Peter%20B%20Chase.%0A%0Ahttps%3A%2F%2Fpeterbchase.com%2Fstill-lives%2F" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a>
+          <button class="share-option" id="share-copy" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span id="share-copy-label">Copy Link</span></button>
+        </div>
+      </button>
+      <div class="nav-item lang-item">
+        <button class="lang-btn" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></button>
+        <ul class="dropdown lang-dropdown" role="menu">
+          <li><button class="lang-opt" data-lang="en" role="menuitem">English</button></li>
+          <li><button class="lang-opt" data-lang="de" role="menuitem">Deutsch</button></li>
+          <li><button class="lang-opt" data-lang="es" role="menuitem">Español</button></li>
+          <li><button class="lang-opt" data-lang="fr" role="menuitem">Français</button></li>
+          <li><button class="lang-opt" data-lang="zh" role="menuitem">中文</button></li>
+        </ul>
+      </div>
+    </nav>
+    <button id="hamburger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </header>
+
+  <nav id="mobile-menu" aria-hidden="true" aria-label="Mobile navigation">
+    <button id="mobile-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div id="mobile-nav">
+      <div class="mobile-nav-group">
+        <button class="mobile-galleries-btn" aria-expanded="false">Galleries</button>
+        <div id="mobile-galleries-sub" aria-hidden="true">
+          <a href="/sierra/">Sierra</a><a href="/light-and-language/">Dreams and Memories</a><a href="/adagio/">Adagio</a><a href="/sotto-voce/">Sotto Voce</a><a href="/fin-del-mundo/">Fin del Mundo</a><a href="/solitaire/">Desert Solitaire</a><a href="/elation/">Elation</a><a href="/continental-drift/">Continental Drift</a><a href="/elegy/">Elegy</a><a href="/tiny-miracles/">Tiny Miracles</a><a href="/still-lives/">Still Lives</a><a href="/unintelligent-design/">Unintelligent Design</a>
+        </div>
+      </div>
+      <a href="#why">Why</a><a href="#art">But Is It Art?</a><a href="#contact">Contact</a><a href="/licensing.html">Purchasing</a>
+      <div class="mobile-lang"><button class="mobile-lang-opt" data-lang="en">EN</button><button class="mobile-lang-opt" data-lang="de">DE</button><button class="mobile-lang-opt" data-lang="es">ES</button><button class="mobile-lang-opt" data-lang="fr">FR</button><button class="mobile-lang-opt" data-lang="zh">中</button></div>
+    </div>
+  </nav>
+
+  <section class="seo-text">
+    <h1>Still Lives — Fine Art Photography by Peter B Chase</h1>
+    <p>Random perfection — found still life images by Peter B Chase. Macro detail, serendipitous compositions, and nature's quiet beauty.</p>
+  </section>
+
+  <script>
+    const galleries = {
+      'still-lives': {
+        name: 'Still Lives',
+        seoDescription: 'Random perfection — found still life images by Peter B Chase',
+        images: [
+          { src: 'Still Lives/10.jpg', alt: 'Dark water seeping through white snow in organic ink-blot shapes, minimalist color composition evoking winter stillness — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/30.JPG', alt: 'Sepia-toned macro of a withered S-curved dead leaf with intricate crinkled texture against a softly blurred background — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/35.JPG', alt: 'Black and white close-up of dried clematis seed heads with ethereal wispy tendrils radiating outward against a softly blurred winter background — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/37.jpg', alt: 'Color macro of a decaying seed pod densely packed with seeds and draped in spider silk against a pure black background, dark and dramatic — fine art still life photography by Peter B Chase' },
+          { type: 'text', content: 'Ark of the Rootless\n\nPleading Quieting\nThanking Breathing\nIt was more than a petition, it was less,\nbegun when I was a fool, an equal among my peers.\n\nMy spine revealed\nthe thin cheap mat\non the cool hard floor,\nthe enormous old house\nan ark of the rootless.' },
+          { type: 'text', content: 'Insufferably seductive the voice intoned\nclimb up through chakras\none by one\nseems my kundalini just smiled\nthe serpent\'s eye remained on Judy\nin her lovely leotard.\n\nQuieting breathing\nthird eye closed\npleading and thanking\nsoul unrevealed.\n\nJudy drifted away from me,\nshe went to pray\nand speak in tongues\nkneeling in places I couldn\'t follow.' },
+          { src: 'Still Lives/40.JPG', alt: 'Close-up macro of a translucent golden-brown autumn leaf floating in still dark water, its intricate sculptural vein structure glowing with warm color — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/45.jpg', alt: 'Overhead color view of a weathered amber antique glass bottle resting in dark shallow water amid bright green aquatic grasses — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/20.JPG', alt: 'Sepia-toned macro of a curled, desiccated dead leaf suspended on bare twigs with cobweb threads catching the light — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/47.jpg', alt: 'Color overhead still life of sculpted driftwood and wet black volcanic pebbles on a beach, accented by a single vivid red leaf, Hawaii — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/50.jpg', alt: 'Dried vine tendrils cascade against a graffiti-covered wall of vivid blue paint and rust-stained concrete, a vibrant urban found still life — fine art still life photography by Peter B Chase' },
+          { src: 'Still Lives/60.jpg', alt: 'Black and white calligraphic tangle of bare curved twigs with delicate hooked tips against a pure black background, graphic and minimalist — fine art still life photography by Peter B Chase' },
+        ],
+        light: true, fade: false, fullDisplay: true, noSort: true,
+      },
+    };
+
+    const galSection=document.getElementById('gallery'),galImg=document.getElementById('gallery-img');
+    let galImages=[],galMode={},galIndex=0,galBusy=false,galPending=null,galKey='';
+    const galCounter=document.getElementById('gal-counter'),galPrevBtn=document.getElementById('gallery-prev'),galNextBtn=document.getElementById('gallery-next'),galCloseBtn=document.getElementById('gallery-close'),galBookmarkCloseBtn=document.getElementById('gallery-bookmark-close'),galTextEl=document.getElementById('gallery-text');
+    function isTextSlide(s){return s&&typeof s==='object'&&s.type==='text'}
+    function slideUrl(s){return encodeURI(typeof s==='string'?s:s.src)}
+    function slideAlt(s,mode){return(typeof s==='object'&&s.alt)?s.alt:(mode.seoDescription||`${mode.name} — Peter B Chase`)}
+    function renderTextSlide(s){galTextEl.innerHTML=`<div class="poem-inner">${s.content.split('\n\n').map(p=>`<p>${p.replace(/\n/g,'<br>')}</p>`).join('')}</div>`}
+    function updateGalArrows(){const isFirst=galIndex===0,isLast=galIndex===galImages.length-1;const setArrow=(btn,active)=>{btn.style.opacity=active?'':'0';btn.style.pointerEvents=active?'':'none'};if(isLast){setArrow(galPrevBtn,!isFirst);setArrow(galNextBtn,false);galCloseBtn.classList.add('at-end')}else{setArrow(galPrevBtn,!isFirst);setArrow(galNextBtn,true);galCloseBtn.classList.remove('at-end')}galCounter.style.display='none'}
+    function galClose(){window.location.href='/'}
+    function galCloseAndClear(){localStorage.removeItem('gallery-pos-'+galKey);galClose()}
+    function galDone(){galBusy=false;updateGalArrows();if(galPending!==null){const p=galPending;galPending=null;galGoTo(p)}}
+    function galOpen(key){galBusy=false;galPending=null;galKey=key;galMode=galleries[key];galSection.classList.toggle('full-display',!!galMode.fullDisplay);galImages=galMode.noSort?galMode.images.slice():galMode.images.slice().sort((a,b)=>{if(typeof a!=='string'||typeof b!=='string')return 0;const fa=a.split('/').pop().toLowerCase(),fb=b.split('/').pop().toLowerCase();const na=parseFloat(fa),nb=parseFloat(fb);if(!isNaN(na)&&!isNaN(nb))return na-nb;return fa<fb?-1:fa>fb?1:0});galIndex=0;const saved=parseInt(localStorage.getItem('gallery-pos-'+key)||'0',10);if(saved>0&&saved<galImages.length)galIndex=saved;galBookmarkCloseBtn.style.display='block';galSection.classList.toggle('light',!!galMode.light);galSection.classList.toggle('gray',!!galMode.gray);galImages.forEach(slide=>{if(!isTextSlide(slide))new Image().src=slideUrl(slide)});galImg.style.transition='none';galImg.style.opacity='0';galImg.style.pointerEvents='none';galTextEl.style.transition='none';galTextEl.style.opacity='0';galTextEl.style.pointerEvents='none';void galImg.offsetWidth;const firstIsText=isTextSlide(galImages[galIndex]);if(galMode.fade){galSection.classList.add('open');galSection.removeAttribute('aria-hidden');updateGalArrows();const dur=galMode.fadeOpenDuration||'';if(firstIsText){renderTextSlide(galImages[galIndex]);void galTextEl.offsetWidth;galTextEl.style.transition=dur?`opacity ${dur} ease`:'';requestAnimationFrame(()=>requestAnimationFrame(()=>{galTextEl.style.opacity='1';galTextEl.style.pointerEvents='auto';if(dur)setTimeout(()=>{galTextEl.style.transition=''},parseFloat(dur)*1000)}))}else{const doFadeIn=(img)=>{galImg.style.transition='none';galImg.src=img.src;galImg.alt=galMode.seoDescription||`${galMode.name} — Peter B Chase`;void galImg.offsetWidth;galImg.style.transition=dur?`opacity ${dur} ease`:'';requestAnimationFrame(()=>requestAnimationFrame(()=>{galImg.style.opacity='1';galImg.style.pointerEvents='';if(dur)setTimeout(()=>{galImg.style.transition=''},parseFloat(dur)*1000)}))};const loader=new Image();loader.onload=()=>{if(loader.decode){loader.decode().then(()=>doFadeIn(loader)).catch(()=>doFadeIn(loader))}else{doFadeIn(loader)}};loader.onerror=()=>doFadeIn(loader);loader.src=slideUrl(galImages[galIndex])}}else{if(firstIsText){renderTextSlide(galImages[galIndex]);galSection.classList.add('open');galSection.removeAttribute('aria-hidden');requestAnimationFrame(()=>requestAnimationFrame(()=>{galTextEl.style.opacity='1';galTextEl.style.pointerEvents='auto';updateGalArrows()}))}else{const loader=new Image();loader.onload=()=>{galImg.src=loader.src;galImg.alt=slideAlt(galImages[galIndex],galMode);galSection.classList.add('open');galSection.removeAttribute('aria-hidden');requestAnimationFrame(()=>requestAnimationFrame(()=>{galImg.style.opacity='1';galImg.style.pointerEvents='';updateGalArrows()}))};loader.onerror=()=>{galSection.classList.add('open');galSection.removeAttribute('aria-hidden');galImg.style.opacity='1';galImg.style.pointerEvents='';updateGalArrows()};loader.src=slideUrl(galImages[galIndex])}}}
+    function galGoTo(index){const next=Math.max(0,Math.min(index,galImages.length-1));if(next===galIndex)return;if(galBusy){galPending=next;return}const fromText=isTextSlide(galImages[galIndex]),toText=isTextSlide(galImages[next]);const fadeOutEl=fromText?galTextEl:galImg;if(galMode.fade){galBusy=true;const fadeDur=galMode.fadeDuration||2000;fadeOutEl.style.transition=`opacity ${fadeDur}ms ease`;fadeOutEl.style.opacity='0';fadeOutEl.style.pointerEvents='none';setTimeout(()=>{galIndex=next;if(toText){renderTextSlide(galImages[next]);galTextEl.style.transition=`opacity ${fadeDur}ms ease`;requestAnimationFrame(()=>requestAnimationFrame(()=>{galTextEl.style.opacity='1';galTextEl.style.pointerEvents='auto';setTimeout(()=>{galTextEl.style.transition='';galDone()},fadeDur+50)}))}else{galImg.style.transition='none';galImg.src=slideUrl(galImages[next]);galImg.alt=slideAlt(galImages[next],galMode);const fadeIn=()=>{requestAnimationFrame(()=>requestAnimationFrame(()=>{galImg.style.transition=`opacity ${fadeDur}ms ease`;galImg.style.opacity='1';galImg.style.pointerEvents='';setTimeout(()=>{galImg.style.transition='';galDone()},fadeDur+50)}))};if(galImg.decode){galImg.decode().then(fadeIn).catch(fadeIn)}else{fadeIn()}}},fadeDur+50)}else{galBusy=true;galIndex=next;localStorage.setItem('gallery-pos-'+galKey,galIndex);if(toText){galImg.style.opacity='0';galImg.style.pointerEvents='none';renderTextSlide(galImages[next]);galTextEl.style.opacity='1';galTextEl.style.pointerEvents='auto';galDone()}else{galTextEl.style.opacity='0';galTextEl.style.pointerEvents='none';const loader=new Image();loader.onload=()=>{galImg.src=loader.src;galImg.alt=slideAlt(galImages[next],galMode);galImg.style.opacity='1';galImg.style.pointerEvents='';galDone()};loader.onerror=()=>{galDone()};loader.src=slideUrl(galImages[next])}}}
+    galCloseBtn.addEventListener('click',galCloseAndClear);galBookmarkCloseBtn.addEventListener('click',()=>{localStorage.setItem('gallery-pos-'+galKey,galIndex);galClose()});galPrevBtn.addEventListener('click',()=>galGoTo(galIndex-1));galNextBtn.addEventListener('click',()=>galGoTo(galIndex+1));galImg.addEventListener('click',()=>{if(galIndex<galImages.length-1)galGoTo(galIndex+1);else galCloseAndClear()});galTextEl.addEventListener('click',()=>{if(galIndex<galImages.length-1)galGoTo(galIndex+1);else galCloseAndClear()});
+    let touchStartX=0,touchStartY=0;document.addEventListener('touchstart',e=>{touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY},{passive:true});document.addEventListener('touchend',e=>{if(!galSection.classList.contains('open'))return;const dx=e.changedTouches[0].clientX-touchStartX,dy=e.changedTouches[0].clientY-touchStartY;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){if(dx<0)galGoTo(galIndex+1);else galGoTo(galIndex-1)}},{passive:true});
+    const galInfoEl=document.getElementById('gal-info');document.addEventListener('keydown',e=>{if(!galSection.classList.contains('open'))return;if(e.key==='ArrowRight')galGoTo(galIndex+1);if(e.key==='ArrowLeft')galGoTo(galIndex-1);if(e.key==='Escape')galCloseAndClear();if(e.key==='i'||e.key==='I'){const slide=galImages[galIndex];if(isTextSlide(slide))return;const filename=(typeof slide==='string'?slide:slide.src).split('/').pop();galInfoEl.textContent=filename;galInfoEl.classList.remove('expanded');galInfoEl.hidden=!galInfoEl.hidden}if((e.key==='a'||e.key==='A')&&location.hostname==='localhost'){const slide=galImages[galIndex];if(isTextSlide(slide))return;const src=typeof slide==='string'?slide:slide.src;const filename=src.split('/').pop();const alt=(typeof slide==='object'&&slide.alt)?slide.alt:galMode.seoDescription||'';galInfoEl.innerHTML=filename+(alt?'<span class="gal-info-alt">'+alt+'</span>':'');galInfoEl.classList.add('expanded');galInfoEl.hidden=!galInfoEl.hidden}});
+    const contactPanel=document.getElementById('contact-panel');function contactOpen(){contactPanel.classList.add('open');contactPanel.removeAttribute('aria-hidden')}function contactClose(){contactPanel.classList.remove('open');contactPanel.setAttribute('aria-hidden','true');const form=document.getElementById('contact-form');if(form){form.reset();form.style.display=''}document.getElementById('contact-status').textContent='';document.getElementById('contact-error').textContent=''}document.querySelectorAll('a[href="#contact"]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();contactOpen()}));document.getElementById('contact-close')?.addEventListener('click',contactClose);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&contactPanel.classList.contains('open'))contactClose()});window.formspree=window.formspree||function(){(formspree.q=formspree.q||[]).push(arguments)};formspree('initForm',{formElement:'#contact-form',formId:'xpqbyobg'});
+    const whyPanel=document.getElementById('why-panel');function whyOpen(){whyPanel.classList.add('open');whyPanel.removeAttribute('aria-hidden')}function whyClose(){whyPanel.classList.remove('open');whyPanel.setAttribute('aria-hidden','true')}document.querySelectorAll('a[href="#why"]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();whyOpen()}));document.getElementById('why-close')?.addEventListener('click',whyClose);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&whyPanel.classList.contains('open'))whyClose()});
+    const notesPanel=document.getElementById('notes-panel');function notesOpen(){notesPanel.classList.add('open');notesPanel.removeAttribute('aria-hidden')}function notesClose(){notesPanel.classList.remove('open');notesPanel.setAttribute('aria-hidden','true')}document.querySelectorAll('a[href="#notes"]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();notesOpen()}));document.getElementById('notes-corner').addEventListener('click',notesOpen);document.getElementById('notes-close')?.addEventListener('click',notesClose);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&notesPanel.classList.contains('open'))notesClose()});
+    const artPanel=document.getElementById('art-panel');function artOpen(){artPanel.classList.add('open');artPanel.removeAttribute('aria-hidden')}function artClose(){artPanel.classList.remove('open');artPanel.setAttribute('aria-hidden','true')}document.querySelectorAll('a[href="#art"]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();artOpen()}));document.getElementById('art-close')?.addEventListener('click',artClose);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&artPanel.classList.contains('open'))artClose()});
+    const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobile-menu'),mobileClose=document.getElementById('mobile-close');function mobileMenuOpen(){mobileMenu.classList.add('open');mobileMenu.removeAttribute('aria-hidden');hamburger.setAttribute('aria-expanded','true')}function mobileMenuClose(){mobileMenu.classList.remove('open');mobileMenu.setAttribute('aria-hidden','true');hamburger.setAttribute('aria-expanded','false')}hamburger.addEventListener('click',mobileMenuOpen);mobileClose.addEventListener('click',mobileMenuClose);document.querySelectorAll('#mobile-nav a').forEach(a=>{a.addEventListener('click',mobileMenuClose)});const mobileGalBtn=document.querySelector('.mobile-galleries-btn'),mobileGalSub=document.getElementById('mobile-galleries-sub');if(mobileGalBtn&&mobileGalSub)mobileGalBtn.addEventListener('click',()=>mobileGalSub.classList.toggle('open'));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileMenu.classList.contains('open'))mobileMenuClose()});
+    const shareBtn=document.getElementById('share-btn'),sharePopover=document.getElementById('share-popover');shareBtn.addEventListener('click',e=>{e.stopPropagation();const open=sharePopover.classList.toggle('open');shareBtn.setAttribute('aria-expanded',open)});document.addEventListener('click',()=>{sharePopover.classList.remove('open');shareBtn.setAttribute('aria-expanded','false')});document.getElementById('share-copy')?.addEventListener('click',async e=>{e.stopPropagation();await navigator.clipboard.writeText('https://peterbchase.com/still-lives/');const label=document.getElementById('share-copy-label');label.textContent='Copied!';setTimeout(()=>{label.textContent='Copy Link'},2000)});
+    document.addEventListener('DOMContentLoaded',()=>galOpen('still-lives'));
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
