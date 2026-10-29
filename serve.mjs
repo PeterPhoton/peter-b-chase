@@ -26,7 +26,8 @@ const server = createServer(async (req, res) => {
   try {
     const url = new URL(req.url, `http://localhost:${PORT}`);
     const pathname = decodeURIComponent(url.pathname);
-    const relative = pathname === '/' ? 'index.html' : pathname.slice(1);
+    let relative = pathname === '/' ? 'index.html' : pathname.slice(1);
+    if (relative.endsWith('/')) relative += 'index.html';
     const filePath = join(__dirname, relative);
     const data = await readFile(filePath);
     const ext = extname(filePath).toLowerCase();
