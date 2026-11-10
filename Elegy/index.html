@@ -361,7 +361,7 @@
       galBookmarkCloseBtn.style.display='block';
       galSection.classList.toggle('light',!!galMode.light);
       galSection.classList.toggle('gray',!!galMode.gray);
-      galImages.forEach(slide=>{if(!isTextSlide(slide))new Image().src=slideUrl(slide)});
+      window._galPreloadCache=[];galImages.forEach(slide=>{if(!isTextSlide(slide)){const img=new Image();img.src=slideUrl(slide);window._galPreloadCache.push(img)}});
       galImg.style.transition='none';galImg.style.opacity='0';galImg.style.pointerEvents='none';
       galTextEl.style.transition='none';galTextEl.style.opacity='0';galTextEl.style.pointerEvents='none';
       void galImg.offsetWidth;
@@ -463,10 +463,11 @@
     const shareBtn=document.getElementById('share-btn'),sharePopover=document.getElementById('share-popover');
     shareBtn.addEventListener('click',e=>{e.stopPropagation();const open=sharePopover.classList.toggle('open');shareBtn.setAttribute('aria-expanded',open)});
     document.addEventListener('click',()=>{sharePopover.classList.remove('open');shareBtn.setAttribute('aria-expanded','false')});
-    document.getElementById('share-copy')?.addEventListener('click',async e=>{e.stopPropagation();await navigator.clipboard.writeText('https://peterbchase.com/elegy/');const label=document.getElementById('share-copy-label');label.textContent='Copied!';setTimeout(()=>{label.textContent='Copy Link'},2000)});
+    document.getElementById('share-copy')?.addEventListener('click',async e=>{e.stopPropagation();await navigator.clipboard.writeText('https://peterbchase.com/elegy/').catch(()=>{});const label=document.getElementById('share-copy-label');label.textContent='Copied!';setTimeout(()=>{label.textContent='Copy Link'},2000)});
 
+    document.querySelectorAll('.lang-opt,.mobile-lang-opt').forEach(btn=>{btn.addEventListener('click',()=>{localStorage.setItem('lang',btn.dataset.lang);btn.blur()})});
     document.addEventListener('DOMContentLoaded',()=>galOpen('elegy'));
   </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  <script src="https://unpkg.com/@formspree/ajax@1.1.5" defer></script>
 </body>
 </html>
